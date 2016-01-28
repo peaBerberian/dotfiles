@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# This script, usually executed at the end of ./.xinitrc, set a basic
+# config and launch different application on start
+
+# Auto-detect number of screens and set xrandr accordingly
+if [ -f ~/.xrandr_autodetect.sh ]; then
+  sh ~/.xrandr_autodetect.sh &
+fi
+
+# Start ssh-agent
+eval `/usr/bin/ssh-agent -s`
+
+# Display wallpaper
+sh ~/.fehbg &
+
+# start xscreensaver
+xscreensaver -no-splash &
+
+# Auto-lock after 10 minutes
+xautolock -time 10 -locker "xscreensaver-command -lock" &
+
+# Execute power manager
+xfce4-power-manager

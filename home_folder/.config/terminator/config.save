@@ -1,0 +1,349 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  suppress_multiple_term_dialog = True
+[keybindings]
+[profiles]
+  [[Source-p]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Source Code Pro for Powerline Medium 12
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Source semi-p]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Source Code Pro for Powerline Semi-Bold 11
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[DejaVu-p]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = DejaVu Sans Mono 11
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Source]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Source Code Pro for Powerline Medium 11
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Source light-p]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Source Code Pro for Powerline Light 11
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[DejaVu]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = DejaVu Sans Mono 10
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Source semi]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Source Code Pro for Powerline Semi-Bold 10
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Consolas-p]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Consolas for Powerline 12
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Consolas]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Consolas for Powerline 11
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Source Light-p]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Source Code Pro for Powerline Light 11
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[monofur]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.91
+    background_type = transparent
+    background_image = None
+    show_titlebar = False
+    font = monofur for Powerline 13
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Inconsolata-p]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Inconsolata Medium 11
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Liberation-p]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    urgent_bell = True
+    background_type = transparent
+    background_image = /home/oscar/Images/wallpapers/01819_birdonabranch_1920x1080.jpg
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Liberation Mono 11
+    background_color = "#171515"
+    scrollback_lines = 5000
+    scrollback_infinite = True
+  [[Mono]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.91
+    background_type = transparent
+    background_image = None
+    show_titlebar = False
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Meslo M]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Meslo LG M for Powerline 10
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Meslo L]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Meslo LG L for Powerline 10
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Source light]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Source Code Pro for Powerline Light 10
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Meslo S]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Meslo LG S for Powerline 10
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[monofur-p]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.91
+    background_type = transparent
+    background_image = None
+    show_titlebar = False
+    font = monofur for Powerline 14
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Meslo S-p]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Meslo LG S for Powerline 11
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Meslo M-p]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Meslo LG M for Powerline 11
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Meslo L-p]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Meslo LG L for Powerline 11
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Liberation]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    urgent_bell = True
+    background_type = transparent
+    background_image = /home/oscar/Images/wallpapers/01819_birdonabranch_1920x1080.jpg
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Liberation Mono 10
+    background_color = "#171515"
+    scrollback_lines = 5000
+    scrollback_infinite = True
+  [[default]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Meslo LG L for Powerline 10
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Inconsolata]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Inconsolata Medium 10
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Source Light]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.96
+    background_type = transparent
+    background_image = None
+    cursor_color = "#ff0000"
+    show_titlebar = False
+    font = Source Code Pro for Powerline Light 10
+    background_color = "#171515"
+    scrollback_infinite = True
+  [[Mono-p]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.91
+    background_type = transparent
+    background_image = None
+    show_titlebar = False
+    background_color = "#171515"
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+  [[new]]
+    [[[child0]]]
+      position = 0:24
+      type = Window
+      order = 0
+      parent = ""
+      size = 1920, 1056
+    [[[child1]]]
+      position = 922
+      type = VPaned
+      order = 0
+      parent = child0
+    [[[child2]]]
+      position = 1352
+      type = HPaned
+      order = 0
+      parent = child1
+    [[[child4]]]
+      position = 314
+      type = VPaned
+      order = 1
+      parent = child2
+    [[[terminal3]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child2
+    [[[terminal5]]]
+      profile = Black
+      type = Terminal
+      order = 0
+      parent = child4
+    [[[terminal7]]]
+      profile = Completely black
+      type = Terminal
+      order = 1
+      parent = child1
+    [[[terminal6]]]
+      profile = Grey1
+      type = Terminal
+      order = 1
+      parent = child4
+[plugins]

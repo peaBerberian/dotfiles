@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+  <menu id="root-menu" label="Openbox 3">
+    <item label="Terminal">
+      <action name="Execute">
+        <command>
+          terminator
+        </command>
+      </action>
+    </item>
+    <item label="Chromium">
+      <action name="Execute">
+        <command>
+          chromium
+        </command>
+      </action>
+    </item>
+    <item label="Firefox">
+      <action name="Execute">
+        <command>
+          firefox
+        </command>
+      </action>
+    </item>
+    <item label="Geany">
+      <action name="Execute">
+        <command>
+          geany
+        </command>
+      </action>
+    </item>
+    <item label="vi">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>gvim -v</name>
+        </startupnotify>
+        <command>terminator --command="vim"</command>
+      </action>
+    </item>
+    <item label="Filezilla">
+      <action name="Execute">
+        <command>
+          filezilla
+        </command>
+      </action>
+    </item>
+    <item label="mPlayer">
+      <action name="Execute">
+        <command>
+          gnome-mplayer
+        </command>
+      </action>
+    </item>
+    <separator/>
+    <menu id="accessories" label="Accessoires">
+      <item label="Geany">
+        <action name="Execute">
+          <command>
+            geany
+          </command>
+        </action>
+      </item>
+      <item label="Calculatrice">
+        <action name="Execute">
+          <command>
+            galculator
+          </command>
+        </action>
+      </item>
+      <menu id="graphicsScreenshots" label="Capture d'écran">
+        <item label="Screenshooter">
+          <action name="Execute">
+            <command>
+              xfce4-screenshooter
+            </command>
+          </action>
+        </item>
+        <separator label="scrot"/>
+        <item label="Maintenant">
+          <action name="Execute">
+            <command>
+              scrot '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp; viewnior ~/images/$f'
+            </command>
+          </action>
+        </item>
+        <item label="Dans 5 Secondes...">
+          <action name="Execute">
+            <command>
+              scrot -d 5 '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp; viewnior ~/images/$f'
+            </command>
+          </action>
+        </item>
+        <item label="Dans 10 Secondes...">
+          <action name="Execute">
+            <command>
+              scrot -d 10 '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp; viewnior ~/images/$f'
+            </command>
+          </action>
+        </item>
+        <item label="Zone">
+          <action name="Execute">
+            <command>
+              scrot -s '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp; viewnior ~/images/$f'
+            </command>
+          </action>
+        </item>
+      </menu>
+    </menu>
+    <menu id="multimédia" label="Multimedia">
+      <item label="mPlayer">
+        <action name="Execute">
+          <command>
+            gnome-mplayer
+          </command>
+        </action>
+      </item>
+      <item label="VLC">
+        <action name="Execute">
+          <command>
+            vlc
+          </command>
+        </action>
+      </item>
+      <item label="GIMP">
+        <action name="Execute">
+          <command>
+            gimp
+          </command>
+        </action>
+      </item>
+      <item label="GPicView">
+        <action name="Execute">
+          <command>
+            gpicview
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="network" label="Internet">
+      <item label="Firefox">
+        <action name="Execute">
+          <command>
+            firefox
+          </command>
+        </action>
+      </item>
+      <item label="Chromium">
+        <action name="Execute">
+          <command>
+            chromium
+          </command>
+        </action>
+      </item>
+      <item label="XChat IRC">
+        <action name="Execute">
+          <command>
+            xchat
+          </command>
+        </action>
+      </item>
+      <item label="FileZilla">
+        <action name="Execute">
+          <command>
+            filezilla
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="office" label="Bureautique">
+      <item label="libreOffice">
+        <action name="Execute">
+          <command>
+            libreoffice
+          </command>
+        </action>
+      </item>
+      <item label="Evince PDF">
+        <action name="Execute">
+          <command>
+            evince
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="system" label="Système">
+      <item label="Gestionnaire des tâches (htop)">
+        <action name="Execute">
+          <command>terminator --command=&quot;htop&quot;</command>
+        </action>
+      </item>
+      <item label="Gestionnaire d'archives">
+        <action name="Execute">
+          <command>
+            file-roller
+          </command>
+        </action>
+      </item>
+      <item label="Nautilus">
+        <action name="Execute">
+          <command>
+            nautilus
+          </command>
+        </action>
+      </item>
+      <item label="GParted">
+        <action name="Execute">
+          <command>
+            gparted
+          </command>
+        </action>
+      </item>
+      <item label="Gnome Disks">
+        <action name="Execute">
+          <command>
+            gnome-disks
+          </command>
+        </action>
+      </item>
+      <item label="WireShark">
+        <action name="Execute">
+          <command>
+            wireshark 
+          </command>
+        </action>
+      </item>
+    </menu>
+    <separator/>
+    <menu id="settings" label="Configuration">
+      <menu id="uiConf" label="Interface">
+        <menu id="obConfig" label="Openbox">
+          <item label="Réglages">
+            <action name="Execute">
+              <command>obconf</command>
+            </action>
+          </item>
+          <item label="Menu">
+            <action name="Execute">
+              <command>obmenu</command>
+            </action>
+          </item>
+          <separator/>
+          <item label="Editer menu.xml">
+            <action name="Execute">
+              <command>
+                geany ~/.config/openbox/menu.xml
+              </command>
+            </action>
+          </item>
+          <item label="Editer rc.xml">
+            <action name="Execute">
+              <command>
+                geany ~/.config/openbox/rc.xml
+              </command>
+            </action>
+          </item>
+          <item label="Editer autostart">
+            <action name="Execute">
+              <command>
+                geany ~/.config/openbox/autostart
+              </command>
+            </action>
+          </item>
+          <separator/>
+          <item label="Re-configure">
+            <action name="Reconfigure"/>
+          </item>
+          <item label="Redémarre">
+            <action name="Restart"/>
+          </item>
+        </menu>
+        <item label="GTK">
+          <action name="Execute">
+            <command>
+              lxappearance
+            </command>
+          </action>
+        </item>
+        <item label="Qt4">
+          <action name="Execute">
+            <command>
+              qtconfig-qt4
+            </command>
+          </action>
+        </item>
+        <item label="Notifications">
+          <action name="Execute">
+            <command>xfce4-notifyd-config</command>
+          </action>
+        </item>
+        <item label="Ecran de veille">
+          <action name="Execute">
+            <command>
+              xscreensaver-demo
+            </command>
+          </action>
+        </item>
+        <item label="Fond d'écran">
+          <action name="Execute">
+            <command>
+              nitrogen ~/images/wallpapers/
+            </command>
+          </action>
+        </item>
+      </menu>
+      <menu id="apConf" label="Applications">
+        <menu id="tint2config" label="tint2">
+          <item label="Réglages">
+            <action name="Execute">
+              <command>
+                tint2conf
+              </command>
+            </action>
+          </item>
+          <item label="Fichier de config">
+            <action name="Execute">
+              <command>
+                geany ~/.config/tint2/tint2rc
+              </command>
+            </action>
+          </item>
+          <separator label="Aide"/>
+          <item label="Manuel">
+            <action name="Execute">
+              <command>
+                terminator --command=&quot;man tint2&quot;
+              </command>
+            </action>
+          </item>
+          <item label="Aide en ligne">
+            <action name="Execute">
+              <command>
+                chromium http://code.google.com/p/tint2/wiki/Welcome
+              </command>
+            </action>
+          </item>
+        </menu>
+        <menu id="conkyconfig" label="Conky">
+          <item label="Editer .conkyrc">
+            <action name="Execute">
+              <command>
+                geany ~/.conkyrc
+              </command>
+            </action>
+          </item>
+          <separator label="Aide"/>
+          <item label="Manuel">
+            <action name="Execute">
+              <command>
+                terminator --command=&quot;man conky&quot;
+              </command>
+            </action>
+          </item>
+        </menu>
+        <menu id="terminatorconfig" label="Terminator">
+          <item label="Fichier de config">
+            <action name="Execute">
+              <command>
+                geany ~/.config/terminator/config
+              </command>
+            </action>
+          </item>
+          <separator label="Aide"/>
+          <item label="Manuel">
+            <action name="Execute">
+              <command>
+                terminator --command=&quot;man terminator_config&quot;
+              </command>
+            </action>
+          </item>
+        </menu>
+        <menu id="dmenuconfig" label="dmenu">
+          <item label="Fichier de config">
+            <action name="Execute">
+              <command>
+                geany ~/.config/dmenu/dmenu-bind.sh
+              </command>
+            </action>
+          </item>
+          <separator label="Aide"/>
+          <item label="Manuel">
+            <action name="Execute">
+              <command>
+                terminator --command=&quot;man dmenu&quot;
+              </command>
+            </action>
+          </item>
+        </menu>
+        <menu id="DisplaySettings" label="Paramêtres d'affichage">
+          <item label="ARandR">
+            <action name="Execute">
+              <command>
+                arandr
+              </command>
+            </action>
+          </item>
+          <separator label="Aide"/>
+          <item label="Manuel">
+            <action name="Execute">
+              <command>
+                terminator --command=&quot;man xrandr&quot;
+              </command>
+            </action>
+          </item>
+        </menu>
+      </menu>
+      <item label="Volume">
+        <action name="Execute">
+          <command>pavucontrol</command>
+        </action>
+      </item>
+      <item label="Alimentation">
+        <action name="Execute">
+          <command>
+            xfce4-power-manager-settings
+          </command>
+        </action>
+      </item>
+    </menu>
+    <separator/>
+    <item label="Vérrouiller">
+      <action name="Execute">
+        <command>xscreensaver-command -lock</command>
+      </action>
+    </item>
+  </menu>
+</openbox_menu>
