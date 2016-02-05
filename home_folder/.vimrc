@@ -155,7 +155,7 @@ Plug 'ervandew/supertab'
 Plug 'Valloric/YouCompleteMe'
 
 " tern_for_vim: JS auto-completion
-" Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 
 " deoplete: Auto-completion engine
 " Plug 'Shougo/deoplete.nvim' | Plug 'marijnh/tern_for_vim'
@@ -182,6 +182,9 @@ Plug 'junegunn/fzf.vim'
 
 " vim-airline: 1337 interface :p. Has to have compatible fonts
 Plug 'bling/vim-airline'
+
+" Powerline themes
+Plug 'vim-airline/vim-airline-themes'
 
 " vim-fugitive: Git tools
 Plug 'tpope/vim-fugitive'
@@ -214,7 +217,7 @@ Plug 'scrooloose/syntastic'
 Plug 'terryma/vim-multiple-cursors'
 
 " tagbar: browse tags (need exuberant-ctags)
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 
 " vim-indent-guides: show indentation on current file
 Plug 'nathanaelkane/vim-indent-guides'
@@ -307,7 +310,7 @@ let g:EasyMotion_smartcase=1 " easymotion plugin use smartcase
 let g:airline#extensions#tabline#enabled = 1
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='powerlineish'
+let g:airline_theme='serene'
 
 
 " ---- nerdtree ----
@@ -616,7 +619,7 @@ noremap <silent> <LEADER>d :q!<CR>
 noremap <silent> <LEADER>z :wq<CR>
 
 " Hide current split
-noremap <silent> <LEADER>h :hide<CR>
+noremap <silent> <LEADER>i :hide<CR>
 
 
 " ---- Tabulations improvements ----
@@ -641,10 +644,7 @@ noremap <silent> <C-Right> :bnext!<CR>
 
 noremap <silent> <C-k> :bprevious!<CR>
 noremap <silent> <C-j> :bnext!<CR>
-
-" This one does not work. TODO
 noremap <silent> <C-h> :bprevious!<CR>
-
 noremap <silent> <C-l> :bnext!<CR>
 
 " Move between windows splits (ctrl + alt + ...)
@@ -655,10 +655,7 @@ noremap <silent> <C-A-Right> :wincmd l<CR>
 
 noremap <silent> <C-A-k> :wincmd k<CR>
 noremap <silent> <C-A-j> :wincmd j<CR>
-
-" This one does not work. TODO
 noremap <silent> <C-A-h> :wincmd h<CR>
-
 noremap <silent> <C-A-l> :wincmd l<CR>
 
 
@@ -712,14 +709,14 @@ nmap <silent> <LEADER>gg <Plug>(easymotion-s2)
 " nmap <silent> <LEADER>gh <Plug>(easymotion-sn)
 
 " Easymotion movements
-" map <Leader>l <Plug>(easymotion-lineforward)
-" map <Leader>j <Plug>(easymotion-j)
-" map <Leader>k <Plug>(easymotion-k)
-" map <Leader>h <Plug>(easymotion-linebackward)
-" map <Leader><Right> <Plug>(easymotion-lineforward)
-" map <Leader><Down> <Plug>(easymotion-j)
-" map <Leader><Up> <Plug>(easymotion-k)
-" map <Leader><Left> <Plug>(easymotion-linebackward)
+map <LEADER>l <Plug>(easymotion-lineforward)
+map <LEADER>j <Plug>(easymotion-j)
+map <LEADER>k <Plug>(easymotion-k)
+map <LEADER>h <Plug>(easymotion-linebackward)
+map <LEADER><Right> <Plug>(easymotion-lineforward)
+map <LEADER><Down> <Plug>(easymotion-j)
+map <LEADER><Up> <Plug>(easymotion-k)
+map <LEADER><Left> <Plug>(easymotion-linebackward)
 
 " Syntastic:
 " Start checking with syntastic plugin and display possible errors
@@ -730,7 +727,7 @@ nnoremap <F6> :SyntasticCheck<CR>:Errors<CR>
 nnoremap <silent> <F7> :YRShow<CR>
 
 " Tagbar:
-" Open tagBar (need exuberantCtags)
+" Open tagBar (need ctags and tagbar plugin)
 nnoremap <F8> :TagbarToggle<CR>
 
 " Gundo:
