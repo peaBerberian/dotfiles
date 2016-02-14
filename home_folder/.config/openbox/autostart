@@ -14,39 +14,16 @@
 ## Set root window colour
 # hsetroot -solid "#2E3436" &
 
-# show wallpaper
-nitrogen --restore &
-
-tint2 &
+if hash tint2 2>/dev/null; then
+  tint2 &
+fi
 
 ## Volume control for systray
-(sleep 2s && volumeicon) &
-
-## Volume keys daemon
-# xfce4-volumed &
+if hash volumeicon 2>/dev/null; then
+  (sleep 2s && volumeicon) &
+fi
 
 ## Enable power management
-xfce4-power-manager &
-
-# ## Detect and configure touchpad. See 'man synclient' for more info.
-# if egrep -iq 'touchpad' /proc/bus/input/devices; then
-#     synclient VertEdgeScroll=1 &
-#     synclient TapButton1=1 &
-# fi
-
-export LC_TIME=fr_FR.UTF-8
-
-## Start xscreensaver
-xscreensaver -no-splash &
-
-## Start Clipboard manager
-(sleep 3s && clipit) &
-
-## Turn on/off system beep
-xset b off &
-
-## Run the conky
-conky -c ~/.conky/conkyrc_grey -q &
-
-#Start wallpaper deamon
-wallpaperd &
+if hash xfce4-power-manager 2>/dev/null; then
+  xfce4-power-manager &
+fi

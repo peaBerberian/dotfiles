@@ -17,6 +17,21 @@ font pango:DejaVu Sans Mono 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# ~~~~~~~~~~~~~~~~~~~ WORKSPACES ~~~~~~~~~~~~~~~~~~~
+
+# Odd - laptop screen
+# Even - vga screen
+workspace 1 output eDP1
+workspace 3 output eDP1
+workspace 5 output eDP1
+workspace 7 output eDP1
+workspace 9 output eDP1
+workspace 2 output VGA1
+workspace 4 output VGA1
+workspace 6 output VGA1
+workspace 8 output VGA1
+workspace 10 output VGA1
+
 # ~~~~~~~~~~~~~~~~~~~ SHORTCUTS ~~~~~~~~~~~~~~~~~~~
 
 # start a terminal
@@ -311,6 +326,7 @@ bar {
   position top
   workspace_buttons yes
   status_command i3status
+  tray_output primary
   colors {
         # basic colors
         background #191919
@@ -327,4 +343,5 @@ bar {
 # ~~~~~~~~~~~~~~~~~~~ AUTORUN  ~~~~~~~~~~~~~~~~~~~
 
 # Execute applets
-exec --no-startup-id . ~/.i3/autostart
+exec --no-startup-id volumeicon
+exec --no-startup-id nm-applet

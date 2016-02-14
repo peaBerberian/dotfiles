@@ -142,11 +142,11 @@ bindsym $mod+Shift+o move workspace to output right
 bindsym --release button2 kill
 
 # The middle button and a modifer over any part of the window kills the window
-bindsym --whole-window $mod+button2 kill
+# bindsym --whole-window $mod+button2 kill
 
 # The right button toggles floating
 bindsym button3 floating toggle
-bindsym --whole-window $mod+button3 floating toggle
+# bindsym --whole-window $mod+button3 floating toggle
 
 # lock screen
 bindsym $mod+x exec xscreensaver-command -lock
@@ -327,4 +327,4 @@ bar {
 # ~~~~~~~~~~~~~~~~~~~ AUTORUN  ~~~~~~~~~~~~~~~~~~~
 
 # Execute applets
-exec --no-startup-id . ~/.i3/autostart
+exec --no-startup-id sh ~/.i3/autostart

@@ -9,16 +9,26 @@ if [ -f ~/.xrandr_autodetect.sh ]; then
 fi
 
 # Start ssh-agent
-eval `/usr/bin/ssh-agent -s`
+if [ -f /usr/bin/ssh-agent ]; then
+  eval `/usr/bin/ssh-agent -s`
+fi
 
 # Display wallpaper
-sh ~/.fehbg &
+if [ -f ~/.fehbg ]; then
+  sh ~/.fehbg &
+fi
 
 # start xscreensaver
-xscreensaver -no-splash &
+if hash xscreensaver 2>/dev/null; then
+  xscreensaver -no-splash &
 
-# Auto-lock after 10 minutes
-xautolock -time 10 -locker "xscreensaver-command -lock" &
+  # Auto-lock after 10 minutes
+  if hash xautolock 2>/dev/null; then
+    xautolock -time 10 -locker "xscreensaver-command -lock" &
+  fi
+fi
 
 # Execute power manager
-xfce4-power-manager
+if hash xfce4-power-manager 2>/dev/null; then
+  xfce4-power-manager &
+fi
