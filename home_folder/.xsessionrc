@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# This script set some basic X settings (before starting the window manager)
+
+# Thinkpad trackpoint management
+if [ $(xinput | grep "TPPS/2 IBM TrackPoint" | wc -l) -gt 0 ]; then
+  xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
+  xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
+  xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 30
+  xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
+  xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Middle Button Emulation" 8 1
+  xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Middle Button Timeout" 8 50
+fi
+
+# Check and enable various useful services if running inside VirtualBox
+# Also can use `dmesg` command to check this
+if [ $(lspci | grep -i VirtualBox | wc -l) -gt 0 ]; then
+  /usr/bin/VBoxClient-all
+fi
+
+# Repeated keys rate:
+# First number: indicates the ammount of time (in ms) after which the key repeat itself
+# Second number: indicates the throttle interval between repeated keys (in ms)
+xset r rate 175 38
+
+# Deactivate system bell
+xset b off
