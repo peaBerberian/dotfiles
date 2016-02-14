@@ -18,11 +18,6 @@ if [ -f ~/.fehbg ]; then
   sh ~/.fehbg &
 fi
 
-# Bind media keys
-if hash xbindkeys 2>/dev/null; then
-  xbindkeys &
-fi
-
 # start xscreensaver
 if hash xscreensaver 2>/dev/null; then
   xscreensaver -no-splash &

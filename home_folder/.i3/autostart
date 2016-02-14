@@ -11,3 +11,9 @@ fi
 if hash nm-applet 2>/dev/null; then
   nm-applet &
 fi
+
+# Bind media keys
+if hash xbindkeys 2>/dev/null; then
+  xbindkeys &
+fi
+
