@@ -71,7 +71,7 @@ export PATH=$PATH:/home/oscar/.gem/ruby/2.2.0/bin
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-export EDITOR='nvim'
+export EDITOR='vim'
 
 ## Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -101,7 +101,7 @@ bindkey "^R" history-incremental-search-backward
 # https://github.com/neovim/neovim/issues/2048
 infocmp terminator | sed 's/kbs=^[hH]/kbs=\\177/' > /tmp/terminator.ti
 tic /tmp/terminator.ti
-infocmp xterm | sed 's/kbs=^[hH]/kbs=\\177/' > /tmp/$TERM.ti
+infocmp xterm | sed 's/kbs=^[hH]/kbs=\\177/' > /tmp/xterm.ti
 tic /tmp/xterm.ti
 
 
