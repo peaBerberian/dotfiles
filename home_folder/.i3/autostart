@@ -17,3 +17,22 @@ if hash xbindkeys 2>/dev/null; then
   xbindkeys &
 fi
 
+# Display wallpaper
+if [ -f ~/.fehbg ]; then
+  sh ~/.fehbg &
+fi
+
+# start xscreensaver
+if hash xscreensaver 2>/dev/null; then
+  xscreensaver -no-splash &
+
+  # Auto-lock after 10 minutes
+  if hash xautolock 2>/dev/null; then
+    xautolock -time 10 -locker "xscreensaver-command -lock" &
+  fi
+fi
+
+# Execute power manager
+if hash xfce4-power-manager 2>/dev/null; then
+  xfce4-power-manager &
+fi
