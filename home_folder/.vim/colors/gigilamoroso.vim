@@ -111,6 +111,7 @@ hi jsClass           guifg=none guibg=none gui=bold ctermfg=106  ctermbg=none ct
 hi jsPrototype       guifg=none guibg=none gui=none ctermfg=106  ctermbg=none cterm=none
 hi jsGlobalObjects   guifg=none guibg=none gui=none ctermfg=251  ctermbg=none cterm=none
 hi jsHtmlElemAttrs   guifg=none guibg=none gui=none ctermfg=251  ctermbg=none cterm=none
+hi jsHtmlEvents      guifg=none guibg=none gui=none ctermfg=251  ctermbg=none cterm=none
 hi jsHtmlElemFuncs   guifg=none guibg=none gui=none ctermfg=251  ctermbg=none cterm=none
 hi jsSuper           guifg=none guibg=none gui=none ctermfg=251  ctermbg=none cterm=none
 hi jsThis            guifg=none guibg=none gui=none ctermfg=251  ctermbg=none cterm=none
