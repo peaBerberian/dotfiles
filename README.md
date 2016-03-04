@@ -27,7 +27,7 @@ __WIP__
 
 ### vim
 #### colors/*
-Set three homemade themes for vimrc. Needed by vim and neovim.
+Set homemade themes for vimrc. Needed by vim and neovim.
 
 ### ./
 #### .Xresources

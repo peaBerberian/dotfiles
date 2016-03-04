@@ -26,7 +26,7 @@
 
 
 " ---- Prerequisites ----
-" This file uses the gogogadgeto colorscheme which does not exist by default.
+" This file uses the gigilamoroso colorscheme which does not exist by default.
 " If you don't have it, you can remove every mention of this scheme in this
 " file.
 
@@ -570,7 +570,7 @@ let g:javascript_fold=1
 
 " ---- GUI ----
 " Replace some chars visualy, like trailing ...
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set listchars=tab:>-,trail:.,extends:#,nbsp:.
 
 set splitbelow " An horizontal split is done below the current one
 set splitright " A vertical split is done at the right of the current one
@@ -594,7 +594,7 @@ let g:javascript_enable_domhtmlcss=1
 
 " ---- Colorscheme ----
 " Remove (or comment) this line if the following colorscheme does not exist
-colorscheme gogogadgeto
+colorscheme gigilamoroso
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
