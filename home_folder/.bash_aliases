@@ -32,14 +32,11 @@ alias n='nvim'
 # ---- git alias ----
 #
 alias gc='git checkout'
-alias gcd='git checkout .'
-alias gcc='git checkout dev'
 
 alias ga='git add'
 alias gaa='git add --all'
 
 alias gd='git diff'
-alias gdd='git diff origin/dev'
 
 alias gm='git commit -m'
 alias gma='git commit -a -m'
@@ -54,7 +51,6 @@ alias gs='git status -sb'
 alias gss='git status'
 
 alias gr='git rebase'
-alias grd='git rebase dev'
 alias grc='git rebase --continue'
 
 ################
