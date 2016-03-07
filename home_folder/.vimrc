@@ -173,9 +173,6 @@ Plug 'SirVer/ultisnips' | Plug 'carlosvillu/coffeScript-VIM-Snippets'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
       \ | Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" ctrlp.vim: Open files fast
-"Plug 'kien/ctrlp.vim'
-
 " FZF implementation on vim
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -217,7 +214,7 @@ Plug 'scrooloose/syntastic'
 Plug 'terryma/vim-multiple-cursors'
 
 " tagbar: browse tags (need exuberant-ctags)
-" Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 " vim-indent-guides: show indentation on current file
 Plug 'nathanaelkane/vim-indent-guides'
@@ -571,6 +568,7 @@ let g:javascript_fold=1
 " ---- GUI ----
 " Replace some chars visualy, like trailing ...
 set listchars=tab:>-,trail:.,extends:#,nbsp:.
+set nolist
 
 set splitbelow " An horizontal split is done below the current one
 set splitright " A vertical split is done at the right of the current one
@@ -632,7 +630,11 @@ vnoremap <S-Tab> <gv
 
 
 " ---- Line numbers switching ----
-nnoremap <silent> ` :call NumberToggle()<cr>
+nnoremap <silent> <F3> :call NumberToggle()<cr>
+
+
+" ---- listchars switching ----
+nnoremap <silent> <F4> :set list!<cr>
 
 
 " ---- Buffer navigation ----
@@ -738,6 +740,8 @@ nnoremap <silent> <F9> :GundoToggle<CR>
 " ---- Function keys ----
 " F1 open help html
 " F2 toggle paste mode
+" F4 toggle number style
+" F3 toggle listchars
 " F5 Refresh file
 " F6 Open syntastic report
 " F7 Show/hide Yankring
