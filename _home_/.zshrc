@@ -97,6 +97,11 @@ bindkey "^R" history-incremental-search-backward
 
 ################
 
+# Add GOPATH
+if [ -d ~/work/go ]; then
+  export GOPATH=$HOME/work/go
+fi
+
 # Ugly tricks for obscure nvim error
 # https://github.com/neovim/neovim/issues/2048
 infocmp terminator | sed 's/kbs=^[hH]/kbs=\\177/' > /tmp/terminator.ti

@@ -99,6 +99,12 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Add GOPATH
+if [ -d ~/work/go ]; then
+  export GOPATH=$HOME/work/go
+fi
+
 function countdown(){
   date1=$((`date +%s` + $1)); 
   while [ "$date1" -ne `date +%s` ]; do 
