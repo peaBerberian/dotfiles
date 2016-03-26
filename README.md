@@ -2,7 +2,7 @@
 
 Config tested successfully on Arch Linux with i3wm, Debian 8 with i3wm and Linux Mint 17 with cinnamon/i3wm.
 
-## _home_
+## \_home\_
 Those files just need to be directly in the $HOME directory.
 
 ### .config/
