@@ -2,7 +2,8 @@
 
 Config tested successfully on Arch Linux with i3wm, Debian 8 with i3wm and Linux Mint 17 with cinnamon/i3wm.
 
-## home_folder
+## _home_
+Those files just need to be directly in the $HOME directory.
 
 ### .config/
 #### i3status/config
@@ -38,14 +39,9 @@ Aliases used by bash / zsh. Mainly git and npm ones.
 #### .bashrc
 Basic bash configuration.
 
-#### .jscsrc
-JavaScript style validation. On its way to be replaced by an eslintrc.
-
-#### .jshintrc
-JavaScript linter. On its way to be replaced by an eslintrc.
-
 #### .profile_mint
 Simple script called by login shell on linux Mint to run autostart scripts: namely .autostart and .xsessionrc
+Needs to be renamed to '.profile' (ONLY if .xinitrc is not already launched).
 
 #### .tern-config
 Close to empty tern configuration file. Used by tern, itself used by vim.
@@ -64,3 +60,16 @@ Xsession configuration. Used here like (but before) the .autostart script but ma
 
 #### .zshrc
 Z shell configuration. Needs a custom theme "normcore" based on the theme norm.
+
+## linters
+Javascript linters' rules.
+
+#### .jscsrc
+JavaScript style validation.
+
+#### .jshintrc
+JavaScript linter for code errors.
+
+#### .eslintrc
+JavaScript linter. Do both style validation and errors (doesn't need the other linters).
+
