@@ -25,10 +25,6 @@ Terminator terminal configuration, mainly profiles. Needs powerline fonts.
 Multiple i3 configuration files.
 __WIP__
 
-### vim
-#### colors/*
-Set homemade themes for vimrc. Needed by vim and neovim.
-
 ### ./
 #### .Xresources
 Configuration for X applications. Mainly _rxvt-unicode_.
