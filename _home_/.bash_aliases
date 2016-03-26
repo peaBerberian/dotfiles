@@ -1,4 +1,4 @@
-######## ALIAS ########
+#!/bin/bash
 
 # ---- ls alias ----
 

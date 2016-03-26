@@ -73,14 +73,6 @@ export PATH=$PATH:/home/oscar/.gem/ruby/2.2.0/bin
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 
-## Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
-
 ######## MAPPING ########
 
 # Home -> beginning of line
@@ -97,18 +89,7 @@ bindkey "^R" history-incremental-search-backward
 
 ################
 
-# Add GOPATH
-if [ -d ~/work/go ]; then
-  export GOPATH=$HOME/work/go
+# Call common shell rc script
+if [ -f ~/.shellrc ]; then
+  ~/.shellrc
 fi
-
-# Ugly tricks for obscure nvim error
-# https://github.com/neovim/neovim/issues/2048
-infocmp terminator | sed 's/kbs=^[hH]/kbs=\\177/' > /tmp/terminator.ti
-tic /tmp/terminator.ti
-infocmp xterm | sed 's/kbs=^[hH]/kbs=\\177/' > /tmp/xterm.ti
-tic /tmp/xterm.ti
-
-
-# Start fzf if it exists
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

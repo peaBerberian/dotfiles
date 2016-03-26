@@ -72,23 +72,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-## Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -100,28 +83,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Add GOPATH
-if [ -d ~/work/go ]; then
-  export GOPATH=$HOME/work/go
+# Call common shell rc script
+if [ -f ~/.shellrc ]; then
+  ~/.shellrc
 fi
-
-function countdown(){
-  date1=$((`date +%s` + $1)); 
-  while [ "$date1" -ne `date +%s` ]; do 
-    echo -ne "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
-  done
-}
-function stopwatch(){
-  date1=`date +%s`; 
-  while true; do 
-    echo -ne "$(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r"; 
-  done
-}
-function _update_ps1() {
-  export PS1="$(~/powerline-shell.py $? 2> /dev/null)"
-}
-
-export TERM="xterm-256color"
-# export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
