@@ -85,5 +85,5 @@ fi
 
 # Call common shell rc script
 if [ -f ~/.shellrc ]; then
-  ~/.shellrc
+  . ~/.shellrc
 fi
