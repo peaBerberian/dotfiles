@@ -16,8 +16,7 @@ Neovim configuration. Composed only of symbolic links to its vim counterparts.
 Openbox configuration files. The last time I used openbox was a long time ago (on Arch / CrunchBang) so may be outdated.
  - "autostart": startup script for each openbox session.
  - "menu.xml": openbox menu configuration
- - "rc.xml": main openbox configuration (keybindings and tweaks) 
- - 
+ - "rc.xml": main openbox configuration (keybindings and tweaks)
 
 #### terminator/config
 Terminator terminal configuration, mainly profiles. Needs powerline fonts.
@@ -52,7 +51,7 @@ Bloated but functionnal configuration for vim with countless plugins. Fully comp
 #### .xbindkeysrc
 Configuration for xbindkeys, which bind keys to actions. Mainly used to catch media keys.
 
-#### .xinitrc	
+#### .xinitrc
 Called on startx. Call startup scripts (.xsessionrc, autostart...)
 
 #### .xsessionrc

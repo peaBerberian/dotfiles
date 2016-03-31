@@ -51,6 +51,7 @@ alias gs='git status -sb'
 alias gss='git status'
 
 alias gr='git rebase'
+alias gri='git rebase -i'
 alias grc='git rebase --continue'
 
 ################
