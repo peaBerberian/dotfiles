@@ -155,7 +155,7 @@ Plug 'ervandew/supertab'
 Plug 'Valloric/YouCompleteMe'
 
 " tern_for_vim: JS auto-completion
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+" Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 
 " deoplete: Auto-completion engine
 " Plug 'Shougo/deoplete.nvim' | Plug 'marijnh/tern_for_vim'
@@ -214,7 +214,7 @@ Plug 'scrooloose/syntastic'
 Plug 'terryma/vim-multiple-cursors'
 
 " tagbar: browse tags (need exuberant-ctags)
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 
 " vim-indent-guides: show indentation on current file
 Plug 'nathanaelkane/vim-indent-guides'
@@ -507,6 +507,12 @@ if executable('ag')
         \  '--hidden', '-g', '']
 endif
 
+" " toggle scroll lock led on insert/normal transitions
+" augroup scrollLed
+"   au!
+"   autocmd InsertEnter * silent exe "!xset led"
+"   autocmd InsertLeave * silent exe "!xset -led"
+" augroup END
 
 " ---- Basic Settings ----
 " Load indentation rules and plugins according to filetype
