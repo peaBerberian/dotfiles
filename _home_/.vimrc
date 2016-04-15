@@ -61,6 +61,10 @@
 "     the desired language.
 "     => https://github.com/Valloric/YouCompleteMe
 
+"   - vim-flow: You will need to have the flow type npm package for it to
+"     work.
+"     => https://github.com/flowtype/vim-flow
+
 " Moreover, to be able to use syntastic to its full potential with js files,
 " you'll need to install the eslint package with npm (node package manager).
 
@@ -242,6 +246,9 @@ Plug 'tmhedberg/matchit'
 
 " gundo.vim: Undo tree
 Plug 'sjl/gundo.vim', { 'on':  'GundoToggle' }
+
+" vim-flow: flow type checking
+Plug 'flowtype/vim-flow'
 
 " All of your Plugins must be added before the following line
 " Add plugins to &runtimepath
@@ -483,6 +490,9 @@ let g:UltiSnipsExpandTrigger="<c-RIGHT>"
 let g:UltiSnipsJumpForwardTrigger="<c-RIGHT>"
 let g:UltiSnipsJumpBackwardTrigger="<c-LEFT>"
 
+" ---- vim-flow ----
+ let g:flow#enable = 1
+
 
 "-----------------------------------------------------------------------------
 "                                SETTINGS
@@ -645,26 +655,16 @@ nnoremap <silent> <F4> :set list!<cr>
 
 " ---- Buffer navigation ----
 " Move between buffers (Ctrl + left / right or h / l)
-noremap <silent> <C-Up> :bprevious!<CR>
-noremap <silent> <C-Down> :bnext!<CR>
-noremap <silent> <C-Left> :bprevious!<CR>
-noremap <silent> <C-Right> :bnext!<CR>
-
-noremap <silent> <C-k> :bprevious!<CR>
-noremap <silent> <C-j> :bnext!<CR>
 noremap <silent> <C-h> :bprevious!<CR>
 noremap <silent> <C-l> :bnext!<CR>
 
-" Move between windows splits (ctrl + alt + ...)
-noremap <silent> <C-A-Up> :wincmd k<CR>
-noremap <silent> <C-A-Down> :wincmd j<CR>
-noremap <silent> <C-A-Left> :wincmd h<CR>
-noremap <silent> <C-A-Right> :wincmd l<CR>
+nnoremap gb :buffers<CR>:buffer<Space>
 
-noremap <silent> <C-A-k> :wincmd k<CR>
-noremap <silent> <C-A-j> :wincmd j<CR>
-noremap <silent> <C-A-h> :wincmd h<CR>
-noremap <silent> <C-A-l> :wincmd l<CR>
+" Move between windows splits (ctrl + alt + ...)
+" noremap <silent> <C-K> :wincmd k<CR>
+" noremap <silent> <C-J> :wincmd j<CR>
+" noremap <silent> <C-H> :wincmd h<CR>
+" noremap <silent> <C-L> :wincmd l<CR>
 
 
 " ---- Splits ----
@@ -718,13 +718,9 @@ nmap <silent> <LEADER>gg <Plug>(easymotion-s2)
 
 " Easymotion movements
 map <LEADER>l <Plug>(easymotion-lineforward)
+map <LEADER>h <Plug>(easymotion-linebackward)
 map <LEADER>j <Plug>(easymotion-j)
 map <LEADER>k <Plug>(easymotion-k)
-map <LEADER>h <Plug>(easymotion-linebackward)
-map <LEADER><Right> <Plug>(easymotion-lineforward)
-map <LEADER><Down> <Plug>(easymotion-j)
-map <LEADER><Up> <Plug>(easymotion-k)
-map <LEADER><Left> <Plug>(easymotion-linebackward)
 
 " Syntastic:
 " Start checking with syntastic plugin and display possible errors
