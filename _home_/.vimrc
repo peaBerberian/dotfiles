@@ -12,6 +12,8 @@
 
 "   - JavaScript (up to ECMAScript 6) / JSON / JSX
 
+"   - elm
+
 "   - CSS / LESS
 
 "   - Node.JS
@@ -64,6 +66,10 @@
 "   - vim-flow: You will need to have the flow type npm package for it to
 "     work.
 "     => https://github.com/flowtype/vim-flow
+
+"   - elm-vim: You will need to install several npm packages: elm, elm-test,
+"     and elm-oracle.
+"     => https://github.com/ElmCast/elm-vim
 
 " Moreover, to be able to use syntastic to its full potential with js files,
 " you'll need to install the eslint package with npm (node package manager).
@@ -120,6 +126,9 @@ Plug 'epmatsw/ag.vim'
 
 " vim-javascript: JS tools (mainly syntax hl and indent)
 Plug 'pangloss/vim-javascript'
+
+" vim-elm: Elm language tools
+Plug 'ElmCast/elm-vim'
 
 " c.vim: C language tools
 Plug 'vim-scripts/c.vim'
@@ -241,6 +250,12 @@ Plug 'tpope/vim-surround'
 " vim-bookmarks: Beautiful bookmarks management. Integrated with Unite
 " Plug 'MattesGroeger/vim-bookmarks'
 
+" vim-jsx: jsx highlighting and indenting
+Plug 'mxw/vim-jsx'
+
+" javascript-libraries-syntax.vim: syntax for JavaScript libraries
+Plug 'othree/javascript-libraries-syntax.vim'
+
 " matchit: Extended % matching
 Plug 'tmhedberg/matchit'
 
@@ -248,7 +263,7 @@ Plug 'tmhedberg/matchit'
 Plug 'sjl/gundo.vim', { 'on':  'GundoToggle' }
 
 " vim-flow: flow type checking
-Plug 'flowtype/vim-flow'
+" Plug 'flowtype/vim-flow'
 
 " All of your Plugins must be added before the following line
 " Add plugins to &runtimepath
@@ -491,7 +506,10 @@ let g:UltiSnipsJumpForwardTrigger="<c-RIGHT>"
 let g:UltiSnipsJumpBackwardTrigger="<c-LEFT>"
 
 " ---- vim-flow ----
- let g:flow#enable = 1
+ let g:flow#enable = 0
+
+ " ---- vim-jsx ----
+ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 
 "-----------------------------------------------------------------------------
