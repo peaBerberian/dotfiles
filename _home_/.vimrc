@@ -151,6 +151,9 @@ Plug 'vim-scripts/python.vim'
 " ejs-syntax: Highlighting of ejs files
 Plug 'nikvdp/ejs-syntax'
 
+" emmet-vim: Emmet support
+Plug 'mattn/emmet-vim'
+
 " tabular: Tabular plugin
 " vim-markdown: Markdown tools
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
@@ -506,11 +509,13 @@ let g:UltiSnipsJumpForwardTrigger="<c-RIGHT>"
 let g:UltiSnipsJumpBackwardTrigger="<c-LEFT>"
 
 " ---- vim-flow ----
- let g:flow#enable = 0
+let g:flow#enable = 0
 
- " ---- vim-jsx ----
- let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+" ---- vim-jsx ----
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
+" ---- vim-elm ----
+let g:elm_setup_keybindings = 0
 
 "-----------------------------------------------------------------------------
 "                                SETTINGS
