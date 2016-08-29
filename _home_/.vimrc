@@ -343,6 +343,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&
 " ---- yankring ----
 let g:yankring_history_dir = '~/.vim'
 
+"fix for yankring and neovim
+let g:yankring_clipboard_monitor=0
+
 
 " ---- ctrlP ----
 let g:loaded_ctrlp_yankring = 0
