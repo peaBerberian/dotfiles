@@ -24,13 +24,14 @@
 
 "   - Go
 
+"   - Rust
+
 "   - Python
 
 
 " ---- Prerequisites ----
 " This file uses the gigilamoroso colorscheme which does not exist by default.
-" If you don't have it, you can remove every mention of this scheme in this
-" file.
+" If you don't have it, you can change the 'colorscheme' directly in this file.
 
 " Some plugins need more than this file to be able to work seamlessly.
 
@@ -61,6 +62,9 @@
 "     gcc, gcc-c++ and cmake.
 "     You will also need to compile it manually with the right options, for
 "     the desired language.
+"     Also, a direct path to python 2.7 had to be provided in this file through
+"     'g:ycm_server_python_interpreter' due to a problem with my current
+"     distribution. You might need to delete that line or change it.
 "     => https://github.com/Valloric/YouCompleteMe
 
 "   - vim-flow: You will need to have the flow type npm package for it to
@@ -135,6 +139,9 @@ Plug 'vim-scripts/c.vim'
 
 " vim-go: Go language tools
 Plug 'fatih/vim-go'
+
+" rust.vim: Rust language tools
+Plug 'rust-lang/rust.vim'
 
 " vim-less: less (css files) syntax highlighting/indenting/completion
 Plug 'groenewege/vim-less'
@@ -500,6 +507,11 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 " ---- YouCompleteMe ----
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+
+" path to python 2.7 as python3 was the one launched by default. This line
+" might need to be deleted / changed in the future or under another
+" configuration.
+let g:ycm_server_python_interpreter="/usr/bin/python2.7"
 
 
 " ---- deoplete ----
