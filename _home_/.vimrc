@@ -39,11 +39,11 @@
 "     page.
 "     => https://github.com/junegunn/vim-plug
 
-"   - Airline : need Powerline fonts installed and set for current terminal.
+"   - vim-airline : need Powerline fonts installed and set for current terminal.
 "     => https://github.com/bling/vim-airline
 
 "   - tern_for_vim : You will need node.js and npm installed and accessible
-"     via respectively a global node and npm commands.
+"     via respectively a global 'node' and 'npm' commands.
 "     => https://github.com/ternjs/tern_for_vim
 
 "   - vim-go : Needs go binaries to be installed. See their github for more
@@ -208,6 +208,12 @@ Plug 'vim-airline/vim-airline-themes'
 
 " vim-fugitive: Git tools
 Plug 'tpope/vim-fugitive'
+
+" vim-abolish: Powerfull syntax tools (Mainly for Substitution and coercion)
+Plug 'tpope/vim-abolish'
+
+" tpope/vim-repeat: Repeat some plugins command with '.'
+Plug 'tpope/vim-repeat'
 
 " vim-gitgutter: Show diff in gutter
 Plug 'airblade/vim-gitgutter'
@@ -733,7 +739,7 @@ noremap <silent> <LEADER>p :FZF<CR>
 noremap <silent> <LEADER>b :Buffers<CR>
 
 " Navigate between marks
-noremap <silent> <LEADER>s :Marks<CR>
+" noremap <silent> <LEADER>s :Marks<CR>
 
 " Mark--Karkat:
 " Mark/unmark
