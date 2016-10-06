@@ -1,11 +1,13 @@
 #!/bin/bash
 
+alias c='cd'
+
 # ---- ls alias ----
 
+alias l='ls -CF'
 alias ll='ls -alF'
 alias lt='ls -altcF'
 alias la='ls -A'
-alias l='ls -CF'
 
 # --------
 
@@ -21,6 +23,7 @@ alias zshedit='vim ~/.zshrc'
 # ---- VI ----
 
 # launch gvim -v instead of vim (with system clipboard)
+alias v='gvim -v'
 alias vi='gvim -v'
 alias vim='gvim -v'
 
@@ -35,11 +38,12 @@ alias gc='git checkout'
 
 alias ga='git add'
 alias gaa='git add --all'
+alias gam='git commit -a -m'
 
 alias gd='git diff'
 
 alias gm='git commit -m'
-alias gma='git commit -a -m'
+alias gma='git commit --amend'
 
 alias gp='git push origin'
 alias gpp='git push -f origin'
