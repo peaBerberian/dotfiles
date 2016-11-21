@@ -25,6 +25,15 @@ Terminator terminal configuration, mainly profiles. Needs powerline fonts.
 Multiple i3 configuration files.
 __WIP__
 
+### .irssi
+Scripts used by the IRC client irssi
+
+#### scripts
+The different scripts that I have.
+
+##### autorun
+These scripts are symbolic links to the scripts I want to launch as irssi starts.
+
 ### ./
 #### .Xresources
 Configuration for X applications. Mainly _rxvt-unicode_.
