@@ -668,7 +668,7 @@ set background=dark
 noremap <silent> <LEADER>x :bp!<bar>sp!<bar>bn!<bar>bd!<CR>
 
 " Save buffer
-noremap <silent> <LEADER>w :w<CR>
+noremap <silent> <LEADER>s :w<CR>
 
 " Quit
 noremap <silent> <LEADER>d :q!<CR>
@@ -713,8 +713,8 @@ nnoremap gb :buffers<CR>:buffer<Space>
 
 " ---- Splits ----
 " Screen split, close to terminator terminal commands
-noremap <silent> <LEADER>se :vsplit<CR>
-noremap <silent> <LEADER>so :split<CR>
+noremap <silent> <LEADER>wv :vsplit<CR>
+noremap <silent> <LEADER>ws :split<CR>
 
 " Resize split vertically
 nnoremap <silent> <C-e>+ :exe "vertical resize " . (winwidth(0) * 9/8)<CR>
@@ -729,7 +729,7 @@ nnoremap <silent> <C-o>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " nerdtree:
 " Show tree
-nmap <silent> <LEADER>ee :NERDTreeToggle<CR>
+nmap <silent> <LEADER>ft :NERDTreeToggle<CR>
 
 " FZF:
 " Open from name
@@ -823,10 +823,7 @@ vnoremap <C-c> "+y
 inoremap <C-v> <ESC>"+p
 
 " jk/kj to escape in insert/normal/visual mode
-inoremap jk <ESC>
-inoremap kj <ESC>
-vnoremap jk <ESC>
-vnoremap kj <ESC>
+inoremap fd <ESC>
 
 
 "-----------------------------------------------------------------------------
