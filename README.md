@@ -31,13 +31,16 @@ Scripts used by the IRC client irssi
 #### scripts
 The different scripts that I have.
 
+##### nickcolor.pl
+Display each nick in an IRC channel in a different color.
+
+##### trackbar.pl
+Shows a bar where you've last read a window.
+
 ##### autorun
 These scripts are symbolic links to the scripts I want to launch as irssi starts.
 
 ### ./
-#### .Xresources
-Configuration for X applications. Mainly _rxvt-unicode_.
-
 #### .autostart
 Script launched on startx / login shell to launch basic applications on boot.
 
@@ -51,6 +54,9 @@ Basic bash configuration.
 Simple script called by login shell on linux Mint to run autostart scripts: namely .autostart and .xsessionrc
 Needs to be renamed to '.profile' (ONLY if .xinitrc is not already launched).
 
+#### .spacemacs
+Spacemacs configuration.
+
 #### .tern-config
 Close to empty tern configuration file. Used by tern, itself used by vim.
 
@@ -62,6 +68,12 @@ Configuration for xbindkeys, which bind keys to actions. Mainly used to catch me
 
 #### .xinitrc
 Called on startx. Call startup scripts (.xsessionrc, autostart...)
+
+#### .xrandr\_autodetect.sh
+Script to autodetect multi-monitor setups and call xrandr accordingly (needs xrandr binary).
+
+#### .Xresources
+Configuration for X applications. Mainly _rxvt-unicode_.
 
 #### .xsessionrc
 Xsession configuration. Used here like (but before) the .autostart script but mainly for X applications tweaks (where .autostart start Applications).
@@ -80,4 +92,3 @@ JavaScript linter for code errors.
 
 #### .eslintrc
 JavaScript linter. Do both style validation and errors (doesn't need the other linters).
-
