@@ -141,7 +141,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+                               :size 12
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -308,8 +308,21 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; redefine indent for javascript files
-  (setq-default js2-basic-offset 2)
-  (setq-default js-indent-level 2)
+  (setq-default
+    js-indent-level 2
+    ;; js2-mode
+    js2-basic-offset 2
+    ;; web-mode
+    css-indent-offset 2
+    web-mode-markup-indent-offset 2
+    web-mode-css-indent-offset 2
+    web-mode-code-indent-offset 2
+    web-mode-attr-indent-offset 2)
+
+  (with-eval-after-load 'web-mode
+                        (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+                        (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+                        (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
   ;; should be temp. force eslint as default checker
   (setq flycheck-checkers '(javascript-eslint))
