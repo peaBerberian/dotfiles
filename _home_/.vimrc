@@ -30,8 +30,6 @@
 
 
 " ---- Prerequisites ----
-" This file uses the gigilamoroso colorscheme which does not exist by default.
-" If you don't have it, you can change the 'colorscheme' directly in this file.
 
 " Some plugins need more than this file to be able to work seamlessly.
 
@@ -66,10 +64,6 @@
 "     'g:ycm_server_python_interpreter' due to a problem with my current
 "     distribution. You might need to delete that line or change it.
 "     => https://github.com/Valloric/YouCompleteMe
-
-"   - vim-flow: You will need to have the flow type npm package for it to
-"     work.
-"     => https://github.com/flowtype/vim-flow
 
 "   - elm-vim: You will need to install several npm packages: elm, elm-test,
 "     and elm-oracle.
@@ -125,6 +119,9 @@ endif
 " All the following plugins below are added thanks to their github repo.
 " You can go on the respective github url for more informations.
 
+" More colorschemes
+Plug 'flazz/vim-colorschemes'
+
 " ack.vim: Silver searcher integration in vi (ag)
 Plug 'epmatsw/ag.vim'
 
@@ -152,6 +149,9 @@ Plug 'peterhoeg/vim-qml'
 " vim-coffee-script: Coffee script tools (mainly syntax hl and indent)
 Plug 'kchmck/vim-coffee-script'
 
+"  MOS 6502,65c02,65816 Assembly syntax + Merlin Add-Ons
+Plug 'digarok/asmMerlin65816.vim'
+
 " python.vim: Python tools (mainly syntax hl and indent)
 Plug 'vim-scripts/python.vim'
 
@@ -178,7 +178,7 @@ Plug 'ervandew/supertab'
 Plug 'Valloric/YouCompleteMe'
 
 " tern_for_vim: JS auto-completion
-" Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 
 " deoplete: Auto-completion engine
 " Plug 'Shougo/deoplete.nvim' | Plug 'marijnh/tern_for_vim'
@@ -289,6 +289,10 @@ call plug#end()
 "-----------------------------------------------------------------------------
 "                           PLUGINS CONFIGURATION
 "-----------------------------------------------------------------------------
+
+" ---- vim-javascript ----
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
 
 " ---- vim-markdown ----
 let g:vim_markdown_folding_disabled=1
@@ -517,7 +521,7 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 " path to python 2.7 as python3 was the one launched by default. This line
 " might need to be deleted / changed in the future or under another
 " configuration.
-let g:ycm_server_python_interpreter="/usr/bin/python2.7"
+" let g:ycm_server_python_interpreter=""
 
 
 " ---- deoplete ----
@@ -620,10 +624,13 @@ set expandtab
 
 " ---- Folding methods ----
 " Folds must be defined by entering commands (such as zf)
-set foldmethod=manual
+set foldmethod=syntax
 
 " Enables JavaScript code folding
 let g:javascript_fold=1
+
+" Always open all folds by default
+set foldlevel=99
 
 " ---- GUI ----
 " Replace some chars visualy, like trailing ...
@@ -652,7 +659,7 @@ let g:javascript_enable_domhtmlcss=1
 
 " ---- Colorscheme ----
 " Remove (or comment) this line if the following colorscheme does not exist
-colorscheme gigilamoroso
+colorscheme badwolf
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
@@ -699,14 +706,16 @@ nnoremap <silent> <F4> :set list!<cr>
 
 " ---- Buffer navigation ----
 " Move between buffers (Ctrl + left / right or h / l)
-noremap <silent> <C-h> :bprevious!<CR>
-noremap <silent> <C-l> :bnext!<CR>
+noremap <silent> <C-j> :bprevious!<CR>
+noremap <silent> <C-k> :bnext!<CR>
 
 " Move between windows splits (ctrl + alt + ...)
 " noremap <silent> <C-K> :wincmd k<CR>
 " noremap <silent> <C-J> :wincmd j<CR>
 " noremap <silent> <C-H> :wincmd h<CR>
 " noremap <silent> <C-L> :wincmd l<CR>
+noremap <silent> <C-h> :wincmd h<CR>
+noremap <silent> <C-l> :wincmd l<CR>
 
 
 " ---- Splits ----
@@ -822,6 +831,7 @@ inoremap <C-v> <ESC>"+p
 
 " jk/kj to escape in insert/normal/visual mode
 inoremap jk <ESC>
+inoremap kj <ESC>
 
 
 "-----------------------------------------------------------------------------
