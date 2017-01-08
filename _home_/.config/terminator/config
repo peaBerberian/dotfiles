@@ -57,10 +57,9 @@
   [[default]]
     background_color = "#171515"
     background_darkness = 0.89
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
-    font = Meslo LG L for Powerline 8
+    font = Source Code Pro for Powerline Medium 9
     palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
     scrollback_infinite = True
     scrollbar_position = hidden
@@ -69,7 +68,6 @@
   [[Consolas]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     cursor_color = "#ff0000"
     font = Consolas for Powerline 11
     scrollback_infinite = True
@@ -79,7 +77,6 @@
   [[Consolas-p]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     cursor_color = "#ff0000"
     font = Consolas for Powerline 12
     scrollback_infinite = True
@@ -89,7 +86,6 @@
   [[DejaVu]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
     font = DejaVu Sans Mono 10
@@ -100,7 +96,6 @@
   [[DejaVu-p]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
     font = DejaVu Sans Mono 11
@@ -111,7 +106,6 @@
   [[Inconsolata]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
     font = Inconsolata Medium 10
@@ -122,7 +116,6 @@
   [[Inconsolata-p]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
     font = Inconsolata Medium 11
@@ -133,7 +126,6 @@
   [[Liberation]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = /home/oscar/Images/wallpapers/01819_birdonabranch_1920x1080.jpg
     background_type = transparent
     cursor_color = "#ff0000"
     font = Liberation Mono 10
@@ -146,7 +138,6 @@
   [[Liberation-p]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = /home/oscar/Images/wallpapers/01819_birdonabranch_1920x1080.jpg
     background_type = transparent
     cursor_color = "#ff0000"
     font = Liberation Mono 11
@@ -159,7 +150,6 @@
   [[Meslo L]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
     font = Meslo LG L for Powerline 10
@@ -170,7 +160,6 @@
   [[Meslo L-p]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
     font = Meslo LG L for Powerline 11
@@ -181,7 +170,6 @@
   [[Meslo M]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
     font = Meslo LG M for Powerline 10
@@ -192,7 +180,6 @@
   [[Meslo M-p]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
     font = Meslo LG M for Powerline 11
@@ -203,7 +190,6 @@
   [[Meslo S]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
     font = Meslo LG S for Powerline 9
@@ -214,7 +200,6 @@
   [[Meslo S-p]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
     font = Meslo LG S for Powerline 11
@@ -225,7 +210,6 @@
   [[Mono]]
     background_color = "#171515"
     background_darkness = 0.91
-    background_image = None
     background_type = transparent
     scrollback_infinite = True
     scrollbar_position = hidden
@@ -234,19 +218,16 @@
   [[Mono-p]]
     background_color = "#171515"
     background_darkness = 0.91
-    background_image = None
     background_type = transparent
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
     use_system_font = False
   [[New Profile]]
-    background_image = None
     use_system_font = False
   [[Source]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
     font = Source Code Pro for Powerline Medium 11
@@ -257,7 +238,6 @@
   [[Source Light]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
     font = Source Code Pro for Powerline Light 9
@@ -268,7 +248,6 @@
   [[Source Light-p]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
     font = Source Code Pro for Powerline Light 11
@@ -279,7 +258,6 @@
   [[Source light]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
     font = Source Code Pro for Powerline Light 10
@@ -290,7 +268,6 @@
   [[Source light-p]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
     font = Source Code Pro for Powerline Light 11
@@ -301,7 +278,6 @@
   [[Source semi]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
     font = Source Code Pro for Powerline Semi-Bold 10
@@ -312,7 +288,6 @@
   [[Source semi-p]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
     font = Source Code Pro for Powerline Semi-Bold 11
@@ -323,7 +298,6 @@
   [[Source-p]]
     background_color = "#171515"
     background_darkness = 0.96
-    background_image = None
     background_type = transparent
     cursor_color = "#ff0000"
     font = Source Code Pro for Powerline Medium 12
@@ -334,7 +308,6 @@
   [[monofur]]
     background_color = "#171515"
     background_darkness = 0.91
-    background_image = None
     background_type = transparent
     font = monofur for Powerline 13
     scrollback_infinite = True
@@ -344,7 +317,6 @@
   [[monofur-p]]
     background_color = "#171515"
     background_darkness = 0.91
-    background_image = None
     background_type = transparent
     font = monofur for Powerline 14
     scrollback_infinite = True
