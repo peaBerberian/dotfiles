@@ -677,7 +677,7 @@ noremap <silent> <LEADER>d :q!<CR>
 noremap <silent> <LEADER>z :wq<CR>
 
 " Hide current split
-noremap <silent> <LEADER>i :hide<CR>
+noremap <silent> <LEADER>wd :hide<CR>
 
 
 " ---- Tabulations improvements ----
@@ -701,8 +701,6 @@ nnoremap <silent> <F4> :set list!<cr>
 " Move between buffers (Ctrl + left / right or h / l)
 noremap <silent> <C-h> :bprevious!<CR>
 noremap <silent> <C-l> :bnext!<CR>
-
-nnoremap gb :buffers<CR>:buffer<Space>
 
 " Move between windows splits (ctrl + alt + ...)
 " noremap <silent> <C-K> :wincmd k<CR>
@@ -729,7 +727,7 @@ nnoremap <silent> <C-o>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " nerdtree:
 " Show tree
-nmap <silent> <LEADER>ft :NERDTreeToggle<CR>
+nmap <silent> <LEADER>ee :NERDTreeToggle<CR>
 
 " FZF:
 " Open from name
@@ -823,7 +821,7 @@ vnoremap <C-c> "+y
 inoremap <C-v> <ESC>"+p
 
 " jk/kj to escape in insert/normal/visual mode
-inoremap fd <ESC>
+inoremap jk <ESC>
 
 
 "-----------------------------------------------------------------------------
