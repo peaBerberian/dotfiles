@@ -529,8 +529,8 @@ let g:deoplete#enable_at_startup = 1
 
 
 " ---- ultisnips ----
-let g:UltiSnipsExpandTrigger="<c-RIGHT>"
-let g:UltiSnipsJumpForwardTrigger="<c-RIGHT>"
+let g:UltiSnipsExpandTrigger="<c-SPACE>"
+let g:UltiSnipsJumpForwardTrigger="<c-SPACE>"
 let g:UltiSnipsJumpBackwardTrigger="<c-LEFT>"
 
 " ---- vim-flow ----
@@ -822,6 +822,9 @@ map Q <Nop>
 
 " Add a ';' at the end of the line
 nnoremap <LEADER>; A;<ESC>
+
+" open new line below and escape
+nnoremap <LEADER>o o<ESC>
 
 " Copy in clipboard with CTRL-c on visual mode
 vnoremap <C-c> "+y
