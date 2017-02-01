@@ -10,48 +10,6 @@
     [[[window0]]]
       parent = ""
       type = Window
-  [[new]]
-    [[[child0]]]
-      order = 0
-      parent = ""
-      position = 0:24
-      size = 1920, 1056
-      type = Window
-    [[[child1]]]
-      order = 0
-      parent = child0
-      position = 922
-      type = VPaned
-    [[[child2]]]
-      order = 0
-      parent = child1
-      position = 1352
-      type = HPaned
-    [[[child4]]]
-      order = 1
-      parent = child2
-      position = 314
-      type = VPaned
-    [[[terminal3]]]
-      order = 0
-      parent = child2
-      profile = default
-      type = Terminal
-    [[[terminal5]]]
-      order = 0
-      parent = child4
-      profile = Black
-      type = Terminal
-    [[[terminal6]]]
-      order = 1
-      parent = child4
-      profile = Grey1
-      type = Terminal
-    [[[terminal7]]]
-      order = 1
-      parent = child1
-      profile = Completely black
-      type = Terminal
 [plugins]
 [profiles]
   [[default]]
@@ -99,6 +57,16 @@
     background_type = transparent
     cursor_color = "#ff0000"
     font = DejaVu Sans Mono 11
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
+  [[Dina]]
+    background_color = "#171515"
+    background_darkness = 0.96
+    background_type = transparent
+    cursor_color = "#ff0000"
+    font = Dina 9
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
