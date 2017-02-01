@@ -69,10 +69,6 @@
 "     and elm-oracle.
 "     => https://github.com/ElmCast/elm-vim
 
-" Moreover, to be able to use syntastic to its full potential with js files,
-" you'll need to install the eslint package with npm (node package manager).
-
-
 " ---- Installation ----
 " To install this vimrc:
 
@@ -233,8 +229,11 @@ Plug 'vim-scripts/Mark--Karkat'
 " YankRing.vim: Visual history of yanks
 Plug 'vim-scripts/YankRing.vim'
 
+" ale: display errors in gutter
+Plug 'w0rp/ale'
+
 " syntastic: Display Errors in gutter
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 
 " neomake: asynchronous Syntastic for nvim
 " Plug 'benekastah/neomake'
@@ -299,15 +298,15 @@ let g:vim_markdown_folding_disabled=1
 
 
 " ---- Syntastic ----
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_check_on_wq=0
-let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_warning_symbol='WW' " Symbol used for warnings
-let g:syntastic_error_symbol='EE' " Symbol used for errors
-let g:syntastic_mode_map = {
-        \ "mode": "active",
-        \ "active_filetypes": [""],
-        \ "passive_filetypes": ["javascript"] }
+" let g:syntastic_always_populate_loc_list=1
+" let g:syntastic_check_on_wq=0
+" let g:syntastic_javascript_checkers=['eslint']
+" let g:syntastic_warning_symbol='WW' " Symbol used for warnings
+" let g:syntastic_error_symbol='EE' " Symbol used for errors
+" let g:syntastic_mode_map = {
+"         \ "mode": "active",
+"         \ "active_filetypes": [""],
+"         \ "passive_filetypes": ["javascript"] }
 
 
 " ---- neomake ----
@@ -775,7 +774,7 @@ map <LEADER>k <Plug>(easymotion-k)
 
 " Syntastic:
 " Start checking with syntastic plugin and display possible errors
-nnoremap <F6> :SyntasticCheck<CR>:Errors<CR>
+" nnoremap <F6> :SyntasticCheck<CR>:Errors<CR>
 
 " YankRing:
 " Show every lines yanked (YangRing plugin)
