@@ -5,90 +5,87 @@ Config tested successfully on Arch Linux with i3wm, Debian 8 with i3wm and Linux
 ## \_home\_
 Those files just need to be directly in the $HOME directory.
 
-### .config/
-#### i3status/config
+### .config/i3status/config
 Configuration for i3status. Straightforward: display disks, network, battery, volume informations and the time, in that order.
 
-#### nvim/*
+### .config/nvim/*
 Neovim configuration. Composed only of symbolic links to its vim counterparts.
 
-#### openbox/*
+### .config/openbox/*
 Openbox configuration files. The last time I used openbox was a long time ago (on Arch / CrunchBang) so may be outdated.
  - "autostart": startup script for each openbox session.
  - "menu.xml": openbox menu configuration
  - "rc.xml": main openbox configuration (keybindings and tweaks)
 
-#### terminator/config
+### .config/terminator/config
 Terminator terminal configuration, mainly profiles. Needs powerline fonts.
 
 ### .i3/
 Multiple i3 configuration files.
 __WIP__
 
-### .irssi
-Scripts used by the IRC client irssi
+### .irssi/*
+Scripts used by the IRC client irssi:
+  - nickcolor.pl:
+    Display each nick in an IRC channel in a different color.
 
-#### scripts
-The different scripts that I have.
+  - trackbar.pl:
+    Shows a bar where you've last read a window.
 
-##### nickcolor.pl
-Display each nick in an IRC channel in a different color.
+  - autorun/*:
+    These scripts are symbolic links to the scripts I want to launch as irssi starts.
 
-##### trackbar.pl
-Shows a bar where you've last read a window.
-
-##### autorun
-These scripts are symbolic links to the scripts I want to launch as irssi starts.
-
-### ./
-#### .autostart
+### .autostart
 Script launched on startx / login shell to launch basic applications on boot.
 
-#### .bash_aliases
+### .bash_aliases
 Aliases used by bash / zsh. Mainly git and npm ones.
 
-#### .bashrc
+### .bashrc
 Basic bash configuration.
 
-#### .profile_mint
+### .profile_mint
 Simple script called by login shell on linux Mint to run autostart scripts: namely .autostart and .xsessionrc
 Needs to be renamed to '.profile' (ONLY if .xinitrc is not already launched).
 
-#### .spacemacs
+### .spacemacs
 Spacemacs configuration.
 
-#### .tern-config
+### .tern-config
 Close to empty tern configuration file. Used by tern, itself used by vim.
 
-#### .vimrc
+### .tmux.conf
+Tmux configuration.
+
+### .vimrc
 Bloated but functionnal configuration for vim with countless plugins. Fully compatible with neovim.
 
-#### .xbindkeysrc
+### .xbindkeysrc
 Configuration for xbindkeys, which bind keys to actions. Mainly used to catch media keys.
 
-#### .xinitrc
+### .xinitrc
 Called on startx. Call startup scripts (.xsessionrc, autostart...)
 
-#### .xrandr\_autodetect.sh
+### .xrandr\_autodetect.sh
 Script to autodetect multi-monitor setups and call xrandr accordingly (needs xrandr binary).
 
-#### .Xresources
+### .Xresources
 Configuration for X applications. Mainly _rxvt-unicode_.
 
-#### .xsessionrc
+### .xsessionrc
 Xsession configuration. Used here like (but before) the .autostart script but mainly for X applications tweaks (where .autostart start Applications).
 
-#### .zshrc
+### .zshrc
 Z shell configuration. Needs a custom theme "normcore" based on the theme norm.
 
 ## linters
 Javascript linters' rules.
 
-#### .jscsrc
+### .jscsrc
 JavaScript style validation.
 
-#### .jshintrc
+### .jshintrc
 JavaScript linter for code errors.
 
-#### .eslintrc
+### .eslintrc
 JavaScript linter. Do both style validation and errors (doesn't need the other linters).
