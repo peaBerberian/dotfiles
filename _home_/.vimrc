@@ -723,12 +723,12 @@ noremap <silent> <LEADER>wv :vsplit<CR>
 noremap <silent> <LEADER>ws :split<CR>
 
 " Resize split vertically
-nnoremap <silent> <C-e>+ :exe "vertical resize " . (winwidth(0) * 9/8)<CR>
-nnoremap <silent> <C-e>- :exe "vertical resize " . (winwidth(0) * 8/9)<CR>
+nnoremap <silent> <LEADER>w+ :exe "vertical resize " . (winwidth(0) * 10/9)<CR>
+nnoremap <silent> <LEADER>w- :exe "vertical resize " . (winwidth(0) * 9/10)<CR>
 
 " Resize split horizontally
-nnoremap <silent> <C-o>+ :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> <C-o>- :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> <LEADER>w* :exe "resize " . (winheight(0) * 5/4)<CR>
+nnoremap <silent> <LEADER>w/ :exe "resize " . (winheight(0) * 3/4)<CR>
 
 
 " ---- Plugins shortcuts ----
