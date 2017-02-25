@@ -517,6 +517,9 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
 " path to python 2.7 as python3 was the one launched by default. This line
 " might need to be deleted / changed in the future or under another
 " configuration.
