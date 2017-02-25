@@ -5,6 +5,14 @@ if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
+# TODO move that
+export TZ=:/etc/localtime
+
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# ruby gems in PATH
+export PATH=$PATH:/home/oscar/.gem/ruby/2.2.0/bin
+
 # Add GOPATH
 if [ -d ~/work/go ]; then
   export GOPATH=$HOME/work/go
