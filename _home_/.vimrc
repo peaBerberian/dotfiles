@@ -373,15 +373,15 @@ let g:ctrlp_custom_ignore = {
 
 " ---- tagbar ----
 " Tagbar set for JavaScript
-let g:tagbar_type_javascript = {
-    \ 'ctagstype' : 'JavaScript',
-    \ 'kinds'     : [
-        \ 'o:objects',
-        \ 'f:functions',
-        \ 'a:arrays',
-        \ 's:strings'
-    \ ]
-    \ }
+" let g:tagbar_type_javascript = {
+"     \ 'ctagstype' : 'JavaScript',
+"     \ 'kinds'     : [
+"         \ 'o:objects',
+"         \ 'f:functions',
+"         \ 'a:arrays',
+"         \ 's:strings'
+"     \ ]
+"     \ }
 
 
 " ---- indent-guides ----
@@ -520,10 +520,13 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
+" let g:ycm_keep_logfiles = 1
+" let g:ycm_log_level = 'debug'
+
 " path to python 2.7 as python3 was the one launched by default. This line
 " might need to be deleted / changed in the future or under another
 " configuration.
-" let g:ycm_server_python_interpreter=""
+let g:ycm_server_python_interpreter="/usr/bin/python2.7"
 
 
 " ---- deoplete ----
