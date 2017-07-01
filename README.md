@@ -5,6 +5,9 @@ Config tested successfully on Arch Linux with i3wm, Debian 8 with i3wm and Linux
 ## \_home\_
 Those files just need to be directly in the $HOME directory.
 
+### .config/alacritty/alacritty.yml
+Alacritty terminal config (main terminal).
+
 ### .config/i3status/config
 Configuration for i3status. Straightforward: display disks, network, battery, volume informations and the time, in that order.
 
@@ -22,7 +25,6 @@ Terminator terminal configuration, mainly profiles. Needs powerline fonts.
 
 ### .i3/
 Multiple i3 configuration files.
-__WIP__
 
 ### .irssi/*
 Scripts used by the IRC client irssi:
@@ -76,7 +78,7 @@ Configuration for X applications. Mainly _rxvt-unicode_.
 Xsession configuration. Used here like (but before) the .autostart script but mainly for X applications tweaks (where .autostart start Applications).
 
 ### .zshrc
-Z shell configuration. Needs a custom theme "normcore" based on the theme norm.
+Z shell configuration.
 
 ## linters
 Javascript linters' rules.
