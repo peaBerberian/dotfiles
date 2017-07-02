@@ -692,6 +692,21 @@ noremap <silent> <LEADER>z :wq<CR>
 noremap <silent> <LEADER>wd :hide<CR>
 
 
+" ---- Movement improvements
+nnoremap <S-Up> 6k
+nnoremap <S-Down> 6j
+nnoremap <S-Left> 6h
+nnoremap <S-Right> 6l
+
+nnoremap <C-Up> 6<C-y>
+nnoremap <C-Down> 6<C-e>
+
+" nnoremap <C-Left> 6h
+" nnoremap <C-Down> 6j
+" nnoremap <C-Up> 6k
+" nnoremap <C-Right> 6l
+
+
 " ---- Tabulations improvements ----
 vnoremap > >gv
 vnoremap < <gv
