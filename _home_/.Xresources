@@ -1,37 +1,42 @@
 ! ~~~~~~~~~~~~~~~~~~~~~~~ BASICS ~~~~~~~~~~~~~~~~~~~~~~~
 
-urxvt.saveLines: 2000
+XTerm.vt100.saveLines: 2000
+
+URxvt.saveLines: 2000
 
 ! Fonts
-urxvt.font: xft:Meslo LG L for Powerline:size=8:antialias=true
-urxvt.boldFont: xft:Meslo LG L for Powerline:pixelsize=10:weight=bold
+XTerm.font: xft:Source Code Pro:medium:size=11
+XTerm.boldFont: xft:Source Code Pro:medium:size=11:weight=bold
 
-urxvt.letterSpace: -2
-urxvt.lineSpace:-1
+URxvt.font: xft:Source Code Pro:medium:size=11
+URxvt.boldFont: xft:Source Code Pro:medium:size=11:weight=bold
+
+URxvt.letterSpace:-1
+URxvt.lineSpace:-1
 
 ! Disable scrollbar
-urxvt.scrollBar: false
+URxvt.scrollBar: false
 
 ! True: scroll with scrollback buffer when tty receives new lines
 ! (i.e.  try to show the same lines) and scrollTtyOutput is False;
 ! option -sw. False: do not scroll with scrollback buffer when
 ! tty receives new lines; option +sw.
-urxvt.scrollWithBuffer: true
+URxvt.scrollWithBuffer: true
 
 ! True: scroll to bottom when a non-special key is pressed.
 ! Special keys are those which are intercepted by rxvt-unicode
 ! for special handling and are not passed onto the shell; option
 ! -sk. False: do not scroll to bottom when a non-
-urxvt.scrollTtyKeypress: true
+URxvt.scrollTtyKeypress: true
 
 ! Turn on/off secondary screen (default enabled).
-urxvt.secondaryScreen: true
+URxvt.secondaryScreen: true
 
 ! Turn on/off secondary screen scroll (default enabled). If this
 ! option is enabled, scrolls on the secondary screen will change
 ! the scrollback buffer and, when secondaryScreen is off,
 ! switching to/from the secondary screen will
-urxvtsecondaryScroll: false
+URxvt.secondaryScroll: false
 
 ! The above configuration works as expected except when scrolling
 ! with a mouse wheel. When you scroll a pager in the secondary
@@ -42,20 +47,40 @@ urxvtsecondaryScroll: false
 ! rxvt-unicode[1]. A patched rxvt-unicode is available in AUR as
 ! rxvt-unicode-better-wheel-scrollingAUR. After installing it,
 ! add the following to the configuration file:
-urxvt.secondaryWheel: 1
+URxvt.secondaryWheel: 1
 
 ! Native transparency
-urxvtinheritPixmap: true
-urxvt.transparent: true
+URxvt.inheritPixmap: true
+URxvt.transparent: true
 
 ! 0 to 99 darkens, 101 to 200 lightens
-urxvt.shading: 17
+URxvt.shading: 17
 
 ! ~~~~~~~~~~~~~~~~~~~~~~~ THEMES ~~~~~~~~~~~~~~~~~~~~~~~
 
+XTerm.vt100.background: #000000
+XTerm.vt100.foreground: #ffffff
+XTerm.vt100.color0:  rgb:00/00/00
+XTerm.vt100.color1:  rgb:CC/00/00
+XTerm.vt100.color2:  rgb:4E/9A/06
+XTerm.vt100.color3:  rgb:C4/A0/00
+XTerm.vt100.color4:  rgb:34/65/A4
+XTerm.vt100.color5:  rgb:75/50/7B
+XTerm.vt100.color6:  rgb:06/98/9A
+XTerm.vt100.color7:  rgb:D3/D7/CF
+XTerm.vt100.color8:  rgb:55/57/53
+XTerm.vt100.color9:  rgb:EF/29/29
+XTerm.vt100.color10: rgb:8A/E2/34
+XTerm.vt100.color11: rgb:FC/E9/4F
+XTerm.vt100.color12: rgb:72/9F/CF
+XTerm.vt100.color13: rgb:AD/7F/A8
+XTerm.vt100.color14: rgb:34/E2/E2
+XTerm.vt100.color15: rgb:EE/EE/EC
+XTerm.vt100.colorBD: rgb:ff/ff/ff
+
 ! Use the specified colour as the windows background colour
 ! [default White]; option -bg.
-URxvt*background: #151212
+URxvt*background: #000000
 
 ! Use the specified colour as the windows foreground colour
 ! [default Black]; option -fg.
