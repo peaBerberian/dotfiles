@@ -46,6 +46,9 @@ Aliases used by bash / zsh. Mainly git and npm ones.
 ### .bashrc
 Basic bash configuration.
 
+### .nethackrc
+Some essential config for nethack
+
 ### .profile_mint
 Simple script called by login shell on linux Mint to run autostart scripts: namely .autostart and .xsessionrc
 Needs to be renamed to '.profile' (ONLY if .xinitrc is not already launched).
@@ -72,7 +75,7 @@ Called on startx. Call startup scripts (.xsessionrc, autostart...)
 Script to autodetect multi-monitor setups and call xrandr accordingly (needs xrandr binary).
 
 ### .Xresources
-Configuration for X applications. Mainly _rxvt-unicode_.
+Configuration for X applications. Mainly _rxvt-unicode_ and xterm.
 
 ### .xsessionrc
 Xsession configuration. Used here like (but before) the .autostart script but mainly for X applications tweaks (where .autostart start Applications).
