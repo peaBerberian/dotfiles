@@ -28,7 +28,9 @@ new_window 1pixel
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+t exec xfce4-terminal -e tmux
+bindsym $mod+e exec xfce4-terminal --working-directory=`xcwd`
 
 # kill focused window:
 # the i3 way
@@ -160,7 +162,7 @@ bindsym $mod+x exec xscreensaver-command -lock
 
 # launch thunar
 # bindsym $mod+w exec thunar
-bindsym $mod+w exec terminator -e ranger
+# bindsym $mod+w exec terminator -e ranger
 
 # launch chromium
 bindsym $mod+c exec chromium
