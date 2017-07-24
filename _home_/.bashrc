@@ -87,3 +87,5 @@ fi
 if [ -f ~/.shellrc ]; then
   . ~/.shellrc
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
