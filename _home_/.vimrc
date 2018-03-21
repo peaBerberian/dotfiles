@@ -44,16 +44,11 @@
 "     via respectively a global 'node' and 'npm' commands.
 "     => https://github.com/ternjs/tern_for_vim
 
-"   - vim-go : Needs go binaries to be installed. See their github for more
-"     infos. Those can be installed at any time after installing this vim
-"     config via the ":GoInstallBinaries" command.
-"     => https://github.com/fatih/vim-go
-
 "   - TagBar : need exuberant-ctags package.
 "     => https://github.com/majutsushi/tagbar
 
-"   - Ag.vim : You will need ack (the silver searcher) installed. This will
-"     also be used by the fzf plugin.
+"   - Ack.vim : You will need ag (the silver searcher) + Ack installed. This
+"     will also be used by the fzf plugin.
 "     => https://github.com/epmatsw/ag.vim
 
 "   - YouCompleteMe: Will need some dependencies. Most notably python-devel,
@@ -68,6 +63,11 @@
 "   - elm-vim: You will need to install several npm packages: elm, elm-test,
 "     and elm-oracle.
 "     => https://github.com/ElmCast/elm-vim
+
+"   - vim-go : Needs go binaries to be installed. See their github for more
+"     infos. Those can be installed at any time after installing this vim
+"     config via the ":GoInstallBinaries" command.
+"     => https://github.com/fatih/vim-go
 
 " ---- Installation ----
 " To install this vimrc:
@@ -118,11 +118,20 @@ endif
 " More colorschemes
 Plug 'flazz/vim-colorschemes'
 
+" terminus: Enhanced terminal integration
+Plug 'wincent/terminus'
+
 " ack.vim: Silver searcher integration in vi (ag)
-Plug 'epmatsw/ag.vim'
+Plug 'mileszs/ack.vim'
 
 " vim-javascript: JS tools (mainly syntax hl and indent)
 Plug 'pangloss/vim-javascript'
+
+" yats.vim: Typescript tools
+Plug 'leafgarland/typescript-vim'
+
+" tsuquyomi: Typescript tools
+Plug 'Quramy/tsuquyomi'
 
 " vim-elm: Elm language tools
 Plug 'ElmCast/elm-vim'
@@ -202,8 +211,14 @@ Plug 'bling/vim-airline'
 " Powerline themes
 Plug 'vim-airline/vim-airline-themes'
 
+" lightline.vim: lighter and KISS-er airline
+" Plug 'itchyny/lightline.vim'
+
 " vim-fugitive: Git tools
 Plug 'tpope/vim-fugitive'
+
+" gv.vim: commit explorer
+Plug 'junegunn/gv.vim'
 
 " vim-abolish: Powerfull syntax tools (Mainly for Substitution and coercion)
 Plug 'tpope/vim-abolish'
@@ -223,8 +238,9 @@ Plug 'justinmk/vim-sneak'
 " vim-commentary: Command gcc to add commentary easily
 Plug 'tpope/vim-commentary'
 
-" Mark--Karkat: Mark and unmark words
-Plug 'vim-scripts/Mark--Karkat'
+" vim-mark: Mark and unmark words
+Plug 'inkarkat/vim-ingo-library'
+Plug 'inkarkat/vim-mark'
 
 " YankRing.vim: Visual history of yanks
 Plug 'vim-scripts/YankRing.vim'
@@ -242,7 +258,7 @@ Plug 'w0rp/ale'
 Plug 'terryma/vim-multiple-cursors'
 
 " tagbar: browse tags (need exuberant-ctags)
-" Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 " vim-indent-guides: show indentation on current file
 Plug 'nathanaelkane/vim-indent-guides'
@@ -278,7 +294,28 @@ Plug 'tmhedberg/matchit'
 Plug 'sjl/gundo.vim', { 'on':  'GundoToggle' }
 
 " vim-flow: flow type checking
-" Plug 'flowtype/vim-flow'
+Plug 'flowtype/vim-flow'
+
+" vim-eunuch: various UNIX tools
+Plug 'tpope/vim-eunuch'
+
+" vim-unimpaired: handy shortcuts with brackets
+Plug 'tpope/vim-unimpaired'
+
+" rainbow_parentheses: rainbow parentheses to easily match them
+Plug 'kien/rainbow_parentheses.vim'
+
+" vim-css3-syntax: css3 syntax
+Plug 'hail2u/vim-css3-syntax'
+
+" html5.vim: HTML5 syntax and omnicomplete
+Plug 'othree/html5.vim'
+
+" webapi-vim: needed by gist-vim
+" Plug 'mattn/webapi-vim'
+
+" gist-vim: post on gist
+" Plug 'mattn/gist-vim'
 
 " All of your Plugins must be added before the following line
 " Add plugins to &runtimepath
@@ -310,33 +347,33 @@ let g:vim_markdown_folding_disabled=1
 
 
 " ---- neomake ----
-" add eslint
-let g:neomake_javascript_eslint_maker = {
-    \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-    \ }
-let g:neomake_javascript_jscs_maker = {
-    \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-    \ }
-let g:neomake_javascript_jshint_maker = {
-    \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-    \ }
-let g:neomake_javascript_enabled_makers = ['eslint']
+" " add eslint
+" let g:neomake_javascript_eslint_maker = {
+"     \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+"     \ }
+" let g:neomake_javascript_jscs_maker = {
+"     \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+"     \ }
+" let g:neomake_javascript_jshint_maker = {
+"     \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+"     \ }
+" let g:neomake_javascript_enabled_makers = ['eslint']
 
-let g:neomake_warning_sign = {
-  \ 'text': 'W',
-  \ 'texthl': 'WarningMsg',
-  \ }
+" let g:neomake_warning_sign = {
+"   \ 'text': 'W',
+"   \ 'texthl': 'WarningMsg',
+"   \ }
 
-let g:neomake_error_sign = {
-  \ 'text': 'E',
-  \ 'texthl': 'ErrorMsg',
-  \ }
+" let g:neomake_error_sign = {
+"   \ 'text': 'E',
+"   \ 'texthl': 'ErrorMsg',
+"   \ }
 
-" open loclist after neomake
-let g:neomake_open_list = 2
+" " open loclist after neomake
+" let g:neomake_open_list = 2
 
-" display errors / write in logs
-let g:neomake_logfile='/tmp/neomake_error.log'
+" " display errors / write in logs
+" let g:neomake_logfile='/tmp/neomake_error.log'
 
 
 " ---- easymotion ----
@@ -348,7 +385,7 @@ let g:EasyMotion_smartcase=1 " easymotion plugin use smartcase
 let g:airline#extensions#tabline#enabled = 1
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='serene'
+let g:airline_theme='base16'
 
 
 " ---- nerdtree ----
@@ -384,10 +421,37 @@ let g:ctrlp_custom_ignore = {
 "     \ }
 
 
+" ---- tsuquyomi ----
+autocmd FileType typescript setlocal completeopt+=menu,preview
+
+
 " ---- indent-guides ----
 set ts=2 sw=2 et
 let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size = 1
+
+
+" ---- rainbow_parentheses
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
 
 
 " ---- switch ----
@@ -523,14 +587,69 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 " let g:ycm_keep_logfiles = 1
 " let g:ycm_log_level = 'debug'
 
-" path to python 2.7 as python3 was the one launched by default. This line
-" might need to be deleted / changed in the future or under another
-" configuration.
-" let g:ycm_server_python_interpreter="/usr/bin/python2.7"
+" let g:ycm_server_python_interpreter="/usr/bin/python"
 
 
 " ---- deoplete ----
 let g:deoplete#enable_at_startup = 1
+
+
+" ---- Lightline ----
+let g:lightline = {
+\ 'colorscheme': 'landscape',
+\ 'enable': {
+\   'statusline': 1,
+\   'tabline': 1
+\ },
+\ 'active': {
+\   'left': [['mode', 'paste'], ['filename', 'modified']],
+\   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
+\ },
+\ 'component_expand': {
+\   'linter_warnings': 'LightlineLinterWarnings',
+\   'linter_errors': 'LightlineLinterErrors',
+\   'linter_ok': 'LightlineLinterOK'
+\ },
+\ 'component_type': {
+\   'readonly': 'error',
+\   'linter_warnings': 'warning',
+\   'linter_errors': 'error'
+\ },
+\ 'tabline': {
+\   'left': [ [ 'tabs' ] ],
+\   'right': [ [ 'close' ] ]
+\ }
+\ }
+
+function! LightlineLinterWarnings() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '' : printf('%d ◆', all_non_errors)
+endfunction
+
+function! LightlineLinterErrors() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '' : printf('%d ✗', all_errors)
+endfunction
+
+function! LightlineLinterOK() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+  return l:counts.total == 0 ? '✓ ' : ''
+endfunction
+
+autocmd User ALELint call s:MaybeUpdateLightline()
+
+" Update and show lightline but only if it's visible (e.g., not in Goyo)
+function! s:MaybeUpdateLightline()
+  if exists('#lightline')
+    call lightline#update()
+  end
+endfunction
 
 
 " ---- ultisnips ----
@@ -568,6 +687,11 @@ if executable('ag')
   let g:unite_source_rec_async_command =
         \ ['ag', '--follow', '--nocolor', '--nogroup',
         \  '--hidden', '-g', '']
+endif
+
+" Join comments correctly
+if v:version > 703 || v:version == 703 && has('patch541')
+  set formatoptions+=j
 endif
 
 " " toggle scroll lock led on insert/normal transitions
@@ -629,7 +753,7 @@ set expandtab
 
 " ---- Folding methods ----
 " Folds must be defined by entering commands (such as zf)
-set foldmethod=syntax
+set foldmethod=manual
 
 " Enables JavaScript code folding
 let g:javascript_fold=1
@@ -670,6 +794,28 @@ colorscheme badwolf
 " turn on this option as well
 set background=dark
 
+augroup LargeFile
+  let g:large_file = 1048576 " 1MB
+
+  " Set options:
+  "   eventignore+=FileType (no syntax highlighting etc
+  "   assumes FileType always on)
+  "   noswapfile (save copy of file)
+  "   bufhidden=unload (save memory when other file is viewed)
+  "   buftype=nowritefile (is read-only)
+  "   undolevels=-1 (no undo possible)
+  au BufReadPre *
+        \ let f=expand("<afile>") |
+        \ if getfsize(f) > g:large_file |
+        \   set eventignore+=FileType |
+        \   syntax off |
+        \   setlocal ft= syn= |
+        \   setlocal noswapfile bufhidden=unload buftype=nowrite undolevels=-1 |
+        \ else |
+        \   set eventignore-=FileType |
+        \ endif
+augroup END
+
 
 "-----------------------------------------------------------------------------
 "                                 MAPPING
@@ -691,6 +837,13 @@ noremap <silent> <LEADER>z :wq<CR>
 " Hide current split
 noremap <silent> <LEADER>wd :hide<CR>
 
+" Close QuickFix + Location List
+noremap <silent> <LEADER>q :cclose<CR>:lclose<CR>
+
+
+" ---- Replace
+nnoremap <LEADER>` :%s/<C-R><C-W>//gcI<LEFT><LEFT><LEFT><LEFT>
+
 
 " ---- Movement improvements
 nnoremap <S-Up> 6k
@@ -705,6 +858,10 @@ nnoremap <C-Down> 6<C-e>
 " nnoremap <C-Down> 6j
 " nnoremap <C-Up> 6k
 " nnoremap <C-Right> 6l
+
+" ---- navigate in jump list
+nnoremap g, <C-o>
+nnoremap g. <C-i>
 
 
 " ---- Tabulations improvements ----
@@ -768,10 +925,6 @@ noremap <silent> <LEADER>b :Buffers<CR>
 " Navigate between marks
 " noremap <silent> <LEADER>s :Marks<CR>
 
-" Mark--Karkat:
-" Mark/unmark
-" nnoremap <silent> <LEADER>m :Mark <C-R><C-W><CR>
-
 " Unmark all
 nnoremap <silent> <LEADER>M :MarkClear<CR>:nohl<CR>
 
@@ -809,6 +962,10 @@ nnoremap <F8> :TagbarToggle<CR>
 " Display/hide Gundo
 nnoremap <silent> <F9> :GundoToggle<CR>
 
+" Ack:
+" Search word behind cursor
+nnoremap <LEADER>a :Ack! 
+nnoremap <LEADER>A :Ack! "\b<cword>\b" %<CR>
 
 " ---- Function keys ----
 " F1 open help html
@@ -896,3 +1053,18 @@ function! NumberToggle()
     set relativenumber
   endif
 endfunc
+
+" Navigate easily between jumps
+function! GotoJump()
+  jumps
+  let j = input("Please select your jump: ")
+  if j != ''
+    let pattern = '\v\c^\+'
+    if j =~ pattern
+      let j = substitute(j, pattern, '', 'g')
+      execute "normal " . j . "\g."
+    else
+      execute "normal " . j . "\g,"
+    endif
+  endif
+endfunction
