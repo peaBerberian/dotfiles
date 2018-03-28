@@ -33,7 +33,7 @@ alias n='nvim'
 # --------
 
 # ---- git alias ----
-#
+
 alias gc='git checkout'
 
 alias ga='git add'
@@ -41,6 +41,9 @@ alias gaa='git add --all'
 alias gam='git commit -a -m'
 
 alias gd='git diff'
+
+alias gl='git log --oneline --graph --pretty=format:"%C(3)%h %C(75)%ad %C(41)%an%C(auto)%d %s" --date=short'
+alias gla='git log --all --oneline --graph --pretty=format:"%C(3)%h %C(75)%ad %C(41)%an%C(auto)%d %s" --date=short'
 
 alias gm='git commit -m'
 alias gma='git commit --amend'
