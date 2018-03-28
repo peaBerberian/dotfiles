@@ -69,6 +69,12 @@
 "     config via the ":GoInstallBinaries" command.
 "     => https://github.com/fatih/vim-go
 
+"   - vimproc: Needs to be build. See GitHub for more infos.
+"     => https://github.com/Shougo/vimproc.vim
+
+"   - ale: Needs eslint and tslint to be installed and accessible in the PATH.
+"     => https://github.com/w0rp/ale
+
 " ---- Installation ----
 " To install this vimrc:
 
@@ -117,6 +123,7 @@ endif
 
 " More colorschemes
 Plug 'flazz/vim-colorschemes'
+" Plug 'rafi/awesome-vim-colorschemes'
 
 " terminus: Enhanced terminal integration
 Plug 'wincent/terminus'
@@ -129,6 +136,9 @@ Plug 'pangloss/vim-javascript'
 
 " yats.vim: Typescript tools
 Plug 'leafgarland/typescript-vim'
+
+" vimproc: Interactive command execution in Vim
+Plug 'ujihisa/vimproc'
 
 " tsuquyomi: Typescript tools
 Plug 'Quramy/tsuquyomi'
@@ -269,12 +279,6 @@ Plug 'AndrewRadev/switch.vim'
 " vim-surround: Change 'surroundings' (brackets, quotes...) - cs command
 Plug 'tpope/vim-surround'
 
-" vimproc: Interactive command execution in Vim needed by Unite
-" vimfiler: File explorer for unite
-" unite.vim: Unite menu
-" Plug 'ujihisa/vimproc' | Plug 'Shougo/vimfiler.vim'
-      " \ | Plug 'Shougo/unite.vim'
-
 " vimshell.vim: Vim shell
 " Plug 'Shougo/vimshell.vim'
 
@@ -380,12 +384,14 @@ let g:vim_markdown_folding_disabled=1
 let g:EasyMotion_smartcase=1 " easymotion plugin use smartcase
 
 
-" ---- airline ----
+" ---- vim-airline ----
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
-
 let g:airline_powerline_fonts = 1
-let g:airline_theme='base16'
+let g:airline_theme='zenburn'
+let g:airline_section_b = "%{airline#extensions#branch#get_head()}"
+let g:airline_section_y = ""
+let g:airline_section_z = "%3p%% %#__accent_bold#% %l% %#__restore__#% /%#__accent_bold#% %L% %#__restore__#% \ :%3v"
 
 
 " ---- nerdtree ----
@@ -785,15 +791,6 @@ set relativenumber " Show relative line numbers
 " Enables HTML/CSS syntax highlighting in your JavaScript file
 let g:javascript_enable_domhtmlcss=1
 
-
-" ---- Colorscheme ----
-" Remove (or comment) this line if the following colorscheme does not exist
-colorscheme badwolf
-
-" If using a dark background within the editing area and syntax highlighting
-" turn on this option as well
-set background=dark
-
 augroup LargeFile
   let g:large_file = 1048576 " 1MB
 
@@ -950,6 +947,12 @@ map <LEADER>k <Plug>(easymotion-k)
 " Start checking with syntastic plugin and display possible errors
 " nnoremap <F6> :SyntasticCheck<CR>:Errors<CR>
 
+" Ale:
+let g:ale_linters = {
+\  'javascript': ['eslint'],
+\  'typescript': ['tslint'],
+\}
+
 " YankRing:
 " Show every lines yanked (YangRing plugin)
 nnoremap <silent> <F7> :YRShow<CR>
@@ -1068,3 +1071,14 @@ function! GotoJump()
     endif
   endif
 endfunction
+
+
+"-----------------------------------------------------------------------------
+"                             COLORSCHEME
+"-----------------------------------------------------------------------------
+" Remove (or comment) this line if the following colorscheme does not exist
+colorscheme hybrid
+
+" If using a dark background within the editing area and syntax highlighting
+" turn on this option as well
+set background=dark
