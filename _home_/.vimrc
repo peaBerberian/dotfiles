@@ -134,14 +134,14 @@ Plug 'mileszs/ack.vim'
 " vim-javascript: JS tools (mainly syntax hl and indent)
 Plug 'pangloss/vim-javascript'
 
-" yats.vim: Typescript tools
+" tsuquyomi: TypeScript tools
+Plug 'Quramy/tsuquyomi'
+
+" yats.vim: TypeScript tools
 Plug 'leafgarland/typescript-vim'
 
 " vimproc: Interactive command execution in Vim
 Plug 'ujihisa/vimproc'
-
-" tsuquyomi: Typescript tools
-Plug 'Quramy/tsuquyomi'
 
 " vim-elm: Elm language tools
 Plug 'ElmCast/elm-vim'
@@ -154,6 +154,9 @@ Plug 'fatih/vim-go'
 
 " rust.vim: Rust language tools
 Plug 'rust-lang/rust.vim'
+
+" vim-racer: Rust code completion
+" Plug 'racer-rust/vim-racer'
 
 " vim-less: less (css files) syntax highlighting/indenting/completion
 Plug 'groenewege/vim-less'
