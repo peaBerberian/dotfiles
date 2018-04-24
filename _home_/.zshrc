@@ -1,6 +1,6 @@
-#================================================================================
-#                            ZSH CONFIGURATION FILE
-#================================================================================
+# ZSH Configuration file #######################################################
+
+## General Configuration #######################################################
 
 # If not running interactively, don't do anything
 case $- in
@@ -60,17 +60,28 @@ plugins=(vi-mode git gittools gitfast node sudo)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+## Editor configuration ########################################################
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
+export PAGER='less'
 
-######## MAPPING ########
+for suffix in c cc cxx go graphql h html js json jsx md py rb rs ts tsx vim \
+  yml mpd Manifest
+do
+  alias -s $suffix=$EDITOR
+done
+
+for suffix in txt log
+do
+  alias -s $suffix=$PAGER
+done
+
+
+
+## Mapping #####################################################################
 
 # Home -> beginning of line
 bindkey '\eOH'  beginning-of-line
@@ -84,7 +95,28 @@ bindkey "\e[3~" delete-char
 # Ctrl+R -> history search
 bindkey "^R" history-incremental-search-backward
 
-################
+
+
+## Plugins #####################################################################
+
+. ~/.zplug/init.zsh
+
+zplug junegunn/fzf
+zplug zsh-users/zsh-autosuggestions
+zplug zsh-users/zsh-completions, lazy:true
+zplug zsh-users/zsh-syntax-highlighting
+zplug zsh-users/zsh-history-substring-search
+
+if ! zplug check
+then
+  zplug install
+fi
+
+zplug load
+
+
+
+## Scripts #####################################################################
 
 # Call common shell rc script
 if [ -f ~/.shellrc ]; then
@@ -97,3 +129,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export GPG_TTY=$(tty)
+
+# added by travis gem
+[ -f /home/oscar/.travis/travis.sh ] && source /home/oscar/.travis/travis.sh
