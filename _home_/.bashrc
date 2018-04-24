@@ -90,3 +90,6 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export GPG_TTY=$(tty)
+
+# added by travis gem
+[ -f /home/oscar/.travis/travis.sh ] && source /home/oscar/.travis/travis.sh
