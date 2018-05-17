@@ -19,17 +19,5 @@ if [ -d ~/work/go ]; then
   export PATH="$GOPATH/bin:$PATH"
 fi
 
-# Ugly tricks for obscure nvim error
-# https://github.com/neovim/neovim/issues/2048
-if [ -f /tmp/terminator.ti ]; then
-  infocmp terminator | sed 's/kbs=^[hH]/kbs=\\177/' > /tmp/terminator.ti
-  tic /tmp/terminator.ti
-fi
-if [ -f /tmp/xterm.ti ]; then
-  infocmp xterm | sed 's/kbs=^[hH]/kbs=\\177/' > /tmp/xterm.ti
-  tic /tmp/xterm.ti
-fi
-
-
 # Start fzf if it exists
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
