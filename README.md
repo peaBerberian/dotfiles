@@ -6,7 +6,7 @@ Config tested successfully on Arch Linux with i3wm, Debian 8 with i3wm and Linux
 Those files just need to be directly in the $HOME directory.
 
 ### .config/alacritty/alacritty.yml
-Alacritty terminal config (main terminal).
+Alacritty terminal config.
 
 ### .config/i3status/config
 Configuration for i3status. Straightforward: display disks, network, battery, volume informations and the time, in that order.
@@ -22,6 +22,9 @@ Openbox configuration files. The last time I used openbox was a long time ago (o
 
 ### .config/terminator/config
 Terminator terminal configuration, mainly profiles. Needs powerline fonts.
+
+### .config/xfce4/terminal/terminalrc
+xfce4-terminal configuration
 
 ### .i3/
 Multiple i3 configuration files.
