@@ -335,5 +335,8 @@ bar {
 
 # ~~~~~~~~~~~~~~~~~~~ AUTORUN  ~~~~~~~~~~~~~~~~~~~
 
+# Switch from us to fr keymap through ctrl+alt
+exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:ctrl_alt_toggle'"
+
 # Execute applets
 exec --no-startup-id sh ~/.i3/autostart
