@@ -319,7 +319,7 @@ client.urgent               $crimson-red     $crimson-red     $white           $
 bar {
   position top
   workspace_buttons yes
-  status_command i3status
+  status_command i3blocks
   colors {
         # basic colors
         background #191919
@@ -340,3 +340,7 @@ exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:ctrl_alt_toggle'"
 
 # Execute applets
 exec --no-startup-id sh ~/.i3/autostart
+
+# Maps for i3blocks
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
