@@ -2,11 +2,6 @@
 
 # Start applets
 
-# Volumecontrol
-if hash volumeicon 2>/dev/null; then
-  volumeicon &
-fi
-
 # Network-manager
 if hash nm-applet 2>/dev/null; then
   nm-applet &
