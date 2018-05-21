@@ -15,5 +15,5 @@ xrandr --auto
 if [ $numberOfMonitors -gt 1 ]; then
   monitor1=$(echo "$monitorsName" | head -1)
   monitor2=$(echo "$monitorsName" | head -2 | tail -1)
-  xrandr --output $monitor1 --primary --left-of $monitor2
+  xrandr --output $monitor2 --primary --left-of $monitor1
 fi
