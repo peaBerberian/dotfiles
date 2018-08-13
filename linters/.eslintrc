@@ -1,81 +1,96 @@
 {
   "env": {
-    "browser": true,
     "es6": true,
-    "mocha": true
+    "browser": true,
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "globals": {},
+
+  "extends": "eslint:recommended",
+
   "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    },
+    "ecmaVersion": 2017,
+    "sourceType": "module"
   },
-  "plugins": [
-    "react"
-  ],
+
   "rules": {
-    "array-bracket-spacing": [2, "always"],
-    "block-spacing": [2, "always"],
-    "brace-style": [2, "1tbs", { "allowSingleLine": false }],
-    "camelcase": [2, {"properties": "always"}],
-    "comma-spacing": [2, {"before": false, "after": true}],
-    "comma-style": [2, "last"],
-    "computed-property-spacing": [2, "never"],
-    "consistent-this": [2, "self", "_this"],
-    "eol-last": 2,
-    "func-style": [2, "expression"],
-    "indent": [2, 2, {"SwitchCase": 1}],
-    "jsx-quotes": [2, "prefer-single"],
-    "key-spacing": [2, {"beforeColon": false, "afterColon": true, "mode": "minimum"}],
-    "keyword-spacing": [2, {"before": true, "after": true, "overrides": {}}],
-    "linebreak-style": 2,
-    "lines-around-comment": [2, {
-      "beforeBlockComment": true,
-      "beforeLineComment": true,
-      "allowBlockStart": true,
-      "allowBlockEnd": false
-    }],
-    "max-depth": [2, 10],
-    "max-len": [2, 80, 4, {"ignoreUrls": true}],
-    "max-nested-callbacks": [2, 3],
-    "new-cap": [2, { "newIsCap": true }],
-    "new-parens": 2,
-    "no-array-constructor": 2,
-    "no-continue": 2,
-    "no-lonely-if": 2,
-    "no-mixed-spaces-and-tabs": 2,
-    "no-multiple-empty-lines": [2, {max: 1}],
-    "no-nested-ternary": 2,
-    "no-new-object": 2,
-    "no-restricted-syntax": [2, "WithStatement"],
-    "no-spaced-func": 2,
-    "no-trailing-spaces": 2,
-    "no-unneeded-ternary": [2, { "defaultAssignment": false }],
-    "no-whitespace-before-property": 2,
-    "object-curly-spacing": [2, "always"],
-    "one-var": [2, "never"],
-    "one-var-declaration-per-line": [2, "always"],
-    "operator-assignment": [2, "always"],
-    "operator-linebreak": [2, "after"],
-    "padded-blocks": [2, "never"],
-    "quote-props": [2, "as-needed"],
-    "quotes": [2, "single"],
-    "require-jsdoc": [2, {
-      "require": {
-        "FunctionDeclaration": true,
-        "MethodDefinition": true,
-        "ClassDeclaration": true
-      }
-    }],
-    "semi": [2, "always"],
-    "semi-spacing": [2, {"before": false, "after": true}],
-    "space-before-blocks": 2,
-    "space-before-function-paren": 2,
-    "space-infix-ops": 2,
-    "space-unary-ops": 2,
-    "spaced-comment": [2, "always"]
+    // Possible Errors <http://eslint.org/docs/rules/#possible-errors>
+    // babel removes them for older browsers, we should do a codemod
+    "comma-dangle": [1, "always-multiline"],
+    // equivalent to jshint boss
+    "no-cond-assign": 0,
+    // equivalent to jshint devel
+    "no-console": 0,
+    // prohibits things like `while (true)`
+    "no-constant-condition": 0,
+    // we need to be able to match these
+    "no-control-regex": 0,
+    // equivalent to jshint debug
+    "no-debugger": 2,
+    // equivalent to jshint W004
+    "no-dupe-args": 2,
+    // syntax error in strict mode, almost certainly unintended in any case
+    "no-dupe-keys": 2,
+    // almost certainly a bug
+    "no-duplicate-case": 1,
+    // almost certainly a bug
+    "no-empty-character-class": 1,
+    // would warn on uncommented empty `catch (ex) {}` blocks
+    "no-empty": 0,
+    // can cause subtle bugs in IE 8, and we shouldn't do this anyways
+    "no-ex-assign": 1,
+    // we shouldn"t do this anyways
+    "no-extra-boolean-cast": 1,
+    // parens may be used to improve clarity, equivalent to jshint W068
+    'no-extra-parens': [1, 'functions'],
+    // equivalent to jshint W032
+    'no-extra-semi': 1,
+    // a function delaration shouldn't be rewritable
+    'no-func-assign': 2,
+    // babel and es6 allow block-scoped functions
+    'no-inner-declarations': 0,
+    // will cause a runtime error
+    'no-invalid-regexp': 1,
+    // disallow non-space or tab whitespace characters
+    'no-irregular-whitespace': 1,
+    // write `if (!(a in b))`, not `if (!a in b)`, equivalent to jshint W007
+    'no-negated-in-lhs': 2,
+    // will cause a runtime error
+    'no-obj-calls': 2,
+    // improves legibility
+    'no-regex-spaces': 1,
+    // equivalent to jshint elision
+    'no-sparse-arrays': 2,
+    // equivalent to jshint W027
+    'no-unreachable': 2,
+    // equivalent to jshint use-isnan
+    'use-isnan': 2,
+    // probably too noisy ATM
+    'valid-jsdoc': 0,
+    // equivalent to jshint notypeof
+    'valid-typeof': 2,
+    // we already require semicolons
+    'no-unexpected-multiline': 0,
+
+    // Best Practices <http://eslint.org/docs/rules/#best-practices>
+    // probably a bug, we shouldn't actually even use this yet, because of IE8
+    'accessor-pairs': [1, {setWithoutGet: true}],
+    // probably too noisy ATM
+    'block-scoped-var': 0,
+    // cyclomatic complexity, we're too far gone
+    'complexity': 0,
+    // style guide: Always use brackets, even when optional.
+    'curly': [1, 'all'],
+
+    'no-case-declarations': 0,
+    'no-var': 1,
+    'prefer-const': 1,
+
+    'max-len': [1, 120, 2,
+      {'ignorePattern': maxLenIgnorePattern}
+    ],
+
+    "indent": [1, 2],
+    "quotes": [1, "double"],
+    "linebreak-style": [1, "unix"],
+    "semi": [1, "always"]
   }
 }
