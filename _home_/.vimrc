@@ -268,7 +268,7 @@ Plug 'w0rp/ale'
 " Plug 'benekastah/neomake'
 
 " vim-multiple-cursors: CTRL-n to select many occurences of the same pattern
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
 
 " tagbar: browse tags (need exuberant-ctags)
 Plug 'majutsushi/tagbar'
