@@ -318,6 +318,9 @@ Plug 'hail2u/vim-css3-syntax'
 " html5.vim: HTML5 syntax and omnicomplete
 Plug 'othree/html5.vim'
 
+" vim-highlightedyank: highlight yank selections for a few seconds
+Plug 'machakann/vim-highlightedyank'
+
 " webapi-vim: needed by gist-vim
 " Plug 'mattn/webapi-vim'
 
@@ -674,6 +677,10 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " ---- vim-elm ----
 let g:elm_setup_keybindings = 0
+
+" ---- vim-highlightedyank ----
+let g:highlightedyank_highlight_duration = 250
+
 
 "-----------------------------------------------------------------------------
 "                                SETTINGS
