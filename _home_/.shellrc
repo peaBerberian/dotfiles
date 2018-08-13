@@ -25,3 +25,5 @@ fi
 # Add node_modules path
 PATH="$HOME/.node_modules/bin:$PATH"
 export npm_config_prefix=~/.node_modules
+
+export CHROME_BIN=/usr/bin/chromium
