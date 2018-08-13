@@ -6,31 +6,37 @@ Config tested successfully on Arch Linux with i3wm, Debian 8 with i3wm and Linux
 Those files just need to be directly in the $HOME directory.
 
 ### .config/alacritty/alacritty.yml
-Alacritty terminal config.
+[Alacritty](https://github.com/jwilm/alacritty) terminal config.
 
 ### .config/i3status/config
-Configuration for i3status. Straightforward: display disks, network, battery, volume informations and the time, in that order.
+Configuration for [i3status](https://i3wm.org/i3status/).
+Straightforward: display disks, network, battery, volume informations and the time, in that order.
 
 ### .config/nvim/*
-Neovim configuration. Composed only of symbolic links to its vim counterparts.
+[Neovim](https://neovim.io/) configuration.
+Composed only of symbolic links to its vim counterparts.
 
 ### .config/openbox/*
-Openbox configuration files. The last time I used openbox was a long time ago (on Arch / CrunchBang) so may be outdated.
+[Openbox](http://openbox.org/wiki/Main_Page) configuration files.
+The last time I used openbox was a long time ago (on Arch / CrunchBang) so may be outdated.
  - "autostart": startup script for each openbox session.
  - "menu.xml": openbox menu configuration
  - "rc.xml": main openbox configuration (keybindings and tweaks)
 
+### .config/redshift/redshift.conf
+[redshift](http://jonls.dk/redshift/) configuration.
+
 ### .config/terminator/config
-Terminator terminal configuration, mainly profiles. Needs powerline fonts.
+[Terminator terminal](https://gnometerminator.blogspot.com/p/introduction.html) configuration, mainly profiles. Needs powerline fonts.
 
 ### .config/xfce4/terminal/terminalrc
-xfce4-terminal configuration
+[xfce4-terminal](https://docs.xfce.org/apps/terminal/start) configuration
 
 ### .i3/
-Multiple i3 configuration files.
+Multiple [i3](https://i3wm.org/) configuration files.
 
 ### .irssi/*
-Scripts used by the IRC client irssi:
+Scripts used by the IRC client [irssi](https://irssi.org/):
   - nickcolor.pl:
     Display each nick in an IRC channel in a different color.
 
@@ -47,53 +53,53 @@ Script launched on startx / login shell to launch basic applications on boot.
 Aliases used by bash / zsh. Mainly git and npm ones.
 
 ### .bashrc
-Basic bash configuration.
+Basic [bash](https://www.gnu.org/software/bash/) configuration.
 
 ### .nethackrc
-Some essential config for nethack
+Some essential config for [nethack](https://www.nethack.org/)
 
 ### .profile_mint
-Simple script called by login shell on linux Mint to run autostart scripts: namely .autostart and .xsessionrc
+Simple script called by login shell on [linux Mint](https://www.linuxmint.com/) to run autostart scripts: namely .autostart and .xsessionrc
 Needs to be renamed to '.profile' (ONLY if .xinitrc is not already launched).
 
 ### .spacemacs
-Spacemacs configuration.
+[Spacemacs](http://spacemacs.org/) configuration.
 
 ### .tern-config
-Close to empty tern configuration file. Used by tern, itself used by vim.
+Close to empty [tern](https://ternjs.net/) configuration file. Used by tern, itself used by vim.
 
 ### .tmux.conf
-Tmux configuration.
+[tmux](https://github.com/tmux/tmux) configuration.
 
 ### .vimrc
-Bloated but functionnal configuration for vim with countless plugins. Fully compatible with neovim.
+Bloated but functionnal configuration for [vim](https://www.vim.org/) with countless plugins. Fully compatible with neovim.
 
 ### .xbindkeysrc
-Configuration for xbindkeys, which bind keys to actions. Mainly used to catch media keys.
+Configuration for [xbindkeys](https://linux.die.net/man/1/xbindkeys), which bind keys to actions. Mainly used to catch media keys.
 
 ### .xinitrc
-Called on startx. Call startup scripts (.xsessionrc, autostart...)
+Called on [startx](https://www.x.org/archive/X11R6.9.0/doc/html/startx.1.html). Call startup scripts (.xsessionrc, autostart...)
 
 ### .xrandr\_autodetect.sh
-Script to autodetect multi-monitor setups and call xrandr accordingly (needs xrandr binary).
+Script to autodetect multi-monitor setups and call [xrandr](https://www.x.org/archive/X11R7.5/doc/man/man1/xrandr.1.html) accordingly (needs xrandr binary).
 
 ### .Xresources
-Configuration for X applications. Mainly _rxvt-unicode_ and xterm.
+Configuration for X applications. Mainly [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html) and [xterm](https://invisible-island.net/xterm/).
 
 ### .xsessionrc
 Xsession configuration. Used here like (but before) the .autostart script but mainly for X applications tweaks (where .autostart start Applications).
 
 ### .zshrc
-Z shell configuration.
+[Z shell](http://www.zsh.org/) configuration.
 
 ## linters
-Javascript linters' rules.
-
-### .jscsrc
-JavaScript style validation.
-
-### .jshintrc
-JavaScript linter for code errors.
+Linters' rules.
 
 ### .eslintrc
-JavaScript linter. Do both style validation and errors (doesn't need the other linters).
+Default [ESLint](https://eslint.org/) configuration. Do both style validation and errors (doesn't need the other linters).
+
+### .jshintrc
+Default [JSHint](http://jshint.com/) configuration. JavaScript linter for code errors.
+
+### tslint.json
+Default [TSLint](https://palantir.github.io/tslint/) configuration. TypeScript linter.
