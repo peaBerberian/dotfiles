@@ -49,7 +49,7 @@ alias gm='git commit -m'
 alias gma='git commit --amend'
 
 alias gp='git push origin'
-alias gpp='git push -f origin'
+alias gpp='git push --force-with-lease origin'
 
 alias gpt='git pull origin'
 alias gptt='git pull -f origin'
