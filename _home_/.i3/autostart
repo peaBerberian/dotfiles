@@ -1,4 +1,5 @@
 #!/bin/bash
+wallpapers_directory=$HOME/images/wallpapers
 
 # Start applets
 
@@ -12,11 +13,6 @@ if hash xbindkeys 2>/dev/null; then
   xbindkeys &
 fi
 
-# Display wallpaper
-if [ -f ~/.fehbg ]; then
-  sh ~/.fehbg &
-fi
-
 # start xscreensaver
 if hash xscreensaver 2>/dev/null; then
   xscreensaver -no-splash &
@@ -25,6 +21,11 @@ if hash xscreensaver 2>/dev/null; then
   if hash xautolock 2>/dev/null; then
     xautolock -time 10 -locker "xscreensaver-command -lock" &
   fi
+fi
+
+# randomize wallpapers
+if [ -d $wallpapers_directory ] ; then
+  feh --recursive --randomize --bg-fill $wallpapers_directory
 fi
 
 # Execute power manager
