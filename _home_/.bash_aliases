@@ -61,15 +61,19 @@ alias gr='git rebase'
 alias gri='git rebase -i'
 alias grc='git rebase --continue'
 
-################
-
 # --------
 
-######## NPM (node) ########
+# ---- yay alias ----
+
+alias yu="curl -s https://www.archlinux.org/feeds/news/ | xmllint --xpath //item/title\ \|\ //item/pubDate /dev/stdin | sed -r -e \"s:<title>([^<]*?)</title><pubDate>([^<]*?)</pubDate>:\2\t\1\n:g\" && yay -Syu"
+
+# ---- npm alias ----
 
 alias nr="npm run"
 
-################
+# --------
+
+# ---- colors ----
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
