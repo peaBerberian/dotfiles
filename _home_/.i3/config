@@ -24,6 +24,11 @@ for_window [title="xfce4-notifyd"] floating enable
 # disable titlebar, 1pixel border
 new_window 1pixel
 
+# set gaps
+gaps inner 0
+gaps outer 0
+smart_gaps on
+
 # ~~~~~~~~~~~~~~~~~~~ SHORTCUTS ~~~~~~~~~~~~~~~~~~~
 
 # start a terminal
@@ -181,12 +186,27 @@ workspace_auto_back_and_forth no
 bindsym $mod+z workspace back_and_forth
 bindsym $mod+Shift+z move container to workspace back_and_forth; workspace back_and_forth
 
-# ~~ "resize" mode (resize windows with mod+r)
+# ~~~~~~~~~~~~~~~~~~~ MODES  ~~~~~~~~~~~~~~~~~~~
 
-bindsym $mod+r mode "resize"
+# Gaps mode
+set $mode_gaps Inner Gaps: Down/Up/Left: More/Less/Reset. Shift for global
+bindsym $mod+g mode "$mode_gaps"
+mode "$mode_gaps" {
+        bindsym Down  gaps inner current plus 5
+        bindsym Up gaps inner current minus 5
+        bindsym Left gaps inner current set 0
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
+        bindsym Shift+Down  gaps inner all plus 5
+        bindsym Shift+Up gaps inner all minus 5
+        bindsym Shift+Left     gaps inner all set 0
+
+        bindsym Escape mode "default"
+}
+
+# Resize mode
+set $mode_resize Resize mode: Left/Right: shrink/grow width, Up/Down: skrink/grow height. Shift for bigger steps.
+bindsym $mod+r mode "$mode_resize"
+mode "$mode_resize" {
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
@@ -212,62 +232,6 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
-# # ~~ "focused" mode (marking and jumping with mod+n) ~~
-
-# # bindsym $mod+n mode "focused"
-
-# # mode "focused" {
-
-# # hardcoded focus keybindings
-#   # bindsym b [class="(?i)chromium-browser"] focus
-#   # bindsym f [class="(?i)firefox"] focus
-#   # bindsym t [class="(?i)terminal"] focus
-
-# # keybindings for marking and jumping to clients
-#   # bindsym a exec i3-input -F 'mark %s' -P 'Mark name: '
-#   # bindsym g exec i3-input -F '[con_mark=%s] focus' -P 'Go to mark: '
-
-# # Assign marks to keys 1-5
-#   bindsym Shift+0 mark m0
-#   bindsym Shift+1 mark m1
-#   bindsym Shift+2 mark m2
-#   bindsym Shift+3 mark m3
-#   bindsym Shift+4 mark m4
-#   bindsym Shift+5 mark m5
-#   bindsym Shift+6 mark m6
-#   bindsym Shift+7 mark m7
-#   bindsym Shift+8 mark m8
-#   bindsym Shift+9 mark m9
-
-#   bindsym 0 [con_mark="m0"] focus
-#   bindsym 1 [con_mark="m1"] focus
-#   bindsym 2 [con_mark="m2"] focus
-#   bindsym 3 [con_mark="m3"] focus
-#   bindsym 4 [con_mark="m4"] focus
-#   bindsym 5 [con_mark="m5"] focus
-#   bindsym 6 [con_mark="m6"] focus
-#   bindsym 7 [con_mark="m7"] focus
-#   bindsym 8 [con_mark="m8"] focus
-#   bindsym 9 [con_mark="m9"] focus
-
-# # Exit to the default mode
-#   bindsym $mod+n mode "default"
-#   bindsym Return mode "default"
-#   bindsym Escape mode "default"
-# }
-
-# # Jump to clients marked 1-0
-# bindsym Shift+F1 [con_mark="m1"] focus
-# bindsym Shift+F2 [con_mark="m2"] focus
-# bindsym Shift+F3 [con_mark="m3"] focus
-# bindsym Shift+F4 [con_mark="m4"] focus
-# bindsym Shift+F5 [con_mark="m5"] focus
-# bindsym Shift+F6 [con_mark="m6"] focus
-# bindsym Shift+F7 [con_mark="m7"] focus
-# bindsym Shift+F8 [con_mark="m8"] focus
-# bindsym Shift+F9 [con_mark="m9"] focus
-# bindsym Shift+F10 [con_mark="m0"] focus
 
 # ~~~~~~~~~~~~~~~~~~~ THEME ~~~~~~~~~~~~~~~~~~~
 
