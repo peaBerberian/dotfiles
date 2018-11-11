@@ -28,8 +28,8 @@ new_window 1pixel
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec xfce4-terminal
-bindsym $mod+t exec xfce4-terminal -e tmux
+bindsym $mod+Return exec urxvt
+bindsym $mod+Shift+Return exec urxvt -cd "`xcwd`"
 # bindsym $mod+e exec xfce4-terminal --working-directory=`xcwd`
 
 # kill focused window:
