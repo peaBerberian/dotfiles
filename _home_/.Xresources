@@ -13,8 +13,6 @@ URxvt*termName: rxvt-unicode
 URxvt.perl-ext-common: default,matcher
 URxvt.urlLauncher: firefox
 URxvt.matcher.button: 1
-URxvt*foreground: white
-URxvt*background: black
 URxvt.transparent: true
 URxvt.shading:15
 URxvt.iso14755: false
@@ -58,3 +56,6 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 ! white
 *.color7:       #e5e5e5
 *.color15:      #ffffff
+
+! xterm
+XTerm*faceName: Inconsolata For Powerline:size=13
