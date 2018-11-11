@@ -35,7 +35,7 @@ smart_gaps on
 # bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+Return exec urxvt -cd "`xcwd`"
-# bindsym $mod+e exec xfce4-terminal --working-directory=`xcwd`
+bindsym $mod+e exec urxvt -e ranger
 
 # kill focused window:
 # the i3 way
@@ -86,8 +86,8 @@ bindsym $mod+Mod1+Up resize shrink height 10 px or 10 ppt
 bindsym $mod+Mod1+Right resize grow width 10 px or 10 ppt
 
 # splits
-bindsym $mod+e split h
-bindsym $mod+o split v
+bindsym $mod+v split h
+bindsym $mod+s split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
