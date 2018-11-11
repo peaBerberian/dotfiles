@@ -65,7 +65,7 @@ alias grc='git rebase --continue'
 
 # ---- yay alias ----
 
-alias yu="curl -s https://www.archlinux.org/feeds/news/ | xmllint --xpath //item/title\ \|\ //item/pubDate /dev/stdin | sed -r -e \"s:<title>([^<]*?)</title><pubDate>([^<]*?)</pubDate>:\2\t\1\n:g\" && yay -Syu"
+alias yu="curl -s https://www.archlinux.org/feeds/news/ | xmllint --xpath //item/title\ \|\ //item/pubDate /dev/stdin | sed -r -e \"s:<title>([^<]*?)</title><pubDate>([^<]*?)</pubDate>:\2\t\1\n:g\" && yay -Syu --combinedupgrade"
 
 # ---- npm alias ----
 
