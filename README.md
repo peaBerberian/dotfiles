@@ -6,15 +6,21 @@ Config tested successfully on Arch Linux with i3wm, Debian 8 with i3wm and Linux
 Those files just need to be directly in the $HOME directory.
 
 ### .config/alacritty/alacritty.yml
-[Alacritty](https://github.com/jwilm/alacritty) terminal config.
+[Alacritty](https://github.com/jwilm/alacritty) terminal configuration.
 
 ### .config/i3status/config
 Configuration for [i3status](https://i3wm.org/i3status/).
 Straightforward: display disks, network, battery, volume informations and the time, in that order.
 
+### .config/lxterminal/lxterminal.conf
+Basic [lxterminal](https://wiki.lxde.org/fr/LXTerminal) configuration.
+
 ### .config/nvim/*
 [Neovim](https://neovim.io/) configuration.
 Composed only of symbolic links to its vim counterparts.
+
+### .config/oni/*
+[Oni](https://github.com/onivim/oni) (electron-based front end for neovim) configuration files.
 
 ### .config/openbox/*
 [Openbox](http://openbox.org/wiki/Main_Page) configuration files.
@@ -28,6 +34,9 @@ The last time I used openbox was a long time ago (on Arch / CrunchBang) so may b
 
 ### .config/terminator/config
 [Terminator terminal](https://gnometerminator.blogspot.com/p/introduction.html) configuration, mainly profiles. Needs powerline fonts.
+
+### .config/xfce4/terminal/terminalrc
+[termite](https://github.com/thestinger/termite) (terminal) configuration
 
 ### .config/xfce4/terminal/terminalrc
 [xfce4-terminal](https://docs.xfce.org/apps/terminal/start) configuration
