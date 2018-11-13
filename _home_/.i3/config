@@ -286,7 +286,7 @@ bar {
   status_command i3blocks
   colors {
         # basic colors
-        background #191919
+        background #222222
         statusline #aaaa99
 
         # bar colors       border             background        text
