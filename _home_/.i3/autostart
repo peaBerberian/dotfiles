@@ -1,12 +1,6 @@
 #!/bin/bash
-wallpapers_directory=$HOME/images/wallpapers
 
 # Start applets
-
-# Network-manager
-if hash nm-applet 2>/dev/null; then
-  nm-applet &
-fi
 
 # Bind media keys
 if hash xbindkeys 2>/dev/null; then
@@ -23,12 +17,19 @@ if hash xscreensaver 2>/dev/null; then
   fi
 fi
 
-# randomize wallpapers
-if [ -d $wallpapers_directory ] ; then
-  feh --recursive --randomize --bg-fill $wallpapers_directory
-fi
-
 # Execute power manager
 if hash xfce4-power-manager 2>/dev/null; then
   xfce4-power-manager &
+fi
+
+if hash nm-applet 2>/dev/null; then
+  nm-applet &
+fi
+
+if hash redshift 2>/dev/null; then
+  redshift &
+fi
+
+if [ -f $HOME/.update_wallpaper.sh ]; then
+  $HOME/.update_wallpaper.sh &
 fi
