@@ -1,7 +1,7 @@
 ! urxvt
 URxvt*buffered: true
 URxvt*cursorBlink: true
-URxvt*font: xft:Inconsolata For Powerline:size=13:antialias=true, xft:DejaVu Sans:size=12
+URxvt*font: xft:Inconsolata Nerd Font Mono:size=12:antialias=true, xft:DejaVu Sans:size=12
 URxvt*depth: 32
 URxvt*borderless: 1
 URxvt*scrollBar: false
@@ -13,7 +13,9 @@ URxvt.perl-ext-common: default,matcher
 URxvt.urlLauncher: firefox
 URxvt.matcher.button: 1
 URxvt.transparent: true
-URxvt.shading:15
+URxvt.shading:35
+URxvt.visualBell:true
+urxvt*blurRadius: 15
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
@@ -42,8 +44,8 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 *.color11:      #fefd8b
 
 ! blue
-*.color4:       #445adb
-*.color12:      #81b4e0
+*.color4:       #a7d6ff
+*.color12:      #bce0ff
 
 ! magenta
 *.color5:       #cb1ed1
