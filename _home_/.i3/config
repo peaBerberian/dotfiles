@@ -203,6 +203,21 @@ mode "$mode_gaps" {
         bindsym Escape mode "default"
 }
 
+# Outer Gaps mode
+set $mode_outer_gaps Outer Gaps: Down/Up/Left: More/Less/Reset. Shift for global
+bindsym $mod+Shift+g mode "$mode_outer_gaps"
+mode "$mode_outer_gaps" {
+        bindsym Down  gaps outer current plus 5
+        bindsym Up gaps outer current minus 5
+        bindsym Left gaps outer current set 0
+
+        bindsym Shift+Down  gaps outer all plus 5
+        bindsym Shift+Up gaps outer all minus 5
+        bindsym Shift+Left     gaps outer all set 0
+
+        bindsym Escape mode "default"
+}
+
 # Resize mode
 set $mode_resize Resize mode: Left/Right: shrink/grow width, Up/Down: skrink/grow height. Shift for bigger steps.
 bindsym $mod+r mode "$mode_resize"
