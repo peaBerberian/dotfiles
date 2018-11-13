@@ -27,7 +27,7 @@ new_window 1pixel
 # set gaps
 gaps inner 0
 gaps outer 0
-smart_gaps on
+smart_gaps off
 
 # ~~~~~~~~~~~~~~~~~~~ SHORTCUTS ~~~~~~~~~~~~~~~~~~~
 
