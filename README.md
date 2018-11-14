@@ -35,7 +35,7 @@ The last time I used openbox was a long time ago (on Arch / CrunchBang) so may b
 ### .config/terminator/config
 [Terminator terminal](https://gnometerminator.blogspot.com/p/introduction.html) configuration, mainly profiles. Needs powerline fonts.
 
-### .config/xfce4/terminal/terminalrc
+### .config/termite/config
 [termite](https://github.com/thestinger/termite) (terminal) configuration
 
 ### .config/xfce4/terminal/terminalrc
