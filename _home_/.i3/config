@@ -25,7 +25,7 @@ for_window [title="xfce4-notifyd"] floating enable
 new_window 1pixel
 
 # set gaps
-gaps inner 0
+gaps inner 3
 gaps outer 0
 smart_gaps off
 
