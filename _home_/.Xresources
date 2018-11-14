@@ -13,9 +13,9 @@ URxvt.perl-ext-common: default,matcher
 URxvt.urlLauncher: firefox
 URxvt.matcher.button: 1
 URxvt.transparent: true
-URxvt.shading:35
+URxvt.shading:50
 URxvt.visualBell:true
-urxvt*blurRadius: 15
+urxvt*blurRadius: 20
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
@@ -29,7 +29,7 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 ! black
 *.color0:       #000000
-*.color8:       #4d4d4d
+*.color8:       #5d5d5d
 
 ! red
 *.color1:       #cc7373
