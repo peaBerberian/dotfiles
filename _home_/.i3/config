@@ -43,14 +43,9 @@ bindsym $mod+Shift+q kill
 # Old fashioned Alt+F4
 bindsym Mod1+F4 kill
 
-# start dmenu (a program launcher)
+# start rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
-
-bindsym $mod+Escape exec "python3 ~/.i3/winmenu.py"
+bindsym $mod+Escape exec --no-startup-id rofi -show window
 
 # change focus
 bindsym $mod+h focus left
