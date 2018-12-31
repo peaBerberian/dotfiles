@@ -191,12 +191,12 @@ bindsym $mod+Shift+z move container to workspace back_and_forth; workspace back_
 set $mode_gaps Inner Gaps: Down/Up/Left: More/Less/Reset. Shift for global
 bindsym $mod+g mode "$mode_gaps"
 mode "$mode_gaps" {
-        bindsym Down  gaps inner current plus 5
-        bindsym Up gaps inner current minus 5
+        bindsym Down  gaps inner current plus 4
+        bindsym Up gaps inner current minus 4
         bindsym Left gaps inner current set 0
 
-        bindsym Shift+Down  gaps inner all plus 5
-        bindsym Shift+Up gaps inner all minus 5
+        bindsym Shift+Down  gaps inner all plus 4
+        bindsym Shift+Up gaps inner all minus 4
         bindsym Shift+Left     gaps inner all set 0
 
         bindsym Escape mode "default"
@@ -206,12 +206,12 @@ mode "$mode_gaps" {
 set $mode_outer_gaps Outer Gaps: Down/Up/Left: More/Less/Reset. Shift for global
 bindsym $mod+Shift+g mode "$mode_outer_gaps"
 mode "$mode_outer_gaps" {
-        bindsym Down  gaps outer current plus 5
-        bindsym Up gaps outer current minus 5
+        bindsym Down  gaps outer current plus 4
+        bindsym Up gaps outer current minus 4
         bindsym Left gaps outer current set 0
 
-        bindsym Shift+Down  gaps outer all plus 5
-        bindsym Shift+Up gaps outer all minus 5
+        bindsym Shift+Down  gaps outer all plus 4
+        bindsym Shift+Up gaps outer all minus 4
         bindsym Shift+Left     gaps outer all set 0
 
         bindsym Escape mode "default"
