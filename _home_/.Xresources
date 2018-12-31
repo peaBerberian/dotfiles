@@ -13,51 +13,51 @@ URxvt.perl-ext-common: default,matcher
 URxvt.urlLauncher: firefox
 URxvt.matcher.button: 1
 URxvt.transparent: true
-URxvt.shading:50
+URxvt.shading:40
 URxvt.visualBell:true
-urxvt*blurRadius: 20
+urxvt*blurRadius:10
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 ! special
-*.foreground:     #ffffff
-*.background:     #000000
-*.cursorColor:    #ffffff
-*.underlineColor: #aaaaaa
+*.foreground:   #ffffff
+*.background:   #000000
+*.cursorColor:  #ffffff
 
 ! black
 *.color0:       #000000
-*.color8:       #5d5d5d
+*.color8:       #858585
+! *.color8:       #57606f
 
 ! red
-*.color1:       #cc7373
-*.color9:       #ff3d3d
+*.color1:       #ee7878
+*.color9:       #ff4444
 
 ! green
-*.color2:       #74c469
-*.color10:      #9ef890
+*.color2:       #6da950
+*.color10:      #96ec8c
 
 ! yellow
-*.color3:       #bab976
-*.color11:      #fefd8b
+*.color3:       #ffec6c
+*.color11:      #f2e69d
 
 ! blue
-*.color4:       #a7d6ff
-*.color12:      #bce0ff
+*.color4:       #87b3d7
+*.color12:      #98b9d6
 
 ! magenta
-*.color5:       #cb1ed1
-*.color13:      #fd28ff
+*.color5:       #de7aff
+*.color13:      #ecaeff
 
 ! cyan
-*.color6:       #8dd7d7
-*.color14:      #96ffff
+*.color6:       #87ffef
+*.color14:      #b1fff3
 
 ! white
-*.color7:       #e5e5e5
-*.color15:      #ffffff
+*.color7:       #909090
+*.color15:      #dadada
 
 ! xterm
 XTerm*faceName: Inconsolata For Powerline:size=13
