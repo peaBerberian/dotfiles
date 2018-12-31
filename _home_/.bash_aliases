@@ -4,9 +4,9 @@ alias c='cd'
 
 # ---- ls alias ----
 
-alias ll='exa -lgaGh --git --group-directories-first'
-alias la='exa -aG --group-directories-first'
-alias lt='exa -lgaGh --sort oldest --git'
+alias ll='exa -lgah --git --group-directories-first'
+alias la='exa -a --group-directories-first'
+alias lt='exa -lgah --sort oldest --git'
 
 # --------
 
