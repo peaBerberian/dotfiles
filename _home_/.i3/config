@@ -29,9 +29,9 @@ for_window [class="xpad"] floating enable
 new_window 1pixel
 
 # set gaps
-gaps inner 3
+gaps inner 12
 gaps outer 0
-smart_gaps off
+# smart_gaps on
 
 # ~~~~~~~~~~~~~~~~~~~ SHORTCUTS ~~~~~~~~~~~~~~~~~~~
 
