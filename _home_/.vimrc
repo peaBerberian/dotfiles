@@ -8,27 +8,6 @@
 
 " Personal config file for vim/neovim, with its own theme and plugins.
 
-" It is mostly configured for the following languages:
-
-"   - JavaScript (up to ECMAScript 6) / JSON / JSX
-
-"   - elm
-
-"   - CSS / LESS
-
-"   - Node.JS
-
-"   - Qml
-
-"   - C / C++
-
-"   - Go
-
-"   - Rust
-
-"   - Python
-
-
 " ---- Prerequisites ----
 
 " Some plugins need more than this file to be able to work seamlessly.
@@ -44,9 +23,6 @@
 "     via respectively a global 'node' and 'npm' commands.
 "     => https://github.com/ternjs/tern_for_vim
 
-"   - TagBar : need exuberant-ctags package.
-"     => https://github.com/majutsushi/tagbar
-
 "   - Ack.vim : You will need ag (the silver searcher) + Ack installed. This
 "     will also be used by the fzf plugin.
 "     => https://github.com/epmatsw/ag.vim
@@ -60,17 +36,10 @@
 "     distribution. You might need to delete that line or change it.
 "     => https://github.com/Valloric/YouCompleteMe
 
-"   - elm-vim: You will need to install several npm packages: elm, elm-test,
-"     and elm-oracle.
-"     => https://github.com/ElmCast/elm-vim
-
 "   - vim-go : Needs go binaries to be installed. See their github for more
 "     infos. Those can be installed at any time after installing this vim
 "     config via the ":GoInstallBinaries" command.
 "     => https://github.com/fatih/vim-go
-
-"   - vimproc: Needs to be build. See GitHub for more infos.
-"     => https://github.com/Shougo/vimproc.vim
 
 "   - ale: Needs eslint and tslint to be installed and accessible in the PATH.
 "     => https://github.com/w0rp/ale
@@ -80,7 +49,7 @@
 
 "   1. Install vim or neovim.
 
-"   2. Make sure ALL prerequisites are met.
+"   2. Make sure prerequisites are met.
 
 "   3. Put this config file in the right folder (should be '~/.vimrc' for vim
 "      and '~/.config/nvim/init.vim' for nvim).
@@ -123,83 +92,18 @@ endif
 
 " More colorschemes
 Plug 'flazz/vim-colorschemes'
-" Plug 'rafi/awesome-vim-colorschemes'
-
-" terminus: Enhanced terminal integration
-Plug 'wincent/terminus'
 
 " ack.vim: Silver searcher integration in vi (ag)
 Plug 'mileszs/ack.vim'
 
-" vim-javascript: JS tools (mainly syntax hl and indent)
-Plug 'pangloss/vim-javascript'
-
-" tsuquyomi: TypeScript tools
-Plug 'Quramy/tsuquyomi'
-
-" yats.vim: TypeScript tools
-Plug 'leafgarland/typescript-vim'
-
-" vimproc: Interactive command execution in Vim
-Plug 'ujihisa/vimproc'
-
-" vim-elm: Elm language tools
-Plug 'ElmCast/elm-vim'
-
-" c.vim: C language tools
-Plug 'vim-scripts/c.vim'
-
-" vim-go: Go language tools
-Plug 'fatih/vim-go'
-
-" rust.vim: Rust language tools
-Plug 'rust-lang/rust.vim'
-
-" vim-racer: Rust code completion
-" Plug 'racer-rust/vim-racer'
-
-" vim-less: less (css files) syntax highlighting/indenting/completion
-Plug 'groenewege/vim-less'
-
-" vim-qml: Qml highlighting
-Plug 'peterhoeg/vim-qml'
-
-" vim-coffee-script: Coffee script tools (mainly syntax hl and indent)
-Plug 'kchmck/vim-coffee-script'
-
-"  MOS 6502,65c02,65816 Assembly syntax + Merlin Add-Ons
-Plug 'digarok/asmMerlin65816.vim'
-
-" python.vim: Python tools (mainly syntax hl and indent)
-Plug 'vim-scripts/python.vim'
-
-" ejs-syntax: Highlighting of ejs files
-Plug 'nikvdp/ejs-syntax'
-
-" emmet-vim: Emmet support
-Plug 'mattn/emmet-vim'
-
-" tabular: Tabular plugin
 " vim-markdown: Markdown tools
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
-
-" vim-json: JSON tools
-Plug 'elzr/vim-json'
 
 " delimitMate: Automatic Closing of brackets, quotes etc.
 Plug 'Raimondi/delimitMate'
 
-" supertab: Perform all vim insert mode completions with Tab
-Plug 'ervandew/supertab'
-
-" YouCompleteMe: Auto-completion engine
-Plug 'Valloric/YouCompleteMe'
-
-" tern_for_vim: JS auto-completion
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-
-" deoplete: Auto-completion engine
-" Plug 'Shougo/deoplete.nvim' | Plug 'marijnh/tern_for_vim'
+" coc.nvim: Auto-completion engine
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 " ultisnips: To use snippets
 " vim-snippets: Default snippets
@@ -224,23 +128,14 @@ Plug 'bling/vim-airline'
 " Powerline themes
 Plug 'vim-airline/vim-airline-themes'
 
-" lightline.vim: lighter and KISS-er airline
-" Plug 'itchyny/lightline.vim'
-
 " vim-fugitive: Git tools
 Plug 'tpope/vim-fugitive'
 
-" gv.vim: commit explorer
-Plug 'junegunn/gv.vim'
-
-" vim-abolish: Powerfull syntax tools (Mainly for Substitution and coercion)
-Plug 'tpope/vim-abolish'
+" vim-gitgutter: Show diff in gutter
+Plug 'airblade/vim-gitgutter'
 
 " tpope/vim-repeat: Repeat some plugins command with '.'
 Plug 'tpope/vim-repeat'
-
-" vim-gitgutter: Show diff in gutter
-Plug 'airblade/vim-gitgutter'
 
 " vim-easymotion: Faster navigation in file
 Plug 'Lokaltog/vim-easymotion'
@@ -261,38 +156,11 @@ Plug 'vim-scripts/YankRing.vim'
 " ale: display errors in gutter
 Plug 'w0rp/ale'
 
-" syntastic: Display Errors in gutter
-" Plug 'scrooloose/syntastic'
-
-" neomake: asynchronous Syntastic for nvim
-" Plug 'benekastah/neomake'
-
-" vim-multiple-cursors: CTRL-n to select many occurences of the same pattern
-" Plug 'terryma/vim-multiple-cursors'
-
-" tagbar: browse tags (need exuberant-ctags)
-Plug 'majutsushi/tagbar'
-
 " vim-indent-guides: show indentation on current file
 Plug 'nathanaelkane/vim-indent-guides'
 
 " switch.vim: Switch text easily
 Plug 'AndrewRadev/switch.vim'
-
-" vim-surround: Change 'surroundings' (brackets, quotes...) - cs command
-Plug 'tpope/vim-surround'
-
-" vimshell.vim: Vim shell
-" Plug 'Shougo/vimshell.vim'
-
-" vim-bookmarks: Beautiful bookmarks management. Integrated with Unite
-" Plug 'MattesGroeger/vim-bookmarks'
-
-" vim-jsx: jsx highlighting and indenting
-Plug 'mxw/vim-jsx'
-
-" javascript-libraries-syntax.vim: syntax for JavaScript libraries
-Plug 'othree/javascript-libraries-syntax.vim'
 
 " matchit: Extended % matching
 Plug 'tmhedberg/matchit'
@@ -300,14 +168,8 @@ Plug 'tmhedberg/matchit'
 " gundo.vim: Undo tree
 Plug 'sjl/gundo.vim', { 'on':  'GundoToggle' }
 
-" vim-flow: flow type checking
-Plug 'flowtype/vim-flow'
-
 " vim-eunuch: various UNIX tools
 Plug 'tpope/vim-eunuch'
-
-" vim-unimpaired: handy shortcuts with brackets
-Plug 'tpope/vim-unimpaired'
 
 " rainbow_parentheses: rainbow parentheses to easily match them
 Plug 'kien/rainbow_parentheses.vim'
@@ -321,11 +183,76 @@ Plug 'othree/html5.vim'
 " vim-highlightedyank: highlight yank selections for a few seconds
 Plug 'machakann/vim-highlightedyank'
 
-" webapi-vim: needed by gist-vim
-" Plug 'mattn/webapi-vim'
+" vim-javascript: JS tools (mainly syntax hl and indent)
+Plug 'pangloss/vim-javascript'
 
-" gist-vim: post on gist
-" Plug 'mattn/gist-vim'
+" vim-jsx: jsx highlighting and indenting
+Plug 'mxw/vim-jsx'
+
+" typescript-vim: TypeScript tools
+Plug 'leafgarland/typescript-vim'
+
+" c.vim: C language tools
+Plug 'vim-scripts/c.vim'
+
+" vim-go: Go language tools
+Plug 'fatih/vim-go'
+
+" rust.vim: Rust language tools
+Plug 'rust-lang/rust.vim'
+
+" python.vim: Python tools (mainly syntax hl and indent)
+Plug 'vim-scripts/python.vim'
+
+"----------------------------------------------------------------------
+
+" " vim-json: JSON tools
+" Plug 'elzr/vim-json'
+
+" " yats.vim: TypeScript tools
+" Plug 'HerringtonDarkholme/yats.vim'
+
+" " vim-flow: flow type checking
+" Plug 'flowtype/vim-flow'
+
+" vim-racer: Rust code completion
+" Plug 'racer-rust/vim-racer'
+
+" " vim-less: less (css files) syntax highlighting/indenting/completion
+" Plug 'groenewege/vim-less'
+
+" " vim-qml: Qml highlighting
+" Plug 'peterhoeg/vim-qml'
+
+" "  MOS 6502,65c02,65816 Assembly syntax + Merlin Add-Ons
+" Plug 'digarok/asmMerlin65816.vim'
+
+" " tern_for_vim: JS auto-completion
+" Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+
+" " vim-unimpaired: handy shortcuts with brackets
+" Plug 'tpope/vim-unimpaired'
+
+" " gv.vim: commit explorer
+" Plug 'junegunn/gv.vim'
+
+" " vim-abolish: Powerfull syntax tools (Mainly for Substitution and coercion)
+" Plug 'tpope/vim-abolish'
+
+" vim-multiple-cursors: CTRL-n to select many occurences of the same pattern
+" Plug 'terryma/vim-multiple-cursors'
+
+" " javascript-libraries-syntax.vim: syntax for JavaScript libraries
+" Plug 'othree/javascript-libraries-syntax.vim'
+
+" " supertab: Perform all vim insert mode completions with Tab
+" Plug 'ervandew/supertab'
+
+" " YouCompleteMe: Auto-completion engine
+" Plug 'Valloric/YouCompleteMe'
+
+" " tsuquyomi: TypeScript tools
+" Plug 'Quramy/tsuquyomi'
 
 " All of your Plugins must be added before the following line
 " Add plugins to &runtimepath
@@ -340,50 +267,9 @@ call plug#end()
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
 
+
 " ---- vim-markdown ----
 let g:vim_markdown_folding_disabled=1
-
-
-" ---- Syntastic ----
-" let g:syntastic_always_populate_loc_list=1
-" let g:syntastic_check_on_wq=0
-" let g:syntastic_javascript_checkers=['eslint']
-" let g:syntastic_warning_symbol='WW' " Symbol used for warnings
-" let g:syntastic_error_symbol='EE' " Symbol used for errors
-" let g:syntastic_mode_map = {
-"         \ "mode": "active",
-"         \ "active_filetypes": [""],
-"         \ "passive_filetypes": ["javascript"] }
-
-
-" ---- neomake ----
-" " add eslint
-" let g:neomake_javascript_eslint_maker = {
-"     \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-"     \ }
-" let g:neomake_javascript_jscs_maker = {
-"     \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-"     \ }
-" let g:neomake_javascript_jshint_maker = {
-"     \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-"     \ }
-" let g:neomake_javascript_enabled_makers = ['eslint']
-
-" let g:neomake_warning_sign = {
-"   \ 'text': 'W',
-"   \ 'texthl': 'WarningMsg',
-"   \ }
-
-" let g:neomake_error_sign = {
-"   \ 'text': 'E',
-"   \ 'texthl': 'ErrorMsg',
-"   \ }
-
-" " open loclist after neomake
-" let g:neomake_open_list = 2
-
-" " display errors / write in logs
-" let g:neomake_logfile='/tmp/neomake_error.log'
 
 
 " ---- easymotion ----
@@ -407,9 +293,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&
 
 " ---- yankring ----
 let g:yankring_history_dir = '~/.vim'
-
-"fix for yankring and neovim
-let g:yankring_clipboard_monitor=0
+let g:yankring_clipboard_monitor=0 " fix for yankring and neovim
 
 
 " ---- ctrlP ----
@@ -420,21 +304,44 @@ let g:ctrlp_custom_ignore = {
       \'tmp': '.*tmp/.*'}
 
 
-" ---- tagbar ----
-" Tagbar set for JavaScript
-" let g:tagbar_type_javascript = {
-"     \ 'ctagstype' : 'JavaScript',
-"     \ 'kinds'     : [
-"         \ 'o:objects',
-"         \ 'f:functions',
-"         \ 'a:arrays',
-"         \ 's:strings'
-"     \ ]
-"     \ }
+" " ---- tsuquyomi ----
+" autocmd FileType typescript setlocal completeopt+=menu,preview
 
 
-" ---- tsuquyomi ----
-autocmd FileType typescript setlocal completeopt+=menu,preview
+" ---- coc.nvim ----
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use K for show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 
 " ---- indent-guides ----
@@ -479,18 +386,6 @@ let g:switch_builtins =
       \     '\Ctrue':  'false',
       \     '\Cfalse': 'true',
       \   },
-      \   'javascript_function': {
-      \     'function \(\k\+\)(': 'var \1 = function(',
-      \     '\%(var \)\=\(\k\+\) = function(': 'function \1(',
-      \   },
-      \   'coffee_arrow': {
-      \     '^\(.*\)->': '\1=>',
-      \     '^\(.*\)=>': '\1->',
-      \   },
-      \   'coffee_dictionary_shorthand': {
-      \     '\([{,]\s*\)\@<=\(\k\+\)\(\s*[},]\)': '\2: \2\3',
-      \     '\([{,]\s*\)\@<=\(\k\+\): \?\2\(\s*[},]\)': '\2\3',
-      \   },
       \ }
 
 let g:switch_custom_rules =
@@ -516,28 +411,6 @@ let g:switch_custom_rules =
       \       '\([A-Z]\)': '_\l\1'
       \     },
       \   },
-      \   'if_bool': {
-      \     '\<if\> (true ||.*': {
-      \       'if (true ||': 'if (false &&'
-      \     },
-      \     '\<if\> (false &&.*': {
-      \       'if (false && ': 'if ('
-      \     },
-      \     '\<if\> (\%(true ||\|false &&\)\@!.*': {
-      \       'if (': 'if (true || '
-      \     },
-      \   },
-      \   'return_bool': {
-      \     '\<return true\> ||.*': {
-      \       'return true ||': 'return false &&'
-      \     },
-      \     '\<return false\> &&.*': {
-      \       'return false &&': 'return'
-      \     },
-      \     '\<return\> \%(true ||\|false &&\)\@!.*': {
-      \       'return ': 'return true || '
-      \     },
-      \   },
       \   'js_arrow_functions': {
       \     'function(\(.*\){': '(\1=> {',
       \     '(\(.*\)=> {': 'function(\1{',
@@ -558,24 +431,10 @@ let g:switch_custom_definitions =
       \   g:switch_custom_rules.if_else_else_if,
       \ ]
 
-autocmd FileType javascript let b:switch_definitions =
-      \ [
-      \   g:switch_builtins.javascript_function,
-      \ ]
-
 autocmd FileType javascript let b:switch_custom_definitions =
       \ [
       \   g:switch_custom_rules.import_export,
-      \   g:switch_custom_rules.if_bool,
-      \   g:switch_custom_rules.return_bool,
       \   g:switch_custom_rules.js_arrow_functions,
-      \   g:switch_builtins.coffee_dictionary_shorthand,
-      \ ]
-
-autocmd FileType coffee let b:switch_definitions =
-      \ [
-      \   g:switch_builtins.coffee_arrow,
-      \   g:switch_builtins.coffee_dictionary_shorthand,
       \ ]
 
 
@@ -586,7 +445,7 @@ let g:bookmark_show_toggle_warning = 0
 
 
 " ---- Supertab ----
-let g:SuperTabDefaultCompletionType = '<C-n>'
+" let g:SuperTabDefaultCompletionType = '<C-n>'
 
 
 " ---- YouCompleteMe ----
@@ -669,14 +528,8 @@ let g:UltiSnipsExpandTrigger="<c-SPACE>"
 let g:UltiSnipsJumpForwardTrigger="<c-SPACE>"
 let g:UltiSnipsJumpBackwardTrigger="<c-LEFT>"
 
-" ---- vim-flow ----
-let g:flow#enable = 0
-
 " ---- vim-jsx ----
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
-
-" ---- vim-elm ----
-let g:elm_setup_keybindings = 0
 
 " ---- vim-highlightedyank ----
 let g:highlightedyank_highlight_duration = 250
@@ -836,7 +689,7 @@ noremap <silent> <LEADER>x :bp!<bar>sp!<bar>bn!<bar>bd!<CR>
 noremap <silent> <LEADER>s :w<CR>
 
 " Quit
-noremap <silent> <LEADER>d :q!<CR>
+noremap <silent> <LEADER>q :q!<CR>
 
 " Save and quit
 noremap <silent> <LEADER>z :wq<CR>
@@ -845,7 +698,7 @@ noremap <silent> <LEADER>z :wq<CR>
 noremap <silent> <LEADER>wd :hide<CR>
 
 " Close QuickFix + Location List
-noremap <silent> <LEADER>q :cclose<CR>:lclose<CR>
+noremap <silent> <LEADER>d :cclose<CR>:lclose<CR>
 
 
 " ---- Replace
@@ -953,14 +806,10 @@ map <LEADER>h <Plug>(easymotion-linebackward)
 map <LEADER>j <Plug>(easymotion-j)
 map <LEADER>k <Plug>(easymotion-k)
 
-" Syntastic:
-" Start checking with syntastic plugin and display possible errors
-" nnoremap <F6> :SyntasticCheck<CR>:Errors<CR>
-
 " Ale:
 let g:ale_linters = {
 \  'javascript': ['eslint'],
-\  'typescript': ['tslint'],
+\  'typescript': ['tslint', 'tsserver'],
 \}
 
 " YankRing:
@@ -986,7 +835,6 @@ nnoremap <LEADER>A :Ack! "\b<cword>\b" %<CR>
 " F4 toggle number style
 " F3 toggle listchars
 " F5 Refresh file
-" F6 Open syntastic report
 " F7 Show/hide Yankring
 " F8 Show/hide Tagbar
 " F9 Show/hide Gundo
