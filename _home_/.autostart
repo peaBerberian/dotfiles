@@ -12,3 +12,13 @@ fi
 if [ -f /usr/bin/ssh-agent ]; then
   eval `/usr/bin/ssh-agent -s`
 fi
+
+# Bind media keys
+if hash xbindkeys 2>/dev/null; then
+  xbindkeys &
+fi
+
+# Execute power manager
+if hash xfce4-power-manager 2>/dev/null; then
+  xfce4-power-manager &
+fi

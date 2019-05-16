@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# Start applets
-
-# Bind media keys
-if hash xbindkeys 2>/dev/null; then
-  xbindkeys &
-fi
-
 # start xscreensaver
 if hash xscreensaver 2>/dev/null; then
   xscreensaver -no-splash &
@@ -17,11 +10,7 @@ if hash xscreensaver 2>/dev/null; then
   fi
 fi
 
-# Execute power manager
-if hash xfce4-power-manager 2>/dev/null; then
-  xfce4-power-manager &
-fi
-
+# Start applets
 if hash nm-applet 2>/dev/null; then
   nm-applet &
 fi
