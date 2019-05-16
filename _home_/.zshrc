@@ -102,6 +102,7 @@ bindkey "^R" history-incremental-search-backward
 . ~/.zplug/init.zsh
 
 zplug junegunn/fzf
+zplug andrewferrier/fzf-z
 zplug zsh-users/zsh-autosuggestions
 zplug zsh-users/zsh-completions, lazy:true
 zplug zsh-users/zsh-syntax-highlighting
@@ -123,11 +124,10 @@ if [ -f ~/.shellrc ]; then
   . ~/.shellrc
 fi
 
+# add fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export GPG_TTY=$(tty)
 
 # added by travis gem
 [ -f /home/oscar/.travis/travis.sh ] && source /home/oscar/.travis/travis.sh
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
