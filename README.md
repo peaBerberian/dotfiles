@@ -29,6 +29,10 @@ The last time I used openbox was a long time ago (on Arch / CrunchBang) so may b
  - "menu.xml": openbox menu configuration
  - "rc.xml": main openbox configuration (keybindings and tweaks)
 
+### .config/polybar/*
+[Polybar](https://polybar.github.io/) configuration.
+Default status bar used in my i3 windows manager configuration
+
 ### .config/redshift/redshift.conf
 [redshift](http://jonls.dk/redshift/) configuration.
 
