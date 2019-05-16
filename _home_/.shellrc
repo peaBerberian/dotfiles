@@ -13,10 +13,11 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/home/oscar/.gem/ruby/2.2.0/bin
 
 # Add GOPATH
-if [ -d ~/work/go ]; then
-  export GOPATH=$HOME/work/go
-  export PATH="$GOPATH/bin:$PATH"
+if [ ! -d "$HOME/prog/go" ]; then
+  mkdir -p $HOMEprog/go
 fi
+export GOPATH=$HOME/prog/go
+export PATH="$GOPATH/bin:$PATH"
 
 # add z
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
