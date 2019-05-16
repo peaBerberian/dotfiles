@@ -8,6 +8,10 @@ alias ll='exa -lgah --git --group-directories-first'
 alias la='exa -a --group-directories-first'
 alias lt='exa -lgah --sort oldest --git'
 
+alias lal='exa -lgah --color always --git --group-directories-first | less'
+alias lll='exa -lgah --color always --git --group-directories-first | less'
+alias ltl='exa -lgah --color always --sort oldest --git | less'
+
 # --------
 
 # ---- config files ----
