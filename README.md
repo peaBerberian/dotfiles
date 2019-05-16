@@ -33,6 +33,9 @@ The last time I used openbox was a long time ago (on Arch / CrunchBang) so may b
 [Polybar](https://polybar.github.io/) configuration.
 Default status bar used in my i3 windows manager configuration
 
+### .config/ranger/*
+[Ranger](https://ranger.github.io/) configuration, default file manager.
+
 ### .config/redshift/redshift.conf
 [redshift](http://jonls.dk/redshift/) configuration.
 
