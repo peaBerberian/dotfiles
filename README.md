@@ -81,6 +81,9 @@ Some essential config for [nethack](https://www.nethack.org/)
 Simple script called by login shell on [linux Mint](https://www.linuxmint.com/) to run autostart scripts: namely .autostart and .xsessionrc
 Needs to be renamed to '.profile' (ONLY if .xinitrc is not already launched).
 
+### .restart_clock.sh
+Simple script to restard ntp daemon.
+
 ### .spacemacs
 [Spacemacs](http://spacemacs.org/) configuration.
 
