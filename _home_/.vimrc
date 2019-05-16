@@ -106,6 +106,8 @@ endif
 
 " More colorschemes
 Plug 'flazz/vim-colorschemes'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'gregsexton/Atom'
 
 " ack.vim: Silver searcher integration in vi (ag)
 Plug 'mileszs/ack.vim'
@@ -948,9 +950,10 @@ endfunction
 "-----------------------------------------------------------------------------
 "                             COLORSCHEME
 "-----------------------------------------------------------------------------
-" Remove (or comment) this line if the following colorscheme does not exist
-colorscheme hybrid
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
 set background=dark
+
+" Remove (or comment) this line if the following colorscheme does not exist
+colorscheme hybrid
