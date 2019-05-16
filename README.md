@@ -87,6 +87,10 @@ Close to empty [tern](https://ternjs.net/) configuration file. Used by tern, its
 ### .tmux.conf
 [tmux](https://github.com/tmux/tmux) configuration.
 
+### .update\_wallpaper.sh
+Requires [feh](https://feh.finalrewind.org/) and some wallpapers in `$HOME/images/wallpapers`.
+Update the background every hour.
+
 ### .vimrc
 Bloated but functionnal configuration for [vim](https://www.vim.org/) with countless plugins. Fully compatible with neovim.
 
