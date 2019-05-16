@@ -11,9 +11,6 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 xsession=$HOME/.xsessionrc
 autostart=$HOME/.autostart
 
-# deactivate system bell
-xset b off
-
 # merge in defaults and keymaps
 if [ -f $sysresources ]; then
   xrdb -merge $sysresources
