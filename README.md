@@ -39,6 +39,9 @@ Default status bar used in my i3 windows manager configuration
 ### .config/redshift/redshift.conf
 [redshift](http://jonls.dk/redshift/) configuration.
 
+### .config/sxhkd/sxhkdrc
+[Simple X hotkey daemon](https://github.com/baskerville/sxhkd) configuration to be used with the [bspwm](https://github.com/baskerville/bspwm) window manager.
+
 ### .config/terminator/config
 [Terminator terminal](https://gnometerminator.blogspot.com/p/introduction.html) configuration, mainly profiles. Needs powerline fonts.
 
