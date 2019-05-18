@@ -12,8 +12,12 @@ Those files just need to be directly in the $HOME directory.
 Configuration for [i3status](https://i3wm.org/i3status/).
 Straightforward: display disks, network, battery, volume informations and the time, in that order.
 
+Might be outdated as `polybar` replaces it now.
+
 ### .config/lxterminal/lxterminal.conf
 Basic [lxterminal](https://wiki.lxde.org/fr/LXTerminal) configuration.
+
+Might be outdated as `alacritty` is my main terminal emulator now.
 
 ### .config/nvim/*
 [Neovim](https://neovim.io/) configuration.
@@ -22,12 +26,15 @@ Composed only of symbolic links to its vim counterparts.
 ### .config/oni/*
 [Oni](https://github.com/onivim/oni) (electron-based front end for neovim) configuration files.
 
+As I do not use it often, this file might be outdated.
+
 ### .config/openbox/*
 [Openbox](http://openbox.org/wiki/Main_Page) configuration files.
-The last time I used openbox was a long time ago (on Arch / CrunchBang) so may be outdated.
  - "autostart": startup script for each openbox session.
  - "menu.xml": openbox menu configuration
  - "rc.xml": main openbox configuration (keybindings and tweaks)
+
+The last time I used openbox was a long time ago (on Arch / CrunchBang) so may be outdated.
 
 ### .config/polybar/*
 [Polybar](https://polybar.github.io/) configuration.
@@ -42,14 +49,22 @@ Default status bar used in my i3 windows manager configuration
 ### .config/sxhkd/sxhkdrc
 [Simple X hotkey daemon](https://github.com/baskerville/sxhkd) configuration to be used with the [bspwm](https://github.com/baskerville/bspwm) window manager.
 
+Might be outdated as my main window-manager is `i3-wm`.
+
 ### .config/terminator/config
 [Terminator terminal](https://gnometerminator.blogspot.com/p/introduction.html) configuration, mainly profiles. Needs powerline fonts.
+
+Might be outdated as `alacritty` is my main terminal emulator now.
 
 ### .config/termite/config
 [termite](https://github.com/thestinger/termite) (terminal) configuration
 
+Might be outdated as `alacritty` is my main terminal emulator now.
+
 ### .config/xfce4/terminal/terminalrc
 [xfce4-terminal](https://docs.xfce.org/apps/terminal/start) configuration
+
+Might be outdated as `alacritty` is my main terminal emulator now.
 
 ### .i3/
 Multiple [i3](https://i3wm.org/) configuration files.
@@ -81,17 +96,23 @@ Some essential config for [nethack](https://www.nethack.org/)
 Simple script called by login shell on [linux Mint](https://www.linuxmint.com/) to run autostart scripts: namely .autostart and .xsessionrc
 Needs to be renamed to '.profile' (ONLY if .xinitrc is not already launched).
 
+Might be outdated as I did not use Linux Mint for a long time.
+
 ### .restart_clock.sh
 Simple script to restard ntp daemon.
 
 ### .spacemacs
 [Spacemacs](http://spacemacs.org/) configuration.
 
+Might be outdated.
+
 ### .tern-config
 Close to empty [tern](https://ternjs.net/) configuration file. Used by tern, itself used by vim.
 
 ### .tmux.conf
 [tmux](https://github.com/tmux/tmux) configuration.
+
+Might be outdated.
 
 ### .update\_wallpaper.sh
 Requires [feh](https://feh.finalrewind.org/) and some wallpapers in `$HOME/images/wallpapers`.
