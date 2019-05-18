@@ -129,3 +129,9 @@ Default [JSHint](http://jshint.com/) configuration. JavaScript linter for code e
 
 ### tslint.json
 Default [TSLint](https://palantir.github.io/tslint/) configuration. TypeScript linter.
+
+## xorg.conf.d
+Custom Xorg configuration
+
+### 70-synaptics.conf
+Sane defaults for a laptop touchpad
