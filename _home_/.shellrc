@@ -14,7 +14,7 @@ export PATH=$PATH:/home/oscar/.gem/ruby/2.2.0/bin
 
 # Add GOPATH
 if [ ! -d "$HOME/prog/go" ]; then
-  mkdir -p $HOMEprog/go
+  mkdir -p $HOME/prog/go
 fi
 export GOPATH=$HOME/prog/go
 export PATH="$GOPATH/bin:$PATH"
