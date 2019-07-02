@@ -131,3 +131,5 @@ export GPG_TTY=$(tty)
 
 # added by travis gem
 [ -f /home/oscar/.travis/travis.sh ] && source /home/oscar/.travis/travis.sh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
