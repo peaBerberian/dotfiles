@@ -119,6 +119,25 @@ zplug load
 
 ## Scripts #####################################################################
 
+
+### Absolute "cd" paths to history #############################################
+
+# skip adding "cd" commands to history
+function zshaddhistory() {
+    if [[ $1 = cd\ * ]]; then
+        return 1
+    fi
+}
+
+# add a "cd <absolute path>" to history whenever the working directory changes
+function chpwd() {
+    escaped_dir=$(printf %q "$(pwd)") # escape spaces in directory names
+    print -rs "cd $escaped_dir"
+}
+
+
+### Misc #######################################################################
+
 # Call common shell rc script
 if [ -f ~/.shellrc ]; then
   . ~/.shellrc
