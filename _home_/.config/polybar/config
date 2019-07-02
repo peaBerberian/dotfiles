@@ -81,7 +81,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_free%%
 label-mounted-underline = ${colors.green}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
@@ -92,7 +92,7 @@ interval = 25
 
 mount-0 = /home
 
-label-mounted = %{F#0a81f5}~%{F-}: %percentage_used%%
+label-mounted = %{F#0a81f5}~%{F-}: %percentage_free%%
 label-mounted-underline = ${colors.primary}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
