@@ -220,6 +220,9 @@ Plug 'rust-lang/rust.vim'
 " python.vim: Python tools (mainly syntax hl and indent)
 Plug 'vim-scripts/python.vim'
 
+" vim-glsl: GLSL syntax
+Plug 'tikhomirov/vim-glsl'
+
 " vim-toml: TOML Syntax
 Plug 'cespare/vim-toml'
 
