@@ -698,6 +698,25 @@ augroup LargeFile
         \ endif
 augroup END
 
+" Do not redraw screen in the middle of a macro. Makes them complete faster.
+set lazyredraw
+
+" Persistent undo, even if you close and reopen Vim. Super great when combined
+" with the undotree plugin.
+set undofile
+
+set foldcolumn=3
+
+" This is Neovim only.
+" inccommand shows you in realtime what changes your ex command should make.
+" Right now it only supports s, but even that is incredibly useful. If you type
+" :s/regex, it will highlight what matches regex. If you then add /change, it
+" will show all matches replaced with change. This works with all of the regex
+" properties, include backreferences and groups.
+if (has("nvim"))
+  set inccommand=nosplit
+endif
+
 
 "-----------------------------------------------------------------------------
 "                                 MAPPING
