@@ -138,6 +138,9 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+" editorconfig-vim: Handle `.editorconfig` files
+Plug 'editorconfig/editorconfig-vim'
+
 " vim-airline: 1337 interface :p. Has to have compatible fonts
 Plug 'bling/vim-airline'
 
