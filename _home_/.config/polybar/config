@@ -9,7 +9,7 @@ col = #00f
 green =  #5ab738
 
 [bar/top]
-# monitor = eDP-1-1
+# monitor = HDMI-0
 width = 100%
 height = 24
 offset-x = 0
