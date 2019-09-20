@@ -49,9 +49,12 @@ alias gl='git log --oneline --graph --pretty=format:"%C(3)%h %C(75)%ad %C(41)%an
 alias gla='git log --all --oneline --graph --pretty=format:"%C(3)%h %C(75)%ad %C(41)%an%C(auto)%d %s" --date=short'
 
 alias gm='git commit -m'
+alias gmn='git commit --no-verify -m'
 alias gma='git commit --amend'
+alias gmna='git commit --no-verify --amend'
 
 alias gp='git push origin'
+alias gpn='git push --no-verify origin'
 alias gpp='git push --force-with-lease origin'
 
 alias gpt='git pull origin'
