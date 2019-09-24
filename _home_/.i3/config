@@ -25,8 +25,9 @@ for_window [class="gimp"] floating enable
 for_window [class="Xpad"] floating enable
 for_window [class="xpad"] floating enable
 
-# disable titlebar, 1pixel border
-new_window 1pixel
+# disable titlebar, border size
+default_border pixel 2
+default_floating_border pixel 2
 
 # set gaps
 gaps inner 12
@@ -285,7 +286,7 @@ set $denim  #1560bd
 # ~~ i3wm colors ~~
 
 # windows decorations       border           background       text             indicator
-client.focused              $anthracite      $anthracite      $white           $dim-grey
+client.focused              $olive           $olive           $white           $dim-grey
 client.unfocused            $arsenic         $arsenic         $white           $black
 client.focused_inactive     $arsenic         $arsenic         $white           $black
 client.urgent               $crimson-red     $crimson-red     $white           $black
