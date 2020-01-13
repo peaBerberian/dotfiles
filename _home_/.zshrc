@@ -152,3 +152,11 @@ export GPG_TTY=$(tty)
 [ -f /home/oscar/.travis/travis.sh ] && source /home/oscar/.travis/travis.sh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Set up Node Version Manager
+source /usr/share/nvm/init-nvm.sh
+
+# Set up Node Version Manager
+export NVM_DIR="$HOME/.nvm"                            # You can change this if you want.
+export NVM_SOURCE="/usr/share/nvm"                     # The AUR package installs it to here.
+[ -s "$NVM_SOURCE/nvm.sh" ] && . "$NVM_SOURCE/nvm.sh"  # Load NVM
