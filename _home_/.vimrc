@@ -625,7 +625,6 @@ set title
 set visualbell
 set noerrorbells
 set nobackup
-set noswapfile
 set list
 set ignorecase
 set smartcase
