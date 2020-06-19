@@ -25,6 +25,4 @@ export PATH="$GOPATH/bin:$PATH"
 # Add node_modules path
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.node_modules/bin:$PATH"
 
-export npm_config_prefix=~/.node_modules
-
 export CHROME_BIN=/usr/bin/chromium
