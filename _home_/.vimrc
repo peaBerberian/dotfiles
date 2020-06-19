@@ -19,14 +19,6 @@
 "   - vim-airline : need Powerline fonts installed and set for current terminal.
 "     => https://github.com/bling/vim-airline
 
-"   - tern_for_vim : You will need node.js and npm installed and accessible
-"     via respectively a global 'node' and 'npm' commands.
-"     => https://github.com/ternjs/tern_for_vim
-
-"   - Ack.vim : You will need ag (the silver searcher) + Ack installed. This
-"     will also be used by the fzf plugin.
-"     => https://github.com/epmatsw/ag.vim
-
 "   - YouCompleteMe: Will need some dependencies. Most notably python-devel,
 "     gcc, gcc-c++ and cmake.
 "     You will also need to compile it manually with the right options, for
@@ -119,7 +111,7 @@ Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 Plug 'Raimondi/delimitMate'
 
 " coc.nvim: Auto-completion engine
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " ultisnips: To use snippets
 " vim-snippets: Default snippets
@@ -229,6 +221,9 @@ Plug 'tikhomirov/vim-glsl'
 " vim-toml: TOML Syntax
 Plug 'cespare/vim-toml'
 
+" Wrap vim/neovim terminal
+Plug 'kassio/neoterm'
+
 "----------------------------------------------------------------------
 
 " " vim-json: JSON tools
@@ -251,9 +246,6 @@ Plug 'cespare/vim-toml'
 
 " "  MOS 6502,65c02,65816 Assembly syntax + Merlin Add-Ons
 " Plug 'digarok/asmMerlin65816.vim'
-
-" " tern_for_vim: JS auto-completion
-" Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 
 " " vim-unimpaired: handy shortcuts with brackets
 " Plug 'tpope/vim-unimpaired'
@@ -559,6 +551,8 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 " ---- vim-highlightedyank ----
 let g:highlightedyank_highlight_duration = 250
 
+" ---- neoterm ----
+let g:neoterm_default_mod = "vertical"
 
 "-----------------------------------------------------------------------------
 "                                SETTINGS
@@ -737,9 +731,6 @@ noremap <silent> <LEADER>q :q!<CR>
 " Save and quit
 noremap <silent> <LEADER>z :wq<CR>
 
-" Hide current split
-noremap <silent> <LEADER>wd :hide<CR>
-
 " Close QuickFix + Location List
 noremap <silent> <LEADER>d :cclose<CR>:lclose<CR>
 
@@ -749,13 +740,13 @@ nnoremap <LEADER>` :%s/<C-R><C-W>//gcI<LEFT><LEFT><LEFT><LEFT>
 
 
 " ---- Movement improvements
-nnoremap <S-Up> 6k
-nnoremap <S-Down> 6j
-nnoremap <S-Left> 6h
-nnoremap <S-Right> 6l
+" nnoremap <S-Up> 6k
+" nnoremap <S-Down> 6j
+" nnoremap <S-Left> 6h
+" nnoremap <S-Right> 6l
 
-nnoremap <C-Up> 6<C-y>
-nnoremap <C-Down> 6<C-e>
+" nnoremap <C-Up> 6<C-y>
+" nnoremap <C-Down> 6<C-e>
 
 " nnoremap <C-Left> 6h
 " nnoremap <C-Down> 6j
@@ -763,25 +754,28 @@ nnoremap <C-Down> 6<C-e>
 " nnoremap <C-Right> 6l
 
 " ---- navigate in jump list
-nnoremap g, <C-o>
-nnoremap g. <C-i>
+" nnoremap g, <C-o>
+" nnoremap g. <C-i>
 
 
 " ---- Tabulations improvements ----
-vnoremap > >gv
-vnoremap < <gv
-nnoremap <Tab> >>_
+
 nnoremap <S-Tab> <<_
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
+vnoremap > >gv
+vnoremap < <gv
+
+" Sadly, enters in conflict with <C-i> for some reasons
+" nnoremap <Tab> >>_
 
 
-" ---- Line numbers switching ----
-nnoremap <silent> <F3> :call NumberToggle()<cr>
+" " ---- Line numbers switching ----
+" nnoremap <silent> <F3> :call NumberToggle()<cr>
 
 
-" ---- listchars switching ----
-nnoremap <silent> <F4> :set list!<cr>
+" " ---- listchars switching ----
+" nnoremap <silent> <F4> :set list!<cr>
 
 
 " ---- Buffer navigation ----
@@ -789,7 +783,7 @@ nnoremap <silent> <F4> :set list!<cr>
 noremap <silent> <C-j> :bprevious!<CR>
 noremap <silent> <C-k> :bnext!<CR>
 
-" Move between windows splits (ctrl + alt + ...)
+" Move between windows splits
 " noremap <silent> <C-K> :wincmd k<CR>
 " noremap <silent> <C-J> :wincmd j<CR>
 " noremap <silent> <C-H> :wincmd h<CR>
@@ -799,9 +793,6 @@ noremap <silent> <C-l> :wincmd l<CR>
 
 
 " ---- Splits ----
-" Screen split, close to terminator terminal commands
-noremap <silent> <LEADER>wv :vsplit<CR>
-noremap <silent> <LEADER>ws :split<CR>
 
 " Resize split vertically
 nnoremap <silent> <LEADER>w+ :exe "vertical resize " . (winwidth(0) * 10/9)<CR>
@@ -817,6 +808,9 @@ nnoremap <silent> <LEADER>w/ :exe "resize " . (winheight(0) * 3/4)<CR>
 " nerdtree:
 " Show tree
 nmap <silent> <LEADER>ee :NERDTreeToggle<CR>
+
+" CoC
+nmap <silent> <LEADER>c :CocList<CR>
 
 " FZF:
 " Open from name
@@ -861,16 +855,11 @@ nnoremap <silent> <F7> :YRShow<CR>
 
 " Tagbar:
 " Open tagBar (need ctags and tagbar plugin)
-nnoremap <F8> :TagbarToggle<CR>
+" nnoremap <F8> :TagbarToggle<CR>
 
 " Gundo:
 " Display/hide Gundo
-nnoremap <silent> <F9> :GundoToggle<CR>
-
-" Ack:
-" Search word behind cursor
-nnoremap <LEADER>a :Ack! 
-nnoremap <LEADER>A :Ack! "\b<cword>\b" %<CR>
+" nnoremap <silent> <F9> :GundoToggle<CR>
 
 " ---- Function keys ----
 " F1 open help html
@@ -916,6 +905,11 @@ inoremap <C-v> <ESC>"+p
 " jk/kj to escape in insert/normal/visual mode
 inoremap jk <ESC>
 inoremap kj <ESC>
+
+" Terminal
+nnoremap <F3> :Ttoggle<cr><C-w><C-w>A
+inoremap <F3> <esc>:Ttoggle<cr><C-w><C-w>A
+tnoremap <F3> <C-\><C-n>:Ttoggle<cr>
 
 
 "-----------------------------------------------------------------------------
