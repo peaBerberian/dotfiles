@@ -6,7 +6,7 @@ alias c='cd'
 
 alias ll='exa -lgah --git --group-directories-first'
 alias la='exa -a --group-directories-first'
-alias lt='exa -lgah --sort oldest --git'
+alias lt='exa -lgah --sort newest --git'
 
 alias lal='exa -lgah --color always --git --group-directories-first | less'
 alias lll='exa -lgah --color always --git --group-directories-first | less'
