@@ -5,7 +5,7 @@ if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
-export TZ=:/etc/localtime
+export TZ='Europe/Paris'
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -26,3 +26,14 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.node_modules/bin:$PATH"
 
 export CHROME_BIN=/usr/bin/chromium
+
+export NPM_PACKAGES="$HOME/.npm-packages"
+if [ ! -d "$HOME/.npm-packages" ]; then
+  mkdir -p $HOME/.npm-packages
+fi
+NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+export PATH="$PATH:$NPM_PACKAGES/bin"
+
+# DPI settings
+export GDK_SCALE=2
+export GDK_DPI_SCALE=0.5
