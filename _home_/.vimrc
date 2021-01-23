@@ -19,21 +19,12 @@
 "   - vim-airline : need Powerline fonts installed and set for current terminal.
 "     => https://github.com/bling/vim-airline
 
-"   - YouCompleteMe: Will need some dependencies. Most notably python-devel,
-"     gcc, gcc-c++ and cmake.
-"     You will also need to compile it manually with the right options, for
-"     the desired language.
-"     Also, a direct path to python 2.7 had to be provided in this file through
-"     'g:ycm_server_python_interpreter' due to a problem with my current
-"     distribution. You might need to delete that line or change it.
-"     => https://github.com/Valloric/YouCompleteMe
-
 "   - vim-go : Needs go binaries to be installed. See their github for more
 "     infos. Those can be installed at any time after installing this vim
 "     config via the ":GoInstallBinaries" command.
 "     => https://github.com/fatih/vim-go
 
-"   - ale: Needs eslint and tslint to be installed and accessible in the PATH.
+"   - ale: Needs eslint to be installed and accessible in the PATH.
 "     => https://github.com/w0rp/ale
 
 " ---- Installation ----
@@ -106,9 +97,6 @@ Plug 'mileszs/ack.vim'
 
 " vim-markdown: Markdown tools
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
-
-" delimitMate: Automatic Closing of brackets, quotes etc.
-Plug 'Raimondi/delimitMate'
 
 " coc.nvim: Auto-completion engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -221,22 +209,13 @@ Plug 'tikhomirov/vim-glsl'
 " vim-toml: TOML Syntax
 Plug 'cespare/vim-toml'
 
-" Wrap vim/neovim terminal
+" neoterm: Wrap vim/neovim terminal
 Plug 'kassio/neoterm'
 
+" ranger.vim: ranger file explorer integration
+Plug 'francoiscabrol/ranger.vim'
+
 "----------------------------------------------------------------------
-
-" " vim-json: JSON tools
-" Plug 'elzr/vim-json'
-
-" " yats.vim: TypeScript tools
-" Plug 'HerringtonDarkholme/yats.vim'
-
-" " vim-flow: flow type checking
-" Plug 'flowtype/vim-flow'
-
-" vim-racer: Rust code completion
-" Plug 'racer-rust/vim-racer'
 
 " " vim-less: less (css files) syntax highlighting/indenting/completion
 " Plug 'groenewege/vim-less'
@@ -250,8 +229,8 @@ Plug 'kassio/neoterm'
 " " vim-unimpaired: handy shortcuts with brackets
 " Plug 'tpope/vim-unimpaired'
 
-" " gv.vim: commit explorer
-" Plug 'junegunn/gv.vim'
+" gv.vim: commit explorer
+Plug 'junegunn/gv.vim'
 
 " " vim-abolish: Powerfull syntax tools (Mainly for Substitution and coercion)
 " Plug 'tpope/vim-abolish'
@@ -261,15 +240,6 @@ Plug 'kassio/neoterm'
 
 " " javascript-libraries-syntax.vim: syntax for JavaScript libraries
 " Plug 'othree/javascript-libraries-syntax.vim'
-
-" " supertab: Perform all vim insert mode completions with Tab
-" Plug 'ervandew/supertab'
-
-" " YouCompleteMe: Auto-completion engine
-" Plug 'Valloric/YouCompleteMe'
-
-" " tsuquyomi: TypeScript tools
-" Plug 'Quramy/tsuquyomi'
 
 " All of your Plugins must be added before the following line
 " Add plugins to &runtimepath
@@ -338,6 +308,8 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 " Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
@@ -846,7 +818,7 @@ map <LEADER>k <Plug>(easymotion-k)
 " Ale:
 let g:ale_linters = {
 \  'javascript': ['eslint'],
-\  'typescript': ['tslint', 'tsserver'],
+\  'typescript': ['eslint', 'tsserver'],
 \}
 
 " YankRing:
@@ -910,6 +882,13 @@ inoremap kj <ESC>
 nnoremap <F3> :Ttoggle<cr><C-w><C-w>A
 inoremap <F3> <esc>:Ttoggle<cr><C-w><C-w>A
 tnoremap <F3> <C-\><C-n>:Ttoggle<cr>
+
+" Noop bad habits
+inoremap <ESC> <nop>
+nnoremap <Up> <nop>
+nnoremap <Down> <nop>
+nnoremap <Left> <nop>
+nnoremap <Right> <nop>
 
 
 "-----------------------------------------------------------------------------
