@@ -57,8 +57,9 @@ alias glb="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %
 # list every branch by commit date ascending order with last associated commit message displayed
 alias glbc="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
-alias gm='git commit -m'
-alias gmn='git commit --no-verify -m'
+alias gm='git commit'
+alias gmm='git commit -m'
+alias gmn='git commit --no-verify'
 alias gma='git commit --amend'
 alias gmna='git commit --no-verify --amend'
 
@@ -77,11 +78,6 @@ alias gri='git rebase -i'
 alias grc='git rebase --continue'
 
 # --------
-
-# ---- yay alias ----
-
-# Get the last Arch news before updating
-alias yu="curl -s https://www.archlinux.org/feeds/news/ | xmllint --xpath //item/title\ \|\ //item/pubDate /dev/stdin | sed -r -e \"s:<title>([^<]*?)</title><pubDate>([^<]*?)</pubDate>:\2\t\1\n:g\" && yay -Syu --combinedupgrade"
 
 # ---- npm alias ----
 
