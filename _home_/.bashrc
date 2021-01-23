@@ -90,18 +90,3 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export GPG_TTY=$(tty)
-
-# added by travis gem
-[ -f /home/oscar/.travis/travis.sh ] && source /home/oscar/.travis/travis.sh
-
-# set up node version manager
-source /usr/share/nvm/init-nvm.sh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# set up node version manager
-export nvm_dir="$home/.nvm"                            # you can change this if you want.
-export nvm_source="/usr/share/nvm"                     # the aur package installs it to here.
-[ -s "$nvm_source/nvm.sh" ] && . "$nvm_source/nvm.sh"  # load nvm
