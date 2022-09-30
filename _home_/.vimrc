@@ -16,9 +16,6 @@
 "     page.
 "     => https://github.com/junegunn/vim-plug
 
-"   - vim-airline : need Powerline fonts installed and set for current terminal.
-"     => https://github.com/bling/vim-airline
-
 "   - vim-go : Needs go binaries to be installed. See their github for more
 "     infos. Those can be installed at any time after installing this vim
 "     config via the ":GoInstallBinaries" command.
@@ -89,8 +86,8 @@ endif
 
 " More colorschemes
 Plug 'flazz/vim-colorschemes'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'gregsexton/Atom'
 
 " ack.vim: Silver searcher integration in vi (ag)
 Plug 'mileszs/ack.vim'
@@ -121,6 +118,10 @@ Plug 'junegunn/fzf.vim'
 " editorconfig-vim: Handle `.editorconfig` files
 Plug 'editorconfig/editorconfig-vim'
 
+" vim-lightline: 1337 interface :p
+" Plug 'itchyny/lightline.vim'
+" Plug 'mengelbrecht/lightline-bufferline'
+
 " vim-airline: 1337 interface :p. Has to have compatible fonts
 Plug 'bling/vim-airline'
 
@@ -135,9 +136,6 @@ Plug 'airblade/vim-gitgutter'
 
 " tpope/vim-repeat: Repeat some plugins command with '.'
 Plug 'tpope/vim-repeat'
-
-" vim-easymotion: Faster navigation in file
-Plug 'Lokaltog/vim-easymotion'
 
 " vim-sneak: Very convenient motion plugin (s + 2 letters)
 Plug 'justinmk/vim-sneak'
@@ -215,6 +213,12 @@ Plug 'kassio/neoterm'
 " ranger.vim: ranger file explorer integration
 Plug 'francoiscabrol/ranger.vim'
 
+if (has("nvim"))
+  " which-key: displays a popup with possible keybindings of the command you
+  " started typing
+  Plug 'folke/which-key.nvim'
+endif
+
 "----------------------------------------------------------------------
 
 " " vim-less: less (css files) syntax highlighting/indenting/completion
@@ -259,15 +263,11 @@ let g:javascript_plugin_flow = 1
 let g:vim_markdown_folding_disabled=1
 
 
-" ---- easymotion ----
-let g:EasyMotion_smartcase=1 " easymotion plugin use smartcase
-
-
 " ---- vim-airline ----
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline_theme='zenburn'
+let g:airline_powerline_fonts = 0
+let g:airline_theme='hybridline'
 let g:airline_section_b = "%{airline#extensions#branch#get_head()}"
 let g:airline_section_y = ""
 let g:airline_section_z = "%3p%% %#__accent_bold#% %l% %#__restore__#% /%#__accent_bold#% %L% %#__restore__#% \ :%3v"
@@ -296,24 +296,19 @@ let g:ctrlp_custom_ignore = {
 
 
 " ---- coc.nvim ----
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
-" Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
+  inoremap <silent><expr> <C-x><C-z> coc#pum#visible() ? coc#pum#stop() : "\<C-x>\<C-z>"
+
+  " remap for complete to use tab and <cr>
+  inoremap <silent><expr> <C-n>
+        \ coc#pum#visible() ? coc#pum#next(1): "\<C-n>"
+  inoremap <expr><C-p> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+  inoremap <silent><expr> <c-space> coc#refresh()
+
+  hi CocSearch ctermfg=12 guifg=#18A3FF
+  hi CocMenuSel ctermbg=109 guibg=#13354A
 
 " Use K for show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -456,7 +451,7 @@ let g:deoplete#enable_at_startup = 1
 
 " ---- Lightline ----
 let g:lightline = {
-\ 'colorscheme': 'landscape',
+\ 'colorscheme': 'one',
 \ 'enable': {
 \   'statusline': 1,
 \   'tabline': 1
@@ -468,15 +463,17 @@ let g:lightline = {
 \ 'component_expand': {
 \   'linter_warnings': 'LightlineLinterWarnings',
 \   'linter_errors': 'LightlineLinterErrors',
-\   'linter_ok': 'LightlineLinterOK'
+\   'linter_ok': 'LightlineLinterOK',
+\   'buffers': 'lightline#bufferline#buffers'
 \ },
 \ 'component_type': {
 \   'readonly': 'error',
 \   'linter_warnings': 'warning',
-\   'linter_errors': 'error'
+\   'linter_errors': 'error',
+\   'buffers': 'tabsel'
 \ },
 \ 'tabline': {
-\   'left': [ [ 'tabs' ] ],
+\   'left': [ [ 'buffers' ] ],
 \   'right': [ [ 'close' ] ]
 \ }
 \ }
@@ -525,6 +522,15 @@ let g:highlightedyank_highlight_duration = 250
 
 " ---- neoterm ----
 let g:neoterm_default_mod = "vertical"
+
+" ---- which-key ----
+lua << EOF
+require("which-key").setup {
+  -- your configuration comes here
+  -- or leave it empty to use the default settings
+  -- refer to the configuration section below
+  }
+EOF
 
 "-----------------------------------------------------------------------------
 "                                SETTINGS
@@ -585,6 +591,10 @@ set mouse+=a " enable mouse usage
 
 set hidden " Hide buffers when they are abandoned
 
+set updatetime=400 " Shorter update time for plugins
+
+set cmdheight=2 " More space for bottom messages
+
 set undolevels=1000
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title
@@ -630,6 +640,11 @@ set splitright " A vertical split is done at the right of the current one
 
 " decrease message size
 set shortmess=a
+
+" don't give |ins-completion-menu| messages.  For example,
+" -- XXX completion (YYY)", "match 1 of 2", "The only match",
+" Pattern not found", "Back at original", etc.
+set shortmess+=c
 
 " Highlight Search
 set hlsearch
@@ -803,17 +818,6 @@ noremap <silent> <LEADER>gd :Gdiff<CR>
 noremap <silent> <LEADER>gb :Gblame<CR>
 noremap <silent> <LEADER>gs :Gstatus<CR>
 noremap <silent> <LEADER>gl :Glog<CR>
-
-" easymotion:
-" Easymotion lookup
-nmap <silent> <LEADER>gg <Plug>(easymotion-s2)
-" nmap <silent> <LEADER>gh <Plug>(easymotion-sn)
-
-" Easymotion movements
-map <LEADER>l <Plug>(easymotion-lineforward)
-map <LEADER>h <Plug>(easymotion-linebackward)
-map <LEADER>j <Plug>(easymotion-j)
-map <LEADER>k <Plug>(easymotion-k)
 
 " Ale:
 let g:ale_linters = {

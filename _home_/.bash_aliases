@@ -44,6 +44,7 @@ alias gaa='git add --all'
 alias gam='git commit -a -m'
 
 alias gd='git diff'
+alias gdn='git diff --no-ext-diff'
 
 # Prettified log for the current branch
 alias gl='git log --oneline --graph --pretty=format:"%C(3)%h %C(75)%ad %C(41)%an%C(auto)%d %s" --date=short'

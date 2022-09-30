@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export EDITOR=nvim
+
 # Path to your oh-my-zsh installation.
 export ZSH="/home/oscar/.oh-my-zsh"
 
@@ -23,14 +25,13 @@ ZSH_THEME="robbyrussell"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -45,7 +46,10 @@ ZSH_THEME="robbyrussell"
 ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -79,6 +83,13 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -91,95 +102,43 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export MOZ_ENABLE_WAYLAND=1
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-## Editor configuration ########################################################
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-export EDITOR='vim'
-export PAGER='less'
+# add z
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
-for suffix in c cc cxx go graphql h html js json jsx md py rb rs ts tsx vim \
-  yml mpd Manifest
-do
-  alias -s $suffix=$EDITOR
-done
-
-for suffix in txt log
-do
-  alias -s $suffix=$PAGER
-done
-
-
-
-## Mapping #####################################################################
-
-# Home -> beginning of line
-bindkey '\eOH'  beginning-of-line
-
-# End -> end of line
-bindkey '\eOF'  end-of-line
-
-# SUPPR -> delete character
-bindkey "\e[3~" delete-char
-
-# Ctrl+R -> history search
-bindkey "^R" history-incremental-search-backward
-
-
-
-## Plugins #####################################################################
-
-. ~/.zplug/init.zsh
-
-zplug junegunn/fzf
-zplug andrewferrier/fzf-z
-zplug zsh-users/zsh-autosuggestions
-zplug zsh-users/zsh-completions, lazy:true
-zplug zsh-users/zsh-syntax-highlighting
-zplug zsh-users/zsh-history-substring-search
-
-if ! zplug check
-then
-  zplug install
+## Alias definitions.
+if [ -f ~/.bash_aliases ]; then
+  . ~/.bash_aliases
 fi
 
-zplug load
-
-
-
-## Scripts #####################################################################
-
-
-### Absolute "cd" paths to history #############################################
-
-# skip adding "cd" commands to history
-function zshaddhistory() {
-    if [[ $1 = cd\ * ]]; then
-        return 1
-    fi
-}
-
-# add a "cd <absolute path>" to history whenever the working directory changes
-function chpwd() {
-    escaped_dir=$(printf %q "$(pwd)") # escape spaces in directory names
-    print -rs "cd $escaped_dir"
-}
-
-
-### Misc #######################################################################
-
-# Call common shell rc script
-if [ -f ~/.shellrc ]; then
-  . ~/.shellrc
-fi
-
-# add fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export GPG_TTY=$(tty)
+_urlencode() {
+	local length="${#1}"
+	for (( i = 0; i < length; i++ )); do
+		local c="${1:$i:1}"
+		case $c in
+			%) printf '%%%02X' "'$c" ;;
+			*) printf "%s" "$c" ;;
+		esac
+	done
+}
+
+osc7_cwd() {
+	printf '\e]7;file://%s%s\e\\' "$HOSTNAME" "$(_urlencode "$PWD")"
+}
+
+autoload -Uz add-zsh-hook
+add-zsh-hook -Uz chpwd osc7_cwd
+
+source /home/oscar/.config/broot/launcher/bash/br
+
+eval "$(zoxide init zsh)"

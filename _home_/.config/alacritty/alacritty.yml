@@ -12,7 +12,8 @@ env:
   # Note that some xterm terminfo databases don't declare support for italics.
   # You can verify this by checking for the presence of `smso` and `sitm` in
   # `infocmp xterm-256color`.
-  TERM: alacritty
+  # TERM: alacritty
+  TERM: xterm-256color
 
 # Window dimensions in character columns and lines
 # (changes require restart)
@@ -40,21 +41,21 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Iosevka Term
+    family: Iosevka
     style: Medium
 
   # The bold font face
   bold:
-    family: Iosevka Term
+    family: Iosevka
     style: Bold
 
   # The italic font face
   italic:
-    family: Iosevka Term
+    family: Iosevka
     style: Italic
 
   # Point size of the font
-  size: 9.0
+  size: 11.5
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -81,7 +82,9 @@ debug.render_timer: false
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 1.0
+# background_opacity: 0.7
+window:
+  opacity: 0.7
 
 # Colors (Tomorrow Night Bright)
 colors:
@@ -104,15 +107,15 @@ colors:
     blue:    '0x7aa6da'
     magenta: '0xc397d8'
     cyan:    '0x70c0ba'
-    white:   '0xffffff'
+    white:   '0xdddddd'
 
   # Bright colors
   bright:
     black:   '0x666666'
     red:     '0xff3334'
     green:   '0x9ec400'
-    yellow:  '0xe7c547'
-    blue:    '0x7aa6da'
+    yellow:  '0xf7c547'
+    blue:    '0xc0efff'
     magenta: '0xb77ee0'
     cyan:    '0x54ced6'
     white:   '0xffffff'

@@ -1,9 +1,1 @@
-#!/bin/bash
-if hash feh 2>/dev/null; then
-        feh --recursive --randomize --bg-fill $HOME/images/wallpapers/
-
-        while true; do
-                sleep 1h
-                feh --recursive --randomize --bg-fill $HOME/images/wallpapers/
-        done
-fi
+while true; do pic=$(find ~/images/wallpapers/ -type f | shuf -n1); swaymsg output "*" background "$pic" fill; sleep 3600; done
