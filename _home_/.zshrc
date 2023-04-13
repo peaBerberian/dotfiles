@@ -1,6 +1,6 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.cargo/bin:$HOME/.npm/bin:$PATH
+export NODE_PATH="$HOME/.npm/lib/node_modules:$NODE_PATH"
+export GPG_TTY=$(tty)
 export EDITOR=nvim
 
 # Path to your oh-my-zsh installation.
@@ -108,9 +108,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-
 # add z
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
@@ -138,7 +135,5 @@ osc7_cwd() {
 
 autoload -Uz add-zsh-hook
 add-zsh-hook -Uz chpwd osc7_cwd
-
-source /home/oscar/.config/broot/launcher/bash/br
 
 eval "$(zoxide init zsh)"

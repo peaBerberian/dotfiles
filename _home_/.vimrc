@@ -245,6 +245,11 @@ Plug 'junegunn/gv.vim'
 " " javascript-libraries-syntax.vim: syntax for JavaScript libraries
 " Plug 'othree/javascript-libraries-syntax.vim'
 
+" vim-prettier: Prettier integration
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+
 " All of your Plugins must be added before the following line
 " Add plugins to &runtimepath
 call plug#end()
@@ -448,6 +453,11 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 " ---- deoplete ----
 let g:deoplete#enable_at_startup = 1
 
+" Tell FZF to use RG - so we can skip .gitignore files even if not using
+" :GitFiles search
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
+" If you want gitignored files:
+"let $FZF_DEFAULT_COMMAND = 'rg --files --no-ignore-vcs --hidden'
 
 " ---- Lightline ----
 let g:lightline = {
@@ -523,15 +533,6 @@ let g:highlightedyank_highlight_duration = 250
 " ---- neoterm ----
 let g:neoterm_default_mod = "vertical"
 
-" ---- which-key ----
-lua << EOF
-require("which-key").setup {
-  -- your configuration comes here
-  -- or leave it empty to use the default settings
-  -- refer to the configuration section below
-  }
-EOF
-
 "-----------------------------------------------------------------------------
 "                                SETTINGS
 "-----------------------------------------------------------------------------
@@ -542,10 +543,12 @@ if filereadable("/etc/vim/vimrc.local")
 endif
 
 
-" ---- Search with ag ----
-" If ag (the silver searcher) is available, use it instead of grep
-if executable('ag')
-  " Use ag over grep
+" ---- Search  ----
+" If ripgrep is available, use it instead of grep
+if executable('rg')
+  set grepprg="rg --vimgrep --hidden —glob '!.git'"
+elseif executable('ag')
+  " Use ag  ag (the silver searcher) over grep
   set grepprg=ag\ --nogroup\ --nocolor
   " Use ag in CtrlP for listing files. Lightning fast and respect .gitignore
   let g:ctrlp_user_command='ag %s -l --nocolor -g ""'

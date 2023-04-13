@@ -18,7 +18,7 @@ set $term footclient
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu fuzzel
 
 # disable titlebar, border size
 default_border pixel 2
@@ -32,7 +32,6 @@ gaps outer 1
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg $(find ~/images/wallpapers/ -type f | shuf -n1) fill
-output "Samsung Electric Company U28E590 HTPK608633" scale 2
 
 # Example configuration:
 #
@@ -139,6 +138,8 @@ input * {
 # Workspaces:
 #
     # Switch to workspace
+    bindsym $mod+Ctrl+Left workspace prev
+    bindsym $mod+Ctrl+Right workspace next
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
     bindsym $mod+3 workspace number 3
