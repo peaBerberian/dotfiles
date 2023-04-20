@@ -118,6 +118,9 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# added by travis gem
+[ ! -s /home/oscar/.travis/travis.sh ] || source /home/oscar/.travis/travis.sh
+
 _urlencode() {
 	local length="${#1}"
 	for (( i = 0; i < length; i++ )); do

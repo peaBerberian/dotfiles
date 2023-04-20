@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term footclient
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -32,6 +32,7 @@ gaps outer 1
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg $(find ~/images/wallpapers/ -type f | shuf -n1) fill
+output "Samsung Electric Company U28E590 HTPK608633" scale 2
 
 # Example configuration:
 #
@@ -73,7 +74,7 @@ input "1267:12736:ASUE120B:00_04F3:31C0_Touchpad" {
 
 input * {
     xkb_layout "us,fr"
-    xkb_options "grp:lalt_lshift_toggle"
+    xkb_options "grp:rctrl_toggle"
 }
 
 ### Key bindings
@@ -245,7 +246,5 @@ bar {
 }
 
 exec mako
-
-exec foot -s
 
 include /etc/sway/config.d/*
