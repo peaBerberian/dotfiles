@@ -238,7 +238,7 @@ Plug 'junegunn/gv.vim'
 Plug 'prettier/vim-prettier', {
       \ 'do': 'npm install --frozen-lockfile --production',
       \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html']
-}
+\ }
 
 " " vim-abolish: Powerfull syntax tools (Mainly for Substitution and coercion)
 " Plug 'tpope/vim-abolish'
