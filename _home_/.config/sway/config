@@ -21,11 +21,11 @@ set $term alacritty
 set $menu fuzzel
 
 # disable titlebar, border size
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 1
+default_floating_border pixel 1
 
 # Stablish gaps between windows and from the screen edge
-gaps inner 5
+gaps inner 2
 gaps outer 1
 
 ### Output configuration
@@ -245,6 +245,9 @@ bar {
     }
 }
 
+exec export XDG_CURRENT_DESKTOP=sway
 exec mako
+exec /usr/lib/xdg-desktop-portal-hyprland
+exec usdiskie
 
 include /etc/sway/config.d/*
