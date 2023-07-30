@@ -2,6 +2,10 @@
 
 alias c='cd'
 
+if [ -f ~/git_shortcuts.sh ]; then
+  alias g='~/git_shortcuts.sh'
+fi
+
 # ---- ls alias ----
 
 alias ll='exa -lgah --git --group-directories-first'
