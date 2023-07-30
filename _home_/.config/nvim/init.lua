@@ -229,6 +229,11 @@ Plug 'leafgarland/typescript-vim'
 -- YankRing.vim: Cycle through yanks and prodie visual history
 Plug 'vim-scripts/YankRing.vim'
 
+-- iamcco/markdown-preview.nvim: Markdown previewer
+Plug('iamcco/markdown-preview.nvim', {['do'] = 'cd app && yarn install' })
+
+Plug 'folke/trouble.nvim'
+
 -- -- colorscheme
 -- Plug 'drewtempelmeyer/palenight.vim'
 
@@ -557,11 +562,6 @@ require("nvim-tree").setup({
   sort_by = "name",
   view = {
     adaptive_size = true,
-    mappings = {
-      list = {
-        { key = "u", action = "dir_up" },
-      },
-    },
   },
   renderer = {
     group_empty = true,
@@ -792,6 +792,8 @@ keyset("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
 -- Resume latest coc list.
 keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
 
+---- trouble.vim ----
+keyset("n", "<space>t", ":<C-u>Trouble<cr>", opts)
 
 -- ---- Supertab ----
 -- vim.g.SuperTabDefaultCompletionType = '<C-n>'
@@ -1058,8 +1060,8 @@ vnoremap < <gv
 
 " ---- Buffer navigation ----
 " Move between buffers (Ctrl + left / right or h / l)
-noremap <silent> <C-j> :bprevious!<CR>
-noremap <silent> <C-k> :bnext!<CR>
+nnoremap <silent> <C-j> :bprevious!<CR>
+nnoremap <silent> <C-k> :bnext!<CR>
 noremap <silent> <C-S-Tab> :bprevious!<CR>
 noremap <silent> <C-Tab> :bnext!<CR>
 
