@@ -140,3 +140,4 @@ autoload -Uz add-zsh-hook
 add-zsh-hook -Uz chpwd osc7_cwd
 
 eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"

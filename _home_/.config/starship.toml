@@ -1,0 +1,60 @@
+# starship config.toml
+
+# Use custom format
+format = """
+ $directory\
+$git_branch\
+$git_state\
+$git_status\
+$status[>](yellow) """
+
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+[username]
+style_user = "green bold"
+style_root = "red bold"
+format = "(bold green)[$user]($style)"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format =  "[@$hostname ](green bold)"
+disabled = false
+
+[directory]
+read_only = " 🔒"
+read_only_style = "fg:blue bold"
+style = "#00ccaa bold"
+format = "[$path ]($style)[$read_only]($read_only_style)"
+
+[git_branch]
+symbol = " "
+always_show_remote = false
+format = "[$symbol$branch]($style) "
+style = "yellow bold"
+only_attached = false
+disabled = false
+
+[package]
+style = "bold white"
+format = "[$symbol$version]($style) "
+
+[git_status]
+conflicted = "C"
+ahead = "[:A](white)"
+behind = "[:B](red)"
+diverged = "[:D](purple)"
+up_to_date = "[:U](green)"
+untracked = "U"
+stashed = ""
+modified = "M"
+staged = '[+$count](green)'
+renamed = "👅"
+deleted = "D"
+format = '([$all_status$ahead_behind]($style) )'
+style = "bold purple"

@@ -22,12 +22,14 @@ window#waybar {
 }
 
 #workspaces button {
+  transition: none;
+  border: none;
+
   font-weight: bold;
-  padding: 0 4px;
+  padding: 2px 4px;
   background: transparent;
-  color: #ffffff;
-  border-bottom: 2px solid transparent;
   margin: 0px 3px;
+  color: #fff;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -39,13 +41,12 @@ window#waybar {
   box-shadow: inherit;
   text-shadow: inherit;
 
-  background-color: #ffffff;
+  background-color: #004411;
   border-radius: 24px;
-  color: #000;
 }
 
 #workspaces button.active {
-  color: #99ff99;
+  color: #ffffff;
   background-color: #77cc77;
   border-radius: 24px;
   color: #000;
@@ -54,6 +55,7 @@ window#waybar {
 
 #workspaces button.urgent {
   background-color: #bf616a;
+  border-radius: 24px;
 }
 
 #mode {
