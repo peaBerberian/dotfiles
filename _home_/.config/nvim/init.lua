@@ -12,10 +12,6 @@
 --
 --  Some plugins need more than this file to be able to work seamlessly.
 --
---    - vim-plug: Will need supplementary actions, indicated in their github
---      page.
---      => https://github.com/junegunn/vim-plug
---
 --    - null-ls: Needs eslint to be installed and accessible in the PATH.
 --
 --    - vim-go : Needs go binaries to be installed. See their github for more
@@ -38,12 +34,9 @@
 --       plugins.
 --
 --    3. Put this config file in the right folder (should be something like
---       '$HOME/.config/nvim/init.vim' for nvim).
+--       '$HOME/.config/nvim/init.lua' for nvim).
 --
---    4. Open nvim, type ':PlugInstall' and enter to install the different
---       plugins.
---
---    5. Enjoy this bloated conf!
+--    4. Enjoy this bloated conf!
 
 -- Allows to shut the linter up for the remaining of the file
 local vim = vim
@@ -66,245 +59,156 @@ if vim.g.vscode then
   return;
 end
 
-vim.call('plug#begin', '~/.config/nvim/plugged')
-local Plug = vim.fn['plug#']
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
 -- All the following plugins below are added thanks to their github repo.
 -- You can go on the respective github url for more informations.
+require("lazy").setup({
+  -- More colorschemes
+  { 'flazz/vim-colorschemes', lazy = true },
+  { 'NLKNguyen/papercolor-theme', lazy = true },
 
--- More colorschemes
-Plug 'flazz/vim-colorschemes'
-Plug 'NLKNguyen/papercolor-theme'
+  -- -- coc.nvim: Auto-completion engine
+  { 'neoclide/coc.nvim', branch = 'release' },
 
--- vim-markdown: Markdown tools
--- Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
+  -- mason: install lsp, linter etc.
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
 
--- -- coc.nvim: Auto-completion engine
-Plug('neoclide/coc.nvim', { branch  = 'release'})
+  -- luaSnip: snippet engine
+  'L3MON4D3/LuaSnip',
+  'rafamadriz/friendly-snippets',
 
--- mason: install lsp, linter etc.
-Plug 'williamboman/mason.nvim'
-Plug 'williamboman/mason-lspconfig.nvim'
+  -- editorconfig-vim: Handle `.editorconfig` files
+  'editorconfig/editorconfig-vim',
 
--- Auto-completion related thingies
--- Plug 'neovim/nvim-lspconfig'
--- Plug 'hrsh7th/cmp-nvim-lsp'
--- Plug 'hrsh7th/cmp-buffer'
--- Plug 'hrsh7th/cmp-path'
--- Plug 'hrsh7th/cmp-cmdline'
--- Plug 'hrsh7th/nvim-cmp'
+  -- vim-airline: 1337 interface :p. Has to have compatible fonts
+  'bling/vim-airline',
 
--- luaSnip: snippet engine
-Plug 'L3MON4D3/LuaSnip'
--- Plug 'saadparwaiz1/cmp_luasnip'
-Plug 'rafamadriz/friendly-snippets'
+  -- Powerline themes
+  'vim-airline/vim-airline-themes',
 
--- editorconfig-vim: Handle `.editorconfig` files
-Plug 'editorconfig/editorconfig-vim'
+  -- vim-fugitive: Git tools
+  'tpope/vim-fugitive',
 
--- vim-airline: 1337 interface :p. Has to have compatible fonts
-Plug 'bling/vim-airline'
+  -- gitsigns.nvim: git diff in vim gitgutter
+  'lewis6991/gitsigns.nvim',
 
--- Powerline themes
-Plug 'vim-airline/vim-airline-themes'
+  -- tpope/vim-repeat: Repeat some plugins command with '.'
+  'tpope/vim-repeat',
 
--- vim-fugitive: Git tools
-Plug 'tpope/vim-fugitive'
+  -- vim-sneak: Very convenient motion plugin (s + 2 letters)
+  'justinmk/vim-sneak',
 
--- gitsigns.nvim: git diff in vim gitgutter
-Plug 'lewis6991/gitsigns.nvim'
+  -- vim-commentary: Command gcc to add commentary easily
+  'tpope/vim-commentary',
 
--- tpope/vim-repeat: Repeat some plugins command with '.'
-Plug 'tpope/vim-repeat'
+  -- vim-mark: Mark and unmark words
+  'inkarkat/vim-ingo-library',
+  'inkarkat/vim-mark',
 
--- vim-sneak: Very convenient motion plugin (s + 2 letters)
-Plug 'justinmk/vim-sneak'
+  -- vim-EnhancedJumps: Better jump list management
+  'inkarkat/vim-EnhancedJumps',
 
--- vim-commentary: Command gcc to add commentary easily
-Plug 'tpope/vim-commentary'
+  'jose-elias-alvarez/null-ls.nvim',
 
--- vim-mark: Mark and unmark words
-Plug 'inkarkat/vim-ingo-library'
-Plug 'inkarkat/vim-mark'
+  -- vim-indent-guides: show indentation on current file
+  'nathanaelkane/vim-indent-guides',
 
--- vim-EnhancedJumps: Better jump list management
-Plug 'inkarkat/vim-EnhancedJumps'
+  -- switch.vim: Switch text easily
+  'AndrewRadev/switch.vim',
 
-Plug 'jose-elias-alvarez/null-ls.nvim'
+  -- matchit: Extended % matching
+  'tmhedberg/matchit',
 
--- -- ale: display errors in gutter
--- Plug 'w0rp/ale'
+  -- undotree: undo history visualizer
+  'mbbill/undotree',
 
--- vim-indent-guides: show indentation on current file
-Plug 'nathanaelkane/vim-indent-guides'
+  -- vim-eunuch: various UNIX tools
+  'tpope/vim-eunuch',
 
--- switch.vim: Switch text easily
-Plug 'AndrewRadev/switch.vim'
+  -- rainbow_parentheses: rainbow parentheses to easily match them
+  'kien/rainbow_parentheses.vim',
 
--- matchit: Extended % matching
-Plug 'tmhedberg/matchit'
+  -- vim-highlightedyank: highlight yank selections for a few seconds
+  'machakann/vim-highlightedyank',
 
--- undotree: undo history visualizer
-Plug 'mbbill/undotree'
+  -- c.vim: C language tools
+  'vim-scripts/c.vim',
 
--- vim-eunuch: various UNIX tools
-Plug 'tpope/vim-eunuch'
+  -- vim-go: Go language tools
+  'fatih/vim-go',
 
--- rainbow_parentheses: rainbow parentheses to easily match them
-Plug 'kien/rainbow_parentheses.vim'
+  -- rust.vim: Rust language tools
+  'rust-lang/rust.vim',
 
--- vim-highlightedyank: highlight yank selections for a few seconds
-Plug 'machakann/vim-highlightedyank'
+  -- python.vim: Python tools (mainly syntax hl and indent)
+  'vim-scripts/python.vim',
 
--- c.vim: C language tools
-Plug 'vim-scripts/c.vim'
+  -- vim-glsl: GLSL syntax
+  'tikhomirov/vim-glsl',
 
--- vim-go: Go language tools
-Plug 'fatih/vim-go'
+  -- vim-toml: TOML Syntax
+  'cespare/vim-toml',
 
--- rust.vim: Rust language tools
-Plug 'rust-lang/rust.vim'
+  -- telescope.nvim: fuzzy finder
+  'nvim-lua/plenary.nvim',
+  { 'nvim-telescope/telescope.nvim', branch = '0.1.x' },
 
--- python.vim: Python tools (mainly syntax hl and indent)
-Plug 'vim-scripts/python.vim'
+  -- Treesitter configurations
+  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
 
--- vim-glsl: GLSL syntax
-Plug 'tikhomirov/vim-glsl'
+  -- Prettier config
+  {
+    'prettier/vim-prettier',
+    ['build'] = 'yarn install --frozen-lockfile --production',
+  },
 
--- vim-toml: TOML Syntax
-Plug 'cespare/vim-toml'
 
--- telescope.nvim: fuzzy finder
-Plug 'nvim-lua/plenary.nvim'
-Plug('nvim-telescope/telescope.nvim', {branch = '0.1.x' })
+  -- which-key: displays a popup with possible keybindings of the command you
+  -- started typing
+  'folke/which-key.nvim',
 
--- Treesitter configurations
-Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
+  -- nvim-web-devicons: Adds file type icons to Vim plugins
+  'kyazdani42/nvim-web-devicons',
 
--- Prettier config
-Plug('prettier/vim-prettier', {
-  ['do'] = 'yarn install --frozen-lockfile --production',
-  ['for'] = {
-    'javascript',
-    'typescript',
-    'css',
-    'less',
-    'scss',
-    'json',
-    'graphql',
-    'markdown',
-    'vue',
-    'svelte',
-    'yaml',
-    'html'
-  }
+  -- nvim-tree.lua: File Explorer
+  'kyazdani42/nvim-tree.lua',
+
+  -- indent-blankline.nvim: Show ident lines
+  'lukas-reineke/indent-blankline.nvim',
+
+  -- toggleterm.nvim: terminal improvements
+  'akinsho/toggleterm.nvim',
+
+  -- vim-javascript: JS tools (mainly syntax hl and indent)
+  'pangloss/vim-javascript',
+
+  -- vim-jsx: jsx highlighting and indenting
+  'mxw/vim-jsx',
+
+  -- typescript-vim: TypeScript tools
+  'leafgarland/typescript-vim',
+
+  -- YankRing.vim: Cycle through yanks and prodie visual history
+  'vim-scripts/YankRing.vim',
+
+  -- iamcco/markdown-preview.nvim: Markdown previewer
+  { 'iamcco/markdown-preview.nvim', ['build'] = 'cd app && yarn install'  },
+
+  'folke/trouble.nvim',
 })
-
-
--- which-key: displays a popup with possible keybindings of the command you
--- started typing
-Plug 'folke/which-key.nvim'
-
--- nvim-web-devicons: Adds file type icons to Vim plugins
-Plug 'kyazdani42/nvim-web-devicons'
-
--- nvim-tree.lua: File Explorer
-Plug 'kyazdani42/nvim-tree.lua'
-
--- indent-blankline.nvim: Show ident lines
-Plug 'lukas-reineke/indent-blankline.nvim'
-
--- toggleterm.nvim: terminal improvements
-Plug('akinsho/toggleterm.nvim', {tag = '*'})
-
--- vim-javascript: JS tools (mainly syntax hl and indent)
-Plug 'pangloss/vim-javascript'
-
--- vim-jsx: jsx highlighting and indenting
-Plug 'mxw/vim-jsx'
-
--- typescript-vim: TypeScript tools
-Plug 'leafgarland/typescript-vim'
-
--- YankRing.vim: Cycle through yanks and prodie visual history
-Plug 'vim-scripts/YankRing.vim'
-
--- iamcco/markdown-preview.nvim: Markdown previewer
-Plug('iamcco/markdown-preview.nvim', {['do'] = 'cd app && yarn install' })
-
-Plug 'folke/trouble.nvim'
-
--- -- colorscheme
--- Plug 'drewtempelmeyer/palenight.vim'
-
--- ack.vim: Silver searcher integration in vi (ag)
--- Plug 'mileszs/ack.vim'
-
--- ultisnips: To use snippets
--- vim-snippets: Default snippets
--- vim-es6: ES6 snippets
--- coffe-Script-VIM-Snippets: Coffee scripts snippets
--- Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
--- Plug 'SirVer/ultisnips' | Plug 'isRuslan/vim-es6'
--- Plug 'SirVer/ultisnips' | Plug 'carlosvillu/coffeScript-VIM-Snippets'
-
--- nerdtree: Directory tree
--- nerdtree-git-plugin: Display git status in nerdTree
--- Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
---       \ | Plug 'Xuyuanp/nerdtree-git-plugin'
-
--- FZF implementation on vim
--- Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
--- Plug 'junegunn/fzf.vim'
-
--- vim-gitgutter: Show diff in gutter
--- Plug 'airblade/vim-gitgutter'
-
--- gundo.vim: Undo tree
--- Plug 'sjl/gundo.vim', { 'on':  'GundoToggle' }
-
--- vim-css3-syntax: css3 syntax
--- Plug 'hail2u/vim-css3-syntax'
-
--- -- html5.vim: HTML5 syntax and omnicomplete
--- Plug 'othree/html5.vim'
-
--- -- neoterm: Wrap vim/neovim terminal
--- Plug 'kassio/neoterm'
-
--- -- ranger.vim: ranger file explorer integration
--- Plug 'francoiscabrol/ranger.vim'
-
--- -- nvim-colorizer.lua: Colorize rgb values and so on
--- Plug 'norcalli/nvim-colorizer.lua'
-
--- -- vim-less: less (css files) syntax highlighting/indenting/completion
--- Plug 'groenewege/vim-less'
-
--- -- vim-qml: Qml highlighting
--- Plug 'peterhoeg/vim-qml'
-
--- --  MOS 6502,65c02,65816 Assembly syntax + Merlin Add-Ons
--- Plug 'digarok/asmMerlin65816.vim'
-
--- -- vim-unimpaired: handy shortcuts with brackets
--- Plug 'tpope/vim-unimpaired'
-
--- -- gv.vim: commit explorer
--- Plug 'junegunn/gv.vim'
-
--- -- vim-abolish: Powerfull syntax tools (Mainly for Substitution and coercion)
--- Plug 'tpope/vim-abolish'
-
--- -- vim-multiple-cursors: CTRL-n to select many occurences of the same pattern
--- Plug 'terryma/vim-multiple-cursors'
-
--- -- javascript-libraries-syntax.vim: syntax for JavaScript libraries
--- Plug 'othree/javascript-libraries-syntax.vim'
-
--- All of your Plugins must be added before the following line
--- Add plugins to &runtimepath
-vim.call('plug#end')
 
 -------------------------------------------------------------------------------
 --                           PLUGINS CONFIGURATION
