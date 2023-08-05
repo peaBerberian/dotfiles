@@ -79,7 +79,7 @@ debug.render_timer: false
 # The value `0.0` is completely transparent and `1.0` is opaque.
 # background_opacity: 0.7
 window:
-  opacity: 0.6
+  opacity: 0.5
 
 # Colors (Tomorrow Night Bright)
 colors:

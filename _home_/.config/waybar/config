@@ -11,7 +11,7 @@
     "hyprland/window",
   ],
   "modules-right": [
-    "idle_inhibitor",
+    // "idle_inhibitor",
     "pulseaudio",
     "network",
     "backlight",
@@ -157,7 +157,6 @@
     "on-click-right": "alacritty -e nmcli device wifi list"
   },
   "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
     "format": "{volume}% {icon}   {format_source}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
@@ -173,7 +172,9 @@
       "car": "",
       "default": ["", "", ""]
     },
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
+    "on-scroll-down": "pamixer -d 1",
+    "on-scroll-up": "pamixer -i 1"
   },
   "custom/media": {
     "format": "{icon} {}",

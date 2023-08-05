@@ -6,21 +6,50 @@
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.0);
   color: #e5e9f0;
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#clock, #battery, #cpu, #memory, #temperature, #language, #window, #workspaces, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
+  background-color: rgba(0, 20, 25, 0.5);
+  border-radius: 25px;
+  padding: 5px 20px;
+  margin: 2px;
+}
+
+#workspaces {
+  background-color: rgba(0, 20, 25, 0.8);
+}
+
 #workspaces button {
-  padding: 0 5px;
+  font-weight: bold;
+  padding: 0 4px;
   background: transparent;
   color: #ffffff;
   border-bottom: 2px solid transparent;
+  margin: 0px 3px;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+  transition: none;
+  border: none;
+
+  padding: 0 4px;
+  box-shadow: inherit;
+  text-shadow: inherit;
+
+  background-color: #ffffff;
+  border-radius: 24px;
+  color: #000;
 }
 
 #workspaces button.active {
   color: #99ff99;
-  border-bottom: 2px solid #99ff99;
+  background-color: #77cc77;
+  border-radius: 24px;
+  color: #000;
+  /* border-bottom: 2px solid #99ff99; */
 }
 
 #workspaces button.urgent {
@@ -32,20 +61,14 @@ window#waybar {
   border-bottom: 3px solid #ffffff;
 }
 
-#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
-  padding: 0 7px;
-  margin: 0 5px;
+#clock, #workspaces {
+  padding: 5px 11px;
 }
 
 #clock {
-  color: #99ff99;
+  background-color: #77cc77;
+  color: #333;
   font-weight: bold;
-}
-
-#tray {
-  margin-left: 0px;
-  padding-left: 10px;
-  border-left: 1px dotted white;
 }
 
 #battery {
@@ -73,7 +96,6 @@ window#waybar {
 }
 
 #cpu {
-  /*background: #2ecc71;*/
   color: #e5e9f0;
 }
 
@@ -120,10 +142,6 @@ window#waybar {
 
 #temperature.critical {
   background: #eb4d4b;
-}
-
-#tray {
-  color: #e5e9f0;
 }
 
 #idle_inhibitor.activated {
