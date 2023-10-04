@@ -5,6 +5,8 @@ commands=(
   "git push" \
   "git push --force-with-lease" \
   "git pull"
+  "git fetch"
+  "git merge"
   "git rebase $1 --rebase-merges"
   "git checkout $1"
   "git checkout . && git clean -fd"
@@ -34,6 +36,8 @@ echo ""
 case $idx in 
   2 | 3 | 4)
     eval "${commands[idx]} origin $(git branch | sed -n -e 's/^\* \(.*\)/\1/p')";;
+  6)
+    eval "${commands[idx]} origin/$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')";;
   *)
     eval "${commands[idx]}";;
 esac
