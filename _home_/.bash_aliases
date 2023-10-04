@@ -8,13 +8,13 @@ fi
 
 # ---- ls alias ----
 
-alias ll='exa -lgah --git --group-directories-first'
-alias la='exa -a --group-directories-first'
-alias lt='exa -lgah --sort newest --git'
+alias ll='lsd -lgah --git --group-directories-first'
+alias la='lsd -a --group-directories-first'
+alias lt='lsd -lgah --sort time --reverse --git'
 
-alias lal='exa -lgah --color always --git --group-directories-first | less'
-alias lll='exa -lgah --color always --git --group-directories-first | less'
-alias ltl='exa -lgah --color always --sort oldest --git | less'
+alias lal='lsd -lgah --color always --git --group-directories-first | less'
+alias lll='lsd -lgah --color always --git --group-directories-first | less'
+alias ltl='lsd -lgah --color always --sort time --git | less'
 
 # --------
 
