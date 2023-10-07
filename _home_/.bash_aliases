@@ -29,10 +29,9 @@ alias zshedit='vim ~/.zshrc'
 
 # ---- VI ----
 
-# launch gvim -v instead of vim (with system clipboard)
-alias v='gvim -v'
-alias vi='gvim -v'
-alias vim='gvim -v'
+# launch vim instead of vi
+alias v='vim'
+alias vi='vim'
 
 # launch neovim
 alias n='nvim'
