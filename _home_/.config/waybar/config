@@ -127,7 +127,7 @@
   },
   "hyprland/language": {
     "format": "⌨️  {}",
-    "format-en": "🇺🇸",
-    "format-fr": "🇫🇷",
+    "format-en": "qwerty",
+    "format-fr": "azerty",
   },
 }
