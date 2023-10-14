@@ -72,7 +72,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode git node sudo)
+plugins=(vi-mode git node sudo fzf-zsh-plugin)
 
 source $ZSH/oh-my-zsh.sh
 
