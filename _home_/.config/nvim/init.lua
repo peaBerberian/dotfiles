@@ -74,15 +74,6 @@ vim.opt.rtp:prepend(lazypath)
 -- You can go on the respective github url for more informations.
 require("lazy").setup({
   -- More colorschemes
-  -- { 'flazz/vim-colorschemes', lazy = true },
-  -- { 'NLKNguyen/papercolor-theme', lazy = true },
-  -- 'joshdick/onedark.vim',
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {},
-  -- },
   "sainnhe/sonokai",
 
   -- -- coc.nvim: Auto-completion engine
@@ -125,15 +116,10 @@ require("lazy").setup({
   'inkarkat/vim-mark',
 
   -- vim-EnhancedJumps: Better jump list management
-  'inkarkat/vim-EnhancedJumps',
-
-  -- 'jose-elias-alvarez/null-ls.nvim',
+  -- 'inkarkat/vim-EnhancedJumps',
 
   -- ALE: linting support
   'dense-analysis/ale',
-
-  -- vim-indent-guides: show indentation on current file
-  -- 'nathanaelkane/vim-indent-guides',
 
   -- switch.vim: Switch text easily
   'AndrewRadev/switch.vim',
@@ -152,24 +138,6 @@ require("lazy").setup({
 
   -- vim-highlightedyank: highlight yank selections for a few seconds
   'machakann/vim-highlightedyank',
-
-  -- c.vim: C language tools
-  'vim-scripts/c.vim',
-
-  -- vim-go: Go language tools
-  'fatih/vim-go',
-
-  -- rust.vim: Rust language tools
-  'rust-lang/rust.vim',
-
-  -- python.vim: Python tools (mainly syntax hl and indent)
-  'vim-scripts/python.vim',
-
-  -- vim-glsl: GLSL syntax
-  'tikhomirov/vim-glsl',
-
-  -- vim-toml: TOML Syntax
-  'cespare/vim-toml',
 
   -- telescope.nvim: fuzzy finder
   'nvim-lua/plenary.nvim',
@@ -201,14 +169,8 @@ require("lazy").setup({
   -- toggleterm.nvim: terminal improvements
   'akinsho/toggleterm.nvim',
 
-  -- vim-javascript: JS tools (mainly syntax hl and indent)
-  'pangloss/vim-javascript',
-
   -- vim-jsx: jsx highlighting and indenting
   'mxw/vim-jsx',
-
-  -- typescript-vim: TypeScript tools
-  'leafgarland/typescript-vim',
 
   -- YankRing.vim: Cycle through yanks and prodie visual history
   'vim-scripts/YankRing.vim',
