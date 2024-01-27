@@ -49,9 +49,15 @@ alias grc 'git rebase --continue'
 # npm alias
 alias nr "npm run"
 
+function starship_transient_prompt_func
+  starship module time
+  starship module character
+end
+
 zoxide init fish | source
-starship init fish | source
 mcfly init fish | source
+starship init fish | source
+enable_transience
 
 if status is-interactive
     # Commands to run in interactive sessions can go here

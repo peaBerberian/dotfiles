@@ -29,6 +29,7 @@ disabled = false
 [directory]
 read_only = " 🔒"
 read_only_style = "fg:blue bold"
+fish_style_pwd_dir_length = 1
 style = "#00ccaa bold"
 format = "[$path ]($style)[$read_only]($read_only_style)"
 
@@ -38,6 +39,9 @@ always_show_remote = false
 format = "[$symbol$branch]($style) "
 style = "yellow bold"
 only_attached = false
+disabled = false
+
+[time]
 disabled = false
 
 [package]
