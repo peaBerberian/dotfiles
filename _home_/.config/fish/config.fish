@@ -1,6 +1,8 @@
+set fish_greeting
 set -gx PATH $HOME/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.cargo/bin:$HOME/.npm/bin:$PATH
 set -gx NODE_PATH "$HOME/.npm/lib/node_modules:$NODE_PATH"
 set -gx GPG_TTY (tty)
+set -gx PAGER less -S -R -+X
 set -gx EDITOR nvim
 set -gx MOZ_ENABLE_WAYLAND 1
 set -gx MCFLY_KEY_SCHEME vim
