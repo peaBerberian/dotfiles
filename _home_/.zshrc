@@ -2,17 +2,10 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.cargo/bin:$HOME/.np
 export NODE_PATH="$HOME/.npm/lib/node_modules:$NODE_PATH"
 export GPG_TTY=$(tty)
 export EDITOR=nvim
-export MCFLY_KEY_SCHEME=vim
-export MCFLY_FUZZY=2
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=100000000
 export SAVEHIST=100000000
 setopt HIST_IGNORE_SPACE
-
-# Enable zsh-autosuggestions (script needs to be installed)
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 export MOZ_ENABLE_WAYLAND=1
 
 export NVM_DIR="$HOME/.nvm"
@@ -51,6 +44,10 @@ add-zsh-hook -Uz chpwd osc7_cwd
 
 autoload -Uz compinit && compinit
 
+# Enable zsh-autosuggestions (script needs to be installed)
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.fzf/shell/key-bindings.zsh
+
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
-eval "$(mcfly init zsh)"

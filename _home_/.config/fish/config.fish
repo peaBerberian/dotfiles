@@ -5,8 +5,6 @@ set -gx GPG_TTY (tty)
 set -gx PAGER less -S -R -+X
 set -gx EDITOR nvim
 set -gx MOZ_ENABLE_WAYLAND 1
-set -gx MCFLY_KEY_SCHEME vim
-set -gx MCFLY_FUZZY 2
 
 fish_vi_key_bindings
 
@@ -72,10 +70,10 @@ function starship_transient_prompt_func
 end
 
 zoxide init fish | source
-mcfly init fish | source
 starship init fish | source
 enable_transience
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
+    fzf_key_bindings
 end
