@@ -144,7 +144,7 @@ require("lazy").setup({
   { 'nvim-telescope/telescope.nvim', branch = '0.1.x' },
 
   -- Treesitter configurations
-  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+  -- { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
 
   -- Prettier config
   {
@@ -605,48 +605,48 @@ vim.g.jsx_ext_required = 0 -- Allow JSX in normal JS files
 vim.g.highlightedyank_highlight_duration = 250
 
 ---- nvim-treesitter ----
-require'nvim-treesitter.configs'.setup {
-  -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "javascript", "typescript", "rust", "markdown", "html" },
+-- require'nvim-treesitter.configs'.setup {
+--   -- A list of parser names, or "all" (the five listed parsers should always be installed)
+--   ensure_installed = { "javascript", "typescript", "rust", "markdown", "html" },
 
-  -- Install parsers synchronously (only applied to `ensure_installed`)
-  sync_install = false,
+--   -- Install parsers synchronously (only applied to `ensure_installed`)
+--   sync_install = false,
 
-  -- Automatically install missing parsers when entering buffer
-  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-  auto_install = false,
+--   -- Automatically install missing parsers when entering buffer
+--   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+--   auto_install = false,
 
-  -- List of parsers to ignore installing (or "all")
-  ignore_install = {},
+--   -- List of parsers to ignore installing (or "all")
+--   ignore_install = {},
 
-  ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-  -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
-  highlight = {
-    enable = true,
+--   ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
+--   -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+--   highlight = {
+--     enable = true,
 
-    -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
-    -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
-    -- the name of the parser)
-    -- list of language that will be disabled
-    disable = {},
+--     -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
+--     -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
+--     -- the name of the parser)
+--     -- list of language that will be disabled
+--     disable = {},
 
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
-  },
+--     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+--     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+--     -- Using this option may slow down your editor, and you may see some duplicate highlights.
+--     -- Instead of true it can also be a list of languages
+--     additional_vim_regex_highlighting = false,
+--   },
 
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = '<CR>',
-      scope_incremental = '<CR>',
-      -- node_incremental = '<TAB>',
-      node_decremental = '<S-CR>',
-    },
-  },
-}
+--   incremental_selection = {
+--     enable = true,
+--     keymaps = {
+--       init_selection = '<CR>',
+--       scope_incremental = '<CR>',
+--       -- node_incremental = '<TAB>',
+--       node_decremental = '<S-CR>',
+--     },
+--   },
+-- }
 
 
 -- ---- neoterm ----
