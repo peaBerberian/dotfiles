@@ -2,6 +2,9 @@
 # ~/.bashrc
 #
 
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.cargo/bin:$HOME/.npm/bin:$PATH
+export NODE_PATH="$HOME/.npm/lib/node_modules:$NODE_PATH"
+export GPG_TTY=$(tty)
 export EDITOR=nvim
 export MOZ_ENABLE_WAYLAND=1
 
@@ -11,9 +14,8 @@ export MOZ_ENABLE_WAYLAND=1
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
-. "$HOME/.cargo/env"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+source $HOME/.fzf/shell/key-bindings.bash
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
