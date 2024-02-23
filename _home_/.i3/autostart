@@ -15,10 +15,6 @@ if hash nm-applet 2>/dev/null; then
   nm-applet &
 fi
 
-if hash redshift-gtk 2>/dev/null; then
-  redshift-gtk &
-fi
-
 if [ -f $HOME/.update_wallpaper.sh ]; then
   $HOME/.update_wallpaper.sh &
 fi
