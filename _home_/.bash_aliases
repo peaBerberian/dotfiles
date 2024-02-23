@@ -66,20 +66,32 @@ alias gmm='git commit -m'
 alias gmn='git commit --no-verify'
 alias gma='git commit --amend'
 alias gmna='git commit --no-verify --amend'
-
-alias gp='git push origin'
-alias gpn='git push --no-verify origin'
-alias gpp='git push --force-with-lease origin'
-
-alias gpt='git pull origin'
-alias gptt='git pull -f origin'
-
 alias gs='git status -sb'
 alias gss='git status'
-
 alias gr='git rebase'
 alias gri='git rebase -i'
 alias grc='git rebase --continue'
+gp() {
+  git push origin $(git rev-parse --abbrev-ref HEAD)
+}
+gpn() {
+  git push --no-verify origin $(git rev-parse --abbrev-ref HEAD)
+}
+gpp() {
+  git push --force-with-lease origin $(git rev-parse --abbrev-ref HEAD)
+}
+gppn() {
+  git push --force-with-lease --no-verify origin $(git rev-parse --abbrev-ref HEAD)
+}
+gpt() {
+  git pull origin $(git rev-parse --abbrev-ref HEAD)
+}
+gptt() {
+  git pull -f origin $(git rev-parse --abbrev-ref HEAD)
+}
+grh() {
+  git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
+}
 
 # --------
 

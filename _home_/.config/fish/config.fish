@@ -35,16 +35,33 @@ alias gmm 'git commit -m'
 alias gmn 'git commit --no-verify'
 alias gma 'git commit --amend'
 alias gmna 'git commit --no-verify --amend'
-alias gp 'git push origin'
-alias gpn 'git push --no-verify origin'
-alias gpp 'git push --force-with-lease origin'
-alias gpt 'git pull origin'
-alias gptt 'git pull -f origin'
 alias gs 'git status -sb'
 alias gss 'git status'
 alias gr 'git rebase'
 alias gri 'git rebase -i'
 alias grc 'git rebase --continue'
+alias gcfd 'git clean -fd'
+function gp
+  git push origin (git rev-parse --abbrev-ref HEAD)
+end
+function gpn
+  git push --no-verify origin (git rev-parse --abbrev-ref HEAD)
+end
+function gpp
+  git push --force-with-lease origin (git rev-parse --abbrev-ref HEAD)
+end
+function gppn
+  git push --force-with-lease --no-verify origin (git rev-parse --abbrev-ref HEAD)
+end
+function gpt
+  git pull origin (git rev-parse --abbrev-ref HEAD)
+end
+function gptt
+  git pull -f origin (git rev-parse --abbrev-ref HEAD)
+end
+function grh
+  git reset --hard origin/(git rev-parse --abbrev-ref HEAD)
+end
 
 # npm alias
 alias nr "npm run"
