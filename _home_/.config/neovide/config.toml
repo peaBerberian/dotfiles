@@ -1,0 +1,7 @@
+[font]
+normal = "Inconsolata"
+size = 14
+
+[font.features]
+"Inconsolata Nerd Font Mono" = ["-calt", "-liga", "-dlig"]
+Inconsolata = ["-calt", "-liga", "-dlig"]
