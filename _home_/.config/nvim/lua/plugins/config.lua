@@ -22,6 +22,7 @@ return {
 					fish = { "fish_indent" },
 					sh = { "shfmt" },
 					typescript = { "prettier" },
+					markdown = { "prettier" },
 					rust = { "rustfmt" },
 				},
 				formatters = {
@@ -37,6 +38,7 @@ return {
 	{
 		"rcarriga/nvim-notify",
 		opts = {
+			-- Set longer timeout for notifications
 			timeout = 8000,
 		},
 	},
