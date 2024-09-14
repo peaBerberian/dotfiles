@@ -31,7 +31,11 @@ vim.keymap.set("v", "<C-c>", '"+y', silent_and_nowait)
 -- Marks
 vim.keymap.set("n", "<LEADER>m", "<Plug>MarkSet", silent_and_nowait)
 vim.keymap.set("v", "<LEADER>m", "<Plug>MarkSet", silent_and_nowait)
-vim.keymap.set("n", "<LEADER>M", "<Plug>MarkClear", silent_and_nowait)
+vim.keymap.set("n", "<LEADER>M", ":MarkClear<CR>", silent_and_nowait)
+
+-- Yank ring iterations
+vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
+vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
 
 -- F2 Toggle inlay hints
 -- vim.keymap.set(
