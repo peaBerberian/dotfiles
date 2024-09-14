@@ -1,18 +1,13 @@
--- -- Mark / Unmark
--- vim.keymap.set("n", "<LEADER>m", "<Plug>MarkSet", { silent = true })
--- vim.keymap.set("v", "<LEADER>m", "<Plug>MarkSet", { silent = true })
--- vim.keymap.set("n", "<LEADER>M", ":MarkClear<CR>:nohl<CR>", { silent = true })
-
 return {
 	{
 		-- vim-eunuch: various UNIX tools
 		"tpope/vim-eunuch",
 	},
-	-- {
-	--   -- vim-mark: Mark and unmark words
-	--   "inkarkat/vim-ingo-library",
-	--   "inkarkat/vim-mark",
-	-- },
+	{
+		-- vim-mark: Mark and unmark words
+		"inkarkat/vim-ingo-library",
+		"peaBerberian/Mark--Karkat",
+	},
 	{
 		"stevearc/conform.nvim",
 		opts = function()

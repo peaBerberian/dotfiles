@@ -28,6 +28,11 @@ vim.keymap.set("i", "<C-s>", "<ESC>:w<CR>a", silent_and_nowait)
 -- Copy in clipboard with CTRL-c on visual mode
 vim.keymap.set("v", "<C-c>", '"+y', silent_and_nowait)
 
+-- Marks
+vim.keymap.set("n", "<LEADER>m", "<Plug>MarkSet", silent_and_nowait)
+vim.keymap.set("v", "<LEADER>m", "<Plug>MarkSet", silent_and_nowait)
+vim.keymap.set("n", "<LEADER>M", "<Plug>MarkClear", silent_and_nowait)
+
 -- F2 Toggle inlay hints
 -- vim.keymap.set(
 -- 	"n",
