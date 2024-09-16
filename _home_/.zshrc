@@ -51,3 +51,5 @@ source $HOME/.fzf/shell/key-bindings.zsh
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+
+source /home/oscar/.config/broot/launcher/bash/br
