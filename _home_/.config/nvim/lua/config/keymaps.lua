@@ -29,9 +29,21 @@ vim.keymap.set("i", "<C-s>", "<ESC>:w<CR>a", silent_and_nowait)
 vim.keymap.set("v", "<C-c>", '"+y', silent_and_nowait)
 
 -- Marks
-vim.keymap.set("n", "<LEADER>m", "<Plug>MarkSet", silent_and_nowait)
-vim.keymap.set("v", "<LEADER>m", "<Plug>MarkSet", silent_and_nowait)
-vim.keymap.set("n", "<LEADER>M", ":MarkClear<CR>", silent_and_nowait)
+vim.keymap.set("n", "<LEADER>m", "<Plug>MarkSet", {
+	silent = true,
+	nowait = true,
+	desc = "Highlight occurences (word under cursor)",
+})
+vim.keymap.set("v", "<LEADER>m", "<Plug>MarkSet", {
+	silent = true,
+	nowait = true,
+	desc = "Highlight occurences (selection)",
+})
+vim.keymap.set("v", "<LEADER>M", "<Plug>MarkSet", {
+	silent = true,
+	nowait = true,
+	desc = "Clear all highlights",
+})
 
 -- Yank ring iterations
 vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
