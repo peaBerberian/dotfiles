@@ -49,6 +49,11 @@ vim.keymap.set("v", "<LEADER>M", "<Plug>MarkSet", {
 vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
 vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
 
+vim.keymap.set("n", "<LEADER>a", "<cmd>echo expand('%')<CR>", {
+	nowait = true,
+	desc = "Print current filename",
+})
+
 -- F2 Toggle inlay hints
 -- vim.keymap.set(
 -- 	"n",
