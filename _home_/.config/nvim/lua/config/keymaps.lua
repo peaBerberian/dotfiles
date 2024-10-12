@@ -39,10 +39,16 @@ vim.keymap.set("v", "<LEADER>m", "<Plug>MarkSet", {
 	nowait = true,
 	desc = "Highlight occurences (selection)",
 })
-vim.keymap.set("v", "<LEADER>M", "<Plug>MarkSet", {
+vim.keymap.set("n", "<LEADER>M", "<Plug>MarkClear", {
 	silent = true,
 	nowait = true,
 	desc = "Clear all highlights",
+})
+
+vim.keymap.set("n", "<LEADER>gd", "<c-w>v<cmd>lua vim.lsp.buf.definition()<CR>", {
+	silent = true,
+	nowait = true,
+	desc = "Go to definition in a vertical split",
 })
 
 -- Yank ring iterations
