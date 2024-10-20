@@ -5,6 +5,8 @@ set -gx GPG_TTY (tty)
 set -gx PAGER less -S -R -+X
 set -gx EDITOR nvim
 set -gx MOZ_ENABLE_WAYLAND 1
+set -gx ELECTRON_OZONE_PLATFORM_HINT wayland
+set -gx QT_QPA_PLATFORM wayland
 
 fish_vi_key_bindings
 
@@ -78,5 +80,5 @@ enable_transience
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    fzf_key_bindings
+    fzf --fish | source
 end

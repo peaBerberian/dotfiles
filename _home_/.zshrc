@@ -7,8 +7,9 @@ export HISTSIZE=100000000
 export SAVEHIST=100000000
 setopt HIST_IGNORE_SPACE
 export MOZ_ENABLE_WAYLAND=1
-
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
 export NVM_DIR="$HOME/.nvm"
+export QT_QPA_PLATFORM=wayland
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
@@ -47,7 +48,7 @@ autoload -Uz compinit && compinit
 # Enable zsh-autosuggestions (script needs to be installed)
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOME/.fzf/shell/key-bindings.zsh
+source <(fzf --zsh)
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
