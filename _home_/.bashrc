@@ -8,6 +8,7 @@ export GPG_TTY=$(tty)
 export EDITOR=nvim
 export MOZ_ENABLE_WAYLAND=1
 export QT_QPA_PLATFORM=wayland
+export LESS='-R --mouse'
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
