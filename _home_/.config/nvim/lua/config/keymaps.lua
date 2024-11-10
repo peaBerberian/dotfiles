@@ -30,25 +30,25 @@ vim.keymap.set("v", "<C-c>", '"+y', silent_and_nowait)
 
 -- Marks
 vim.keymap.set("n", "<LEADER>m", "<Plug>MarkSet", {
-	silent = true,
-	nowait = true,
-	desc = "Highlight occurences (word under cursor)",
+  silent = true,
+  nowait = true,
+  desc = "Highlight occurences (word under cursor)",
 })
 vim.keymap.set("v", "<LEADER>m", "<Plug>MarkSet", {
-	silent = true,
-	nowait = true,
-	desc = "Highlight occurences (selection)",
+  silent = true,
+  nowait = true,
+  desc = "Highlight occurences (selection)",
 })
 vim.keymap.set("n", "<LEADER>M", "<Plug>MarkClear", {
-	silent = true,
-	nowait = true,
-	desc = "Clear all highlights",
+  silent = true,
+  nowait = true,
+  desc = "Clear all highlights",
 })
 
 vim.keymap.set("n", "<LEADER>gd", "<c-w>v<cmd>lua vim.lsp.buf.definition()<CR>", {
-	silent = true,
-	nowait = true,
-	desc = "Go to definition in a vertical split",
+  silent = true,
+  nowait = true,
+  desc = "Go to definition in a vertical split",
 })
 
 -- Yank ring iterations
@@ -56,8 +56,29 @@ vim.keymap.set("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
 vim.keymap.set("n", "<c-n>", "<Plug>(YankyNextEntry)")
 
 vim.keymap.set("n", "<LEADER>a", "<cmd>echo expand('%')<CR>", {
-	nowait = true,
-	desc = "Print current filename",
+  nowait = true,
+  desc = "Print current filename",
+})
+
+-- Open terminal
+vim.keymap.set("n", "<LEADER>t", ":terminal<CR>a", {
+  silent = true,
+  nowait = true,
+  desc = "Open terminal",
+})
+
+-- Go in normal mode in terminal
+vim.keymap.set("t", "<ESC><ESC>", "<C-\\><C-n>", {
+  silent = true,
+  nowait = true,
+})
+vim.keymap.set("t", "jk", "<C-\\><C-n>", {
+  silent = true,
+  nowait = true,
+})
+vim.keymap.set("t", "kj", "<C-\\><C-n>", {
+  silent = true,
+  nowait = true,
 })
 
 -- F2 Toggle inlay hints
