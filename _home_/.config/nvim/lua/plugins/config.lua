@@ -50,6 +50,7 @@ return {
           fish = { "fish_indent" },
           sh = { "shfmt" },
           typescript = { "prettier" },
+          javascript = { "prettier" },
           markdown = { "prettier" },
           rust = { "rustfmt" },
         },
