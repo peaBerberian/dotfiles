@@ -4,6 +4,14 @@ return {
     "tpope/vim-eunuch",
   },
   {
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = {
+        always_show_bufferline = true,
+      },
+    },
+  },
+  {
     -- vim-mark: Mark and unmark words
     "inkarkat/vim-ingo-library",
     "peaBerberian/Mark--Karkat",
@@ -51,6 +59,8 @@ return {
           sh = { "shfmt" },
           typescript = { "prettier" },
           javascript = { "prettier" },
+          javascriptreact = { "prettier" },
+          typescriptreact = { "prettier" },
           markdown = { "prettier" },
           rust = { "rustfmt" },
         },
@@ -69,6 +79,34 @@ return {
     opts = {
       -- Set longer timeout for notifications
       timeout = 8000,
+    },
+  },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      scroll = { enabled = false },
+    },
+  },
+  {
+    "tpope/vim-fugitive",
+    keys = {
+      { "<leader>gd", "<cmd>Gdiffsplit<cr>", desc = "Git diff in a split" },
+    },
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    -- REMOVE THIS once this issue is fixed: https://github.com/yioneko/vtsls/issues/159
+    opts = {
+      routes = {
+        {
+          filter = {
+            event = "notify",
+            find = "Request textDocument/inlayHint failed",
+          },
+          opts = { skip = true },
+        },
+      },
     },
   },
 }

@@ -45,7 +45,7 @@ vim.keymap.set("n", "<LEADER>M", "<Plug>MarkClear", {
   desc = "Clear all highlights",
 })
 
-vim.keymap.set("n", "<LEADER>gd", "<c-w>v<cmd>lua vim.lsp.buf.definition()<CR>", {
+vim.keymap.set("n", "<LEADER>d", "<c-w>v<cmd>lua vim.lsp.buf.definition()<CR>", {
   silent = true,
   nowait = true,
   desc = "Go to definition in a vertical split",
