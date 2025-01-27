@@ -248,8 +248,8 @@ layout {
 // spawn-at-startup "alacritty" "-e" "fish"
 spawn-at-startup "mako"
 spawn-at-startup "waybar"
-spawn-at-startup "foot --server"
-spawn-at-startup "footclient" "-e" "swaybg --image $(find ~/Pictures/wallpapers/ -type f | shuf -n1) --mode fill" 
+spawn-at-startup "foot" "--server"
+spawn-at-startup "sh" "-c" "swaybg --image $(find $HOME/Pictures/wallpapers/ -type f | shuf -n1) --mode fill"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -291,7 +291,7 @@ binds {
 	Mod+Shift+Slash { show-hotkey-overlay; }
 
 	Mod+D { spawn "fuzzel"; }
-	Mod+Return { spawn "foot"; }
+	Mod+Return { spawn "footclient"; }
 	Super+L { spawn "swaylock -i $(find ~/Pictures/wallpapers/ -type f | shuf -n1) -k -l"; }
 
 	XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.03"; }
