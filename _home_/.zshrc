@@ -11,7 +11,6 @@ setopt HIST_IGNORE_SPACE
 export MOZ_ENABLE_WAYLAND=1
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 export QT_QPA_PLATFORM=wayland
-export DISPLAY=':0'
 
 # add z
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh

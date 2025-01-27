@@ -11,7 +11,6 @@ export EDITOR=nvim
 export MOZ_ENABLE_WAYLAND=1
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 export QT_QPA_PLATFORM=wayland
-export DISPLAY=':0'
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return

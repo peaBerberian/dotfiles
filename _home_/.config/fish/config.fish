@@ -8,7 +8,6 @@ set -gx EDITOR nvim
 set -gx MOZ_ENABLE_WAYLAND 1
 set -gx ELECTRON_OZONE_PLATFORM_HINT wayland
 set -gx QT_QPA_PLATFORM wayland
-set -gx DISPLAY :0
 
 fish_vi_key_bindings
 
