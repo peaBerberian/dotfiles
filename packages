@@ -22,8 +22,8 @@ google-chrome
 grim
 gst-plugin-pipewire
 htop
-hyprland
-lazygit
+impala
+iwd
 less
 lsd
 luarocks
@@ -32,6 +32,7 @@ man-db
 mpv
 ncdu
 neovim
+niri
 nodejs
 noto-fonts-emoji
 npm
