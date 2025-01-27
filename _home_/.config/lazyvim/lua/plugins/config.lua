@@ -4,6 +4,12 @@ return {
     "tpope/vim-eunuch",
   },
   {
+    "tpope/vim-fugitive",
+    keys = {
+      { "<leader>gd", "<cmd>Gdiffsplit<cr>", desc = "Git diff in a split" },
+    },
+  },
+  {
     "akinsho/bufferline.nvim",
     opts = {
       options = {
@@ -88,9 +94,9 @@ return {
     },
   },
   {
-    "tpope/vim-fugitive",
-    keys = {
-      { "<leader>gd", "<cmd>Gdiffsplit<cr>", desc = "Git diff in a split" },
+    "folke/snacks.nvim",
+    opts = {
+      scroll = { enabled = false },
     },
   },
   {
