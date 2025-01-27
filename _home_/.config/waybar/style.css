@@ -12,7 +12,7 @@ window#waybar {
   color: #e5e9f0;
 }
 
-#clock, #battery, #cpu, #memory, #temperature, #language, #window, #workspaces, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
+#clock, #battery, #bluetooth, #cpu, #memory, #temperature, #language, #window, #workspaces, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
   background-color: rgba(0, 20, 25, 0.5);
   /* border-radius: 25px; */
   padding: 5px 17px;

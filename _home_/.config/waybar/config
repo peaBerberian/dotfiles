@@ -18,6 +18,7 @@
     // "idle_inhibitor",
     "pulseaudio",
     "network",
+    "bluetooth",
     "backlight",
     // "sway/language",
     "hyprland/language",
@@ -103,7 +104,15 @@
     "format-linked": "  {ifname} (No IP)",
     "format-disconnected": "⚠  Disconnected",
     "format-alt": "{ifname}: {ipaddr}/{cidr}",
-    "on-click-right": "nm-connection-editor"
+    "on-click-right": "footclient -e \"impala\""
+  },
+  "bluetooth": {
+    "on-click": "blueman-manager",
+    "format-connected": "\udb80\udcb0 ",
+    "format-no-controller": "\uf293 ",
+    "format-disabled": "\udb80\udcb2 ",
+    "format-on": "\uf293 ",
+    "format-off": "\udb80\udcaf "
   },
   "pulseaudio": {
     "format": "{icon}   {volume}%",
