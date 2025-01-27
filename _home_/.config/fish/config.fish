@@ -2,12 +2,13 @@ set fish_greeting
 set -gx PATH $HOME/bin $HOME/.local/bin /usr/local/bin $HOME/.cargo/bin $HOME/.npm/bin $PATH
 set -gx NODE_PATH "$HOME/.npm/lib/node_modules:$NODE_PATH"
 set -gx GPG_TTY (tty)
-set -gx PAGER less -S -R -+X
 set -gx LESS -R --mouse
+set -gx PAGER less -S -R -+X
 set -gx EDITOR nvim
 set -gx MOZ_ENABLE_WAYLAND 1
 set -gx ELECTRON_OZONE_PLATFORM_HINT wayland
 set -gx QT_QPA_PLATFORM wayland
+set -gx DISPLAY :0
 
 fish_vi_key_bindings
 
@@ -18,12 +19,12 @@ alias lt 'lsd -lgah --sort time --reverse --git'
 
 # launch neovim
 alias n nvim
+alias l 'NVIM_APPNAME=lazyvim n'
 
 # git aliases
 alias gc 'git checkout'
 alias ga 'git add'
 alias gaa 'git add --all'
-alias gam 'git commit -a -m'
 alias gd 'git diff'
 alias gl 'git log --oneline --graph --pretty=format:"%C(3)%h %C(75)%ad %C(41)%an%C(auto)%d %s" --date=short'
 alias gla 'git log --all --oneline --graph --pretty=format:"%C(3)%h %C(75)%ad %C(41)%an%C(auto)%d %s" --date=short'
@@ -40,8 +41,6 @@ alias gmn 'git commit --no-verify'
 alias gma 'git commit --amend'
 alias gmna 'git commit --no-verify --amend'
 alias gs 'git status -sb'
-alias gss 'git status'
-alias gr 'git rebase'
 alias gri 'git rebase -i'
 alias grc 'git rebase --continue'
 alias gcfd 'git clean -fd'

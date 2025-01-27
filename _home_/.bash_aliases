@@ -1,7 +1,5 @@
 #!/bin/bash
 
-alias c='cd'
-
 if [ -f ~/git_shortcuts.sh ]; then
   alias g='~/git_shortcuts.sh'
 fi
@@ -18,15 +16,6 @@ alias ltl='lsd -lgah --color always --sort time --git | less'
 
 # --------
 
-# ---- config files ----
-
-alias vimedit='vim ~/.vimrc'
-alias nvimedit='vim ~/.config/nvim/init.vim'
-alias bashedit='vim ~/.bashrc'
-alias zshedit='vim ~/.zshrc'
-
-# --------
-
 # ---- VI ----
 
 # launch vim instead of vi
@@ -35,19 +24,16 @@ alias vi='vim'
 
 # launch neovim
 alias n='nvim'
+alias l='NVIM_APPNAME=lazyvim n'
 
 # --------
 
 # ---- git alias ----
 
 alias gc='git checkout'
-
 alias ga='git add'
 alias gaa='git add --all'
-alias gam='git commit -a -m'
-
 alias gd='git diff'
-alias gdn='git diff --no-ext-diff'
 
 # Prettified log for the current branch
 alias gl='git log --oneline --graph --pretty=format:"%C(3)%h %C(75)%ad %C(41)%an%C(auto)%d %s" --date=short'
@@ -70,10 +56,9 @@ alias gmn='git commit --no-verify'
 alias gma='git commit --amend'
 alias gmna='git commit --no-verify --amend'
 alias gs='git status -sb'
-alias gss='git status'
-alias gr='git rebase'
 alias gri='git rebase -i'
 alias grc='git rebase --continue'
+alias gcfd='git clean -fd'
 gp() {
   git push origin $(git rev-parse --abbrev-ref HEAD)
 }
@@ -103,17 +88,3 @@ grh() {
 alias nr="npm run"
 
 # --------
-
-# ---- colors ----
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-  alias ls='ls --color=auto'
-  #alias dir='dir --color=auto'
-  #alias vdir='vdir --color=auto'
-
-  alias grep='grep --color=auto'
-  alias fgrep='fgrep --color=auto'
-  alias egrep='egrep --color=auto'
-fi

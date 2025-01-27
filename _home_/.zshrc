@@ -1,6 +1,8 @@
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.cargo/bin:$HOME/.npm/bin:$PATH
 export NODE_PATH="$HOME/.npm/lib/node_modules:$NODE_PATH"
 export GPG_TTY=$(tty)
+export LESS='-R --mouse'
+export PAGER='less -S -R -+X'
 export EDITOR=nvim
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=100000000
@@ -8,11 +10,8 @@ export SAVEHIST=100000000
 setopt HIST_IGNORE_SPACE
 export MOZ_ENABLE_WAYLAND=1
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
-export NVM_DIR="$HOME/.nvm"
 export QT_QPA_PLATFORM=wayland
-export LESS='-R --mouse'
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export DISPLAY=':0'
 
 # add z
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
@@ -53,5 +52,3 @@ source <(fzf --zsh)
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
-
-source /home/oscar/.config/broot/launcher/bash/br
