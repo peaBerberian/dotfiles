@@ -345,7 +345,7 @@ binds {
 
 	Mod+D { spawn "fuzzel"; }
 	Mod+Return { spawn "footclient"; }
-	Super+L { spawn "swaylock -i $(find ~/Pictures/wallpapers/ -type f | shuf -n1) -k -l"; }
+	Mod+Shift+X { spawn "sh" "-c" "swaylock -i $(find ~/Pictures/wallpapers/ -type f | shuf -n1) -k -l"; }
 
 	XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.03+"; }
 	XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.03-"; }
