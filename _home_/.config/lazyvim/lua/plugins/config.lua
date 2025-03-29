@@ -94,12 +94,6 @@ return {
     },
   },
   {
-    "folke/snacks.nvim",
-    opts = {
-      scroll = { enabled = false },
-    },
-  },
-  {
     "folke/noice.nvim",
     event = "VeryLazy",
     -- REMOVE THIS once this issue is fixed: https://github.com/yioneko/vtsls/issues/159
