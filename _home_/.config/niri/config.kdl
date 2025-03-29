@@ -345,6 +345,8 @@ binds {
 
 	Mod+D { spawn "fuzzel"; }
 	Mod+Return { spawn "footclient"; }
+	Mod+E { spawn "nautilus" "--new-window"; }
+	Mod+Y { spawn "footclient" "-e" "yazi"; }
 	Mod+Shift+X { spawn "sh" "-c" "swaylock -i $(find ~/Pictures/wallpapers/ -type f | shuf -n1) -k -l"; }
 
 	XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.03+"; }
