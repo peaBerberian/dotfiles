@@ -7,6 +7,7 @@ blueman
 bluez
 brightnessctl
 chromium
+curl
 dragon-drop
 fd
 firefox
@@ -16,7 +17,6 @@ fuzzel
 fzf
 git
 git-delta
-github-cli
 go
 google-chrome
 grim
@@ -30,6 +30,7 @@ luarocks
 mako
 man-db
 mpv
+nautilus
 ncdu
 neovim
 niri
@@ -52,10 +53,10 @@ slurp
 starship
 swaybg
 swaylock
+tar
 tldr
 ttf-inconsolata-nerd
 ttf-iosevka-nerd
-unzip
 vim
 waybar
 wget
