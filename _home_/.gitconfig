@@ -20,4 +20,17 @@
 [help]
 	autocorrect = prompt
 [rerere]
-	enabled = true
+        enabled = true
+        autoupdate = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
+[commit]
+	verbose = true
