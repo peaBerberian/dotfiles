@@ -5,7 +5,7 @@
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.cargo/bin:$HOME/.npm/bin:$PATH
 export NODE_PATH="$HOME/.npm/lib/node_modules:$NODE_PATH"
 export GPG_TTY=$(tty)
-export LESS='-R --mouse'
+export LESS='-R --mouse --incsearch'
 export PAGER='less -S -R -+X'
 export EDITOR=nvim
 export MOZ_ENABLE_WAYLAND=1
