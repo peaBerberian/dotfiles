@@ -1,10 +1,3 @@
-workspace "UA"
-workspace "Code"
-workspace "Music"
-workspace "Misc."
-
-
-
 animations {
     // Uncomment to turn off all animations.
     // You can also put "off" into each individual animation to disable it.
@@ -122,14 +115,14 @@ input {
   // for the resolution.
   // If the mode is omitted altogether or is invalid, niri will pick one automatically.
   // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-  mode "1920x1080@120.030"
+  // mode "1920x1080@120.030"
 
   // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-  scale 2
+  scale 1.5
 
   // Transform allows to rotate the output counter-clockwise, valid values are:
   // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
-  transform "normal"
+  // transform "normal"
 
   // Position of the output in the global coordinate space.
   // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
@@ -140,7 +133,7 @@ input {
   // so to put another output directly adjacent to it on the right, set its x to 1920.
   // If the position is unset or results in an overlap, the output is instead placed
   // automatically.
-  position x=1280 y=0
+  // position x=1280 y=0
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -360,8 +353,8 @@ binds {
   XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
   XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
-  XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "s" "10-"; }
-  XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "s" "+10"; }
+  XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "s" "5000-"; }
+  XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "s" "+5000"; }
 
   Mod+Q { close-window; }
 

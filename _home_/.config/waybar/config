@@ -82,8 +82,8 @@
     // "device": "acpi_video1",
     "format": "{icon}  {percent}%",
     "format-icons": ["", ""],
-    "on-scroll-down": "brightnessctl s 5-",
-    "on-scroll-up": "brightnessctl s +5"
+    "on-scroll-down": "brightnessctl s 1000-",
+    "on-scroll-up": "brightnessctl s +1000"
   },
   "battery": {
     "states": {
