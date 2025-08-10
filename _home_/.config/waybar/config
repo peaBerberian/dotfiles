@@ -134,8 +134,8 @@
       "default": ["", "", ""]
     },
     "on-click": "pavucontrol",
-    "on-scroll-down": "pamixer -d 1",
-    "on-scroll-up": "pamixer -i 1"
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ -l 1"
   },
   "hyprland/language": {
     "format": "⌨️  {}",
