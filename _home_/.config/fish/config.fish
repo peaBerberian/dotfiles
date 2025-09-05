@@ -12,61 +12,44 @@ set -gx QT_QPA_PLATFORM wayland
 fish_vi_key_bindings
 
 # ls aliases
-alias ll 'lsd -lgah --git --group-directories-first'
-alias la 'lsd -a --group-directories-first'
-alias lt 'lsd -lgah --sort time --reverse --git'
+abbr ll 'lsd -lgah --git --group-directories-first'
+abbr la 'lsd -a --group-directories-first'
+abbr lt 'lsd -lgah --sort time --reverse --git'
 
 # launch neovim
-alias n nvim
-alias l 'NVIM_APPNAME=lazyvim n'
+abbr n nvim
 
 # git aliases
-alias gc 'git checkout'
-alias ga 'git add'
-alias gaa 'git add --all'
-alias gd 'git diff'
-alias gl 'git log --oneline --graph --pretty=format:"%C(3)%h %C(75)%ad %C(41)%an%C(auto)%d %s" --date=short'
-alias gla 'git log --all --oneline --graph --pretty=format:"%C(3)%h %C(75)%ad %C(41)%an%C(auto)%d %s" --date=short'
+abbr gc 'git checkout'
+abbr ga 'git add'
+abbr gaa 'git add --all'
+abbr gd 'git diff'
+abbr gl 'git log --oneline --graph --pretty=format:"%C(3)%h %C(75)%ad %C(41)%an%C(auto)%d %s" --date=short'
+abbr gla 'git log --all --oneline --graph --pretty=format:"%C(3)%h %C(75)%ad %C(41)%an%C(auto)%d %s" --date=short'
 # list every branch by commit date ascending order
-alias glb "git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+abbr glb "git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 function gcb
     set BRANCH $(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | fzf) && git checkout $BRANCH
 end
 # list every branch by commit date ascending order with last associated commit message displayed
-alias glbc "git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
-alias gm 'git commit'
-alias gmm 'git commit -m'
-alias gmn 'git commit --no-verify'
-alias gma 'git commit --amend'
-alias gmna 'git commit --no-verify --amend'
-alias gs 'git status -sb'
-alias gri 'git rebase -i'
-alias grc 'git rebase --continue'
-alias gcfd 'git clean -fd'
-function gp
-    git push origin (git rev-parse --abbrev-ref HEAD)
-end
-function gpn
-    git push --no-verify origin (git rev-parse --abbrev-ref HEAD)
-end
-function gpp
-    git push --force-with-lease origin (git rev-parse --abbrev-ref HEAD)
-end
-function gppn
-    git push --force-with-lease --no-verify origin (git rev-parse --abbrev-ref HEAD)
-end
-function gpt
-    git pull origin (git rev-parse --abbrev-ref HEAD)
-end
-function gptt
-    git pull -f origin (git rev-parse --abbrev-ref HEAD)
-end
-function grh
-    git reset --hard origin/(git rev-parse --abbrev-ref HEAD)
-end
-
-# npm alias
-alias nr "npm run"
+abbr glbc "git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+abbr -a gm 'git commit'
+abbr -a gmm 'git commit -m'
+abbr -a gmn 'git commit --no-verify'
+abbr -a gma 'git commit --amend'
+abbr -a gmna 'git commit --no-verify --amend'
+abbr -a gs 'git status -sb'
+abbr -a gri 'git rebase -i'
+abbr -a grc 'git rebase --continue'
+abbr -a gcfd 'git clean -fd'
+abbr -a gp 'git push origin (git rev-parse --abbrev-ref HEAD)'
+abbr -a gpp 'git push --force-with-lease origin (git rev-parse --abbrev-ref HEAD)'
+abbr -a gpt 'git pull origin (git rev-parse --abbrev-ref HEAD)'
+abbr -a gptt 'git pull -f origin (git rev-parse --abbrev-ref HEAD)'
+abbr -a grh 'git reset --hard origin/(git rev-parse --abbrev-ref HEAD)'
+abbr -a ni "npm install"
+abbr -a nr "npm run"
+abbr -a y yarn
 
 function starship_transient_prompt_func
     starship module time

@@ -62,14 +62,8 @@ alias gcfd='git clean -fd'
 gp() {
   git push origin $(git rev-parse --abbrev-ref HEAD)
 }
-gpn() {
-  git push --no-verify origin $(git rev-parse --abbrev-ref HEAD)
-}
 gpp() {
   git push --force-with-lease origin $(git rev-parse --abbrev-ref HEAD)
-}
-gppn() {
-  git push --force-with-lease --no-verify origin $(git rev-parse --abbrev-ref HEAD)
 }
 gpt() {
   git pull origin $(git rev-parse --abbrev-ref HEAD)
