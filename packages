@@ -1,7 +1,7 @@
 # Random list of packages, just to not forget things.
 # Both not everything is needed and more is needed, to check individually
-alacritty
 alsa-utils
+atuin
 binaryen
 blueman
 bluez
@@ -20,10 +20,7 @@ git-delta
 go
 google-chrome
 grim
-gst-plugin-pipewire
 htop
-impala
-iwd
 less
 lsd
 luarocks
@@ -40,6 +37,7 @@ npm
 openssh
 pamixer
 pavucontrol
+pwvucontrol
 pipewire
 pipewire-alsa
 pipewire-jack
@@ -63,7 +61,6 @@ wget
 wireplumber
 wl-clipboard
 xdg-desktop-portal-wlr
-yazi
 zoxide
 zram-generator
 zsh
