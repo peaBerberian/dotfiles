@@ -1,0 +1,19 @@
+[
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      // Buffer navigation
+      "ctrl-j": "pane::ActivatePreviousItem",
+      "ctrl-k": "pane::ActivateNextItem",
+      "ctrl-q": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      // jk / kj to normal
+      "j k": "vim::SwitchToNormalMode",
+      "k j": "vim::SwitchToNormalMode"
+    }
+  }
+]
