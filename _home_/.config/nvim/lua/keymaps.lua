@@ -40,14 +40,7 @@ vim.keymap.set('n', '<LEADER>fg', ':Telescope git_files<CR>', {
   desc = 'Find git files',
 })
 
--- Tab to indent
-vim.keymap.set('n', '<Tab>', '>>', silent_and_nowait)
-vim.keymap.set('n', '<S-Tab>', '<<', silent_and_nowait)
-vim.keymap.set('v', '<Tab>', '>gv', silent_and_nowait)
-vim.keymap.set('v', '<S-Tab>', '<gv', silent_and_nowait)
-
 -- Save buffer
--- vim.keymap.set("n", "<LEADER>s", ":w<CR>", silent_and_nowait)
 vim.keymap.set('n', '<C-s>', ':w<CR>', silent_and_nowait)
 vim.keymap.set('i', '<C-s>', '<ESC>:w<CR>a', silent_and_nowait)
 
@@ -118,9 +111,4 @@ vim.keymap.set('t', 'kj', '<C-\\><C-n>', {
 })
 
 -- F2 Toggle inlay hints
--- vim.keymap.set(
--- 	"n",
--- 	"<F2>",
--- 	":lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>",
--- 	silent_and_nowait
--- )
+vim.keymap.set('n', '<F2>', ':lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>', silent_and_nowait)

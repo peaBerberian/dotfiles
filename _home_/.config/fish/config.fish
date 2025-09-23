@@ -12,9 +12,16 @@ set -gx QT_QPA_PLATFORM wayland
 fish_vi_key_bindings
 
 # ls aliases
-abbr ll 'lsd -lgah --git --group-directories-first'
-abbr la 'lsd -a --group-directories-first'
-abbr lt 'lsd -lgah --sort time --reverse --git'
+
+# Old, using `lsd`
+# abbr l 'lsd -a --group-directories-first'
+# abbr ll 'lsd -lgah --git --group-directories-first'
+# abbr lt 'lsd -lgah --sort time --reverse --git'
+
+# Newer try, using `eza`
+abbr l 'eza -a --group-directories-first'
+abbr ll 'eza -lgah --git --group-directories-first'
+abbr lt 'eza -la --group -h -s modified --git'
 
 # launch neovim
 abbr n nvim

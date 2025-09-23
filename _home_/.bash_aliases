@@ -6,13 +6,15 @@ fi
 
 # ---- ls alias ----
 
-alias ll='lsd -lgah --git --group-directories-first'
-alias la='lsd -a --group-directories-first'
-alias lt='lsd -lgah --sort time --reverse --git'
+# Old, using `lsd`
+# abbr l 'lsd -a --group-directories-first'
+# abbr ll 'lsd -lgah --git --group-directories-first'
+# abbr lt 'lsd -lgah --sort time --reverse --git'
 
-alias lal='lsd -lgah --color always --git --group-directories-first | less'
-alias lll='lsd -lgah --color always --git --group-directories-first | less'
-alias ltl='lsd -lgah --color always --sort time --git | less'
+# Newer try, using `eza`
+abbr l 'eza -a --group-directories-first'
+abbr ll 'eza -lgah --git --group-directories-first'
+abbr lt 'eza -la --group -h -s modified --git'
 
 # --------
 

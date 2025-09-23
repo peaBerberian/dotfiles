@@ -5,6 +5,11 @@
 
 return {
   { 'ziglang/zig.vim' },
+  {
+    'pmizio/typescript-tools.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+    opts = {},
+  },
   -- Highlight todo, notes, etc in comments
   {
     'folke/todo-comments.nvim',
