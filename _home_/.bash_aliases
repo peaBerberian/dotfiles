@@ -1,86 +1,69 @@
 #!/bin/bash
 
-if [ -f ~/git_shortcuts.sh ]; then
-  alias g='~/git_shortcuts.sh'
+# ~/.bash_aliases
+
+# ls aliases - auto-detect available tool
+if command -v eza >/dev/null 2>&1; then
+    alias l='eza -a --group-directories-first'
+    alias ll='eza -lgah --git --group-directories-first'
+    alias lt='eza -la --group -h -s modified --git'
+elif command -v lsd >/dev/null 2>&1; then
+    alias l='lsd -a --group-directories-first'
+    alias ll='lsd -lgah --git --group-directories-first'
+    alias lt='lsd -lgah --sort time --reverse --git'
+else
+    # Fallback to regular ls with color
+    alias l='ls -A --color=auto --group-directories-first'
+    alias ll='ls -lAh --color=auto --group-directories-first'
+    alias lt='ls -lAht --color=auto'
 fi
 
-# ---- ls alias ----
+# Editor
+if command -v nvim >/dev/null 2>&1; then
+    alias n='nvim'
+fi
 
-# Old, using `lsd`
-# abbr l 'lsd -a --group-directories-first'
-# abbr ll 'lsd -lgah --git --group-directories-first'
-# abbr lt 'lsd -lgah --sort time --reverse --git'
+# Git aliases
+if command -v git >/dev/null 2>&1; then
+    alias gc='git checkout'
+    alias ga='git add'
+    alias gaa='git add --all'
+    alias gd='git diff'
+    alias gl='git log --oneline --graph --pretty=format:"%C(3)%h %C(75)%ad %C(41)%an%C(auto)%d %s" --date=short'
+    alias gla='git log --all --oneline --graph --pretty=format:"%C(3)%h %C(75)%ad %C(41)%an%C(auto)%d %s" --date=short'
+    alias glb="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+    alias glbc="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+    alias gm='git commit'
+    alias gmm='git commit -m'
+    alias gmn='git commit --no-verify'
+    alias gma='git commit --amend'
+    alias gmna='git commit --no-verify --amend'
+    alias gs='git status -sb'
+    alias gri='git rebase -i'
+    alias grc='git rebase --continue'
+    alias gcfd='git clean -fd'
+    alias gp='git push origin $(git rev-parse --abbrev-ref HEAD)'
+    alias gpp='git push --force-with-lease origin $(git rev-parse --abbrev-ref HEAD)'
+    alias gpt='git pull origin $(git rev-parse --abbrev-ref HEAD)'
+    alias gptt='git pull -f origin $(git rev-parse --abbrev-ref HEAD)'
+    alias grh='git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)'
 
-# Newer try, using `eza`
-abbr l 'eza -a --group-directories-first'
-abbr ll 'eza -lgah --git --group-directories-first'
-abbr lt 'eza -la --group -h -s modified --git'
+    # Interactive branch checkout with fzf
+    if command -v fzf >/dev/null 2>&1; then
+        gcb() {
+            local branch
+            branch=$(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | fzf)
+            [[ -n "$branch" ]] && git checkout "$branch"
+        }
+    fi
+fi
 
-# --------
+# Node/JS aliases
+if command -v npm >/dev/null 2>&1; then
+    alias ni='npm install'
+    alias nr='npm run'
+fi
 
-# ---- VI ----
-
-# launch vim instead of vi
-alias v='vim'
-alias vi='vim'
-
-# launch neovim
-alias n='nvim'
-alias l='NVIM_APPNAME=lazyvim n'
-
-# --------
-
-# ---- git alias ----
-
-alias gc='git checkout'
-alias ga='git add'
-alias gaa='git add --all'
-alias gd='git diff'
-
-# Prettified log for the current branch
-alias gl='git log --oneline --graph --pretty=format:"%C(3)%h %C(75)%ad %C(41)%an%C(auto)%d %s" --date=short'
-
-# Prettified log for all branches
-alias gla='git log --all --oneline --graph --pretty=format:"%C(3)%h %C(75)%ad %C(41)%an%C(auto)%d %s" --date=short'
-
-# list every branch by commit date ascending order
-alias glb="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
-gcb() {
-  BRANCH=$(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | fzf) && git checkout ${BRANCH}
-}
-
-# list every branch by commit date ascending order with last associated commit message displayed
-alias glbc="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
-
-alias gm='git commit'
-alias gmm='git commit -m'
-alias gmn='git commit --no-verify'
-alias gma='git commit --amend'
-alias gmna='git commit --no-verify --amend'
-alias gs='git status -sb'
-alias gri='git rebase -i'
-alias grc='git rebase --continue'
-alias gcfd='git clean -fd'
-gp() {
-  git push origin $(git rev-parse --abbrev-ref HEAD)
-}
-gpp() {
-  git push --force-with-lease origin $(git rev-parse --abbrev-ref HEAD)
-}
-gpt() {
-  git pull origin $(git rev-parse --abbrev-ref HEAD)
-}
-gptt() {
-  git pull -f origin $(git rev-parse --abbrev-ref HEAD)
-}
-grh() {
-  git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
-}
-
-# --------
-
-# ---- npm alias ----
-
-alias nr="npm run"
-
-# --------
+if command -v yarn >/dev/null 2>&1; then
+    alias y='yarn'
+fi
