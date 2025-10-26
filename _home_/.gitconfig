@@ -1,8 +1,6 @@
 [user]
 	name = Paul Berberian
 	email = paul.berberian@proton.me
-[credential]
-	helper = store
 [diff]
 	noprefix = true
 [merge]
