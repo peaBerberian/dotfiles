@@ -6,6 +6,10 @@ set fish_greeting
 set -gx PATH $HOME/bin $HOME/.local/bin /usr/local/bin $HOME/.cargo/bin $HOME/.npm/bin $PATH
 set -gx GPG_TTY (tty)
 
+if test -f ~/.env.fish
+    source ~/.env.fish
+end
+
 # Use Vi keybindings, as god [probably] intended
 fish_vi_key_bindings
 
@@ -23,6 +27,32 @@ else if type -q more
     set -gx PAGER more
 end
 
+# Editor
+if type -q nvim
+    set -gx EDITOR nvim
+    abbr n nvim
+else if type -q vim
+    set -gx EDITOR vim
+else
+    # WTH, no Vim, yet fish? At least POSIX is standard, even busybox machines have one
+    set -gx EDITOR vi
+end
+
+# Starship transient prompt
+function starship_transient_prompt_func
+    starship module time
+    starship module character
+end
+
+# Initialize tools
+type -q zoxide && zoxide init fish | source
+type -q starship && starship init fish | source
+type -q atuin && atuin init fish --disable-up-arrow | source
+type -q mise && mise activate fish | source
+
+# Enable starship transience
+type -q starship && enable_transience
+
 # ls aliases - auto-detect available tool
 if type -q eza
     abbr l 'eza -a --group-directories-first'
@@ -37,17 +67,6 @@ else
     abbr l 'ls -A --color=auto --group-directories-first'
     abbr ll 'ls -lAh --color=auto --group-directories-first'
     abbr lt 'ls -lAht --color=auto'
-end
-
-# Editor
-if type -q nvim
-    set -gx EDITOR nvim
-    abbr n nvim
-else if type -q vim
-    set -gx EDITOR vim
-else
-    # WTH, no Vim, yet fish? At least POSIX is standard, even busybox machines have one
-    set -gx EDITOR vi
 end
 
 # Git aliases
@@ -92,17 +111,3 @@ end
 if type -q yarn
     abbr y yarn
 end
-
-# Starship transient prompt
-function starship_transient_prompt_func
-    starship module time
-    starship module character
-end
-
-# Initialize tools
-type -q zoxide && zoxide init fish | source
-type -q starship && starship init fish | source
-type -q atuin && atuin init fish --disable-up-arrow | source
-
-# Enable starship transience
-type -q starship && enable_transience

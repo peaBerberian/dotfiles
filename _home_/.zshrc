@@ -8,6 +8,8 @@ export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=100000000
 export SAVEHIST=100000000
 
+[[ -f ~/.env.sh ]] && . ~/.env.sh
+
 # Pager config
 if command -v less >/dev/null 2>&1; then
     export LESS='-R --mouse --incsearch'
@@ -100,6 +102,7 @@ command -v fzf >/dev/null 2>&1 && source <(fzf --zsh)
 command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh)"
 command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
 command -v atuin >/dev/null 2>&1 && eval "$(atuin init zsh --disable-up-arrow)"
+command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
 
 ## Common alias definitions for all bash-compatible shells
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases

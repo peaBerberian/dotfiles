@@ -7,6 +7,8 @@ export HISTSIZE=100000000
 export HISTFILESIZE=100000000
 export HISTCONTROL=ignoredups:erasedups
 
+[[ -f ~/.env.sh ]] && . ~/.env.sh
+
 # Pager config
 if command -v less >/dev/null 2>&1; then
     export LESS='-R --mouse --incsearch'
@@ -42,6 +44,7 @@ command -v fzf >/dev/null 2>&1 && eval "$(fzf --bash)"
 command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init bash)"
 command -v starship >/dev/null 2>&1 && eval "$(starship init bash)"
 command -v atuin >/dev/null 2>&1 && eval "$(atuin init bash --disable-up-arrow)"
+command -v mise >/dev/null 2>&1 && eval "$(mise activate bash)"
 
 ## Common alias definitions for all bash-compatible shells
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
