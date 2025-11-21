@@ -103,6 +103,10 @@ if type -q git
     end
 end
 
+if type -q jj
+    abbr jl 'jj log -r ::@'
+end
+
 # Node/JS aliases
 if type -q npm
     abbr ni 'npm install'

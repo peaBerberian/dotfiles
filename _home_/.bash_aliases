@@ -58,6 +58,11 @@ if command -v git >/dev/null 2>&1; then
     fi
 fi
 
+# Jujutsu aliases
+if command -v jj >/dev/null 2>&1; then
+    alias jl='jj log -r ::@'
+fi
+
 # Node/JS aliases
 if command -v npm >/dev/null 2>&1; then
     alias ni='npm install'
