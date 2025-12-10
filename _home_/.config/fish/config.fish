@@ -111,7 +111,7 @@ if type -q git
 end
 
 if type -q jj
-    abbr jl 'jj log --limit 20 --no-pager --reversed -T \'separate(" ", change_id.shortest(8), description.first_line(), bookmarks, author.name())\''
+    abbr jl 'jj log --limit 20 --no-pager -r \'::@\' --reversed -T \'separate(" ", change_id.shortest(8), description.first_line(), bookmarks, author.name(), if(empty, "<empty>", ""), if(conflict, "<conflict!>", ""))\''
 end
 
 # Node/JS aliases
