@@ -869,3 +869,15 @@ require('lazy').setup({
     },
   },
 })
+
+local old_start = vim.lsp.start
+
+vim.lsp.start = function(...)
+  local _, opt = unpack { ... }
+  if opt and opt.bufnr then
+    if vim.b[opt.bufnr].fugitive_type then
+      return
+    end
+  end
+  old_start(...)
+end
