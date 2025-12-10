@@ -112,3 +112,23 @@ vim.keymap.set('t', 'kj', '<C-\\><C-n>', {
 
 -- F2 Toggle inlay hints
 vim.keymap.set('n', '<F2>', ':lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>', silent_and_nowait)
+
+-- Toggle virtual lines for diagnostics
+vim.keymap.set('n', '<leader>ct', function()
+  local current = vim.diagnostic.config().virtual_lines
+  if current then
+    -- Switch to virtual_text
+    vim.diagnostic.config {
+      virtual_lines = false,
+      virtual_text = { spacing = 4, prefix = '●' },
+    }
+    print 'Switched to virtual text'
+  else
+    -- Switch to virtual_lines
+    vim.diagnostic.config {
+      virtual_lines = true,
+      virtual_text = false,
+    }
+    print 'Switched to virtual lines'
+  end
+end, { desc = 'Toggle diagnostics between virtual lines and virtual text' })
