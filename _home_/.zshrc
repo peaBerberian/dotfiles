@@ -100,9 +100,11 @@ unset _zsh_autosuggest_locations
 # Setting up usual tools:
 command -v fzf >/dev/null 2>&1 && source <(fzf --zsh)
 command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init zsh)"
-command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
+# command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
+command -v oh-my-posh >/dev/null 2>&1 && eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.toml)"
 command -v atuin >/dev/null 2>&1 && eval "$(atuin init zsh --disable-up-arrow)"
 command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
+command -v jj >/dev/null 2>&1 && eval "$(jj util completion zsh)"
 
 ## Common alias definitions for all bash-compatible shells
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases

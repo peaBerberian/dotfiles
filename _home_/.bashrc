@@ -42,9 +42,11 @@ PS1='[\u@\h \W]\$ '
 
 command -v fzf >/dev/null 2>&1 && eval "$(fzf --bash)"
 command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init bash)"
-command -v starship >/dev/null 2>&1 && eval "$(starship init bash)"
+# command -v starship >/dev/null 2>&1 && eval "$(starship init bash)"
+command -v oh-my-posh >/dev/null 2>&1 && eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/config.toml)"
 command -v atuin >/dev/null 2>&1 && eval "$(atuin init bash --disable-up-arrow)"
 command -v mise >/dev/null 2>&1 && eval "$(mise activate bash)"
+command -v jj >/dev/null 2>&1 && eval "$(jj util completion bash)"
 
 ## Common alias definitions for all bash-compatible shells
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases

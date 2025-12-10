@@ -39,19 +39,26 @@ else
 end
 
 # Starship transient prompt
-function starship_transient_prompt_func
-    starship module time
-    starship module character
+# function starship_transient_prompt_func
+#     starship module time
+#     starship module character
+# end
+
+# Remove the mode indicator
+function fish_mode_prompt
+    # Intentionally left blank to hide the [I] [N] indicators
 end
 
 # Initialize tools
 type -q zoxide && zoxide init fish | source
-type -q starship && starship init fish | source
+# type -q starship && starship init fish | source
+type -q oh-my-posh && oh-my-posh init fish --config ~/.config/oh-my-posh/config.toml | source
 type -q atuin && atuin init fish --disable-up-arrow | source
 type -q mise && mise activate fish | source
+type -q jj && jj util completion fish >~/.config/fish/completions/jj.fish
 
 # Enable starship transience
-type -q starship && enable_transience
+# type -q starship && enable_transience
 
 # ls aliases - auto-detect available tool
 if type -q eza
@@ -104,7 +111,7 @@ if type -q git
 end
 
 if type -q jj
-    abbr jl 'jj log -r ::@'
+    abbr jl 'jj log --limit 20 --no-pager --reversed -T \'separate(" ", change_id.shortest(8), description.first_line(), bookmarks, author.name())\''
 end
 
 # Node/JS aliases
