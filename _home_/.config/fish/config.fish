@@ -38,7 +38,7 @@ else
     set -gx EDITOR vi
 end
 
-# Starship transient prompt
+# # Starship transient prompt
 # function starship_transient_prompt_func
 #     starship module time
 #     starship module character
@@ -57,7 +57,7 @@ type -q atuin && atuin init fish --disable-up-arrow | source
 type -q mise && mise activate fish | source
 type -q jj && jj util completion fish >~/.config/fish/completions/jj.fish
 
-# Enable starship transience
+# # Enable starship transience
 # type -q starship && enable_transience
 
 # ls aliases - auto-detect available tool
