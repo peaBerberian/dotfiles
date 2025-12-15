@@ -61,7 +61,7 @@ fi
 # Jujutsu aliases
 if command -v jj >/dev/null 2>&1; then
     alias jl='jj log --limit 20 --no-pager -r "::@" --reversed -T "separate(\" \", change_id.shortest(8), description.first_line(), bookmarks, author.name(), if(empty, \"<empty>\", \"\"), if(conflict, \"<conflict!>\", \"\"))"'
-
+    alias j='jj status'
 fi
 
 # Node/JS aliases
