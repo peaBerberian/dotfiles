@@ -1,2 +1,9 @@
+font-family = Inconsolata Nerd Font Mono
+
 # disable ligatures
 font-feature = -calt
+background-opacity = 0.8
+background-opacity-cells = true
+background-blur = true
+font-size = 13
+
