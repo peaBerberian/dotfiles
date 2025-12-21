@@ -38,11 +38,11 @@ else
     set -gx EDITOR vi
 end
 
-# # Starship transient prompt
-# function starship_transient_prompt_func
-#     starship module time
-#     starship module character
-# end
+# Starship transient prompt
+function starship_transient_prompt_func
+    starship module time
+    starship module character
+end
 
 # Remove the mode indicator
 function fish_mode_prompt
@@ -51,14 +51,14 @@ end
 
 # Initialize tools
 type -q zoxide && zoxide init fish | source
-# type -q starship && starship init fish | source
-type -q oh-my-posh && oh-my-posh init fish --config ~/.config/oh-my-posh/config.toml | source
+type -q starship && starship init fish | source
+# type -q oh-my-posh && oh-my-posh init fish --config ~/.config/oh-my-posh/config.toml | source
 type -q atuin && atuin init fish --disable-up-arrow | source
 type -q mise && mise activate fish | source
 type -q jj && jj util completion fish >~/.config/fish/completions/jj.fish
 
-# # Enable starship transience
-# type -q starship && enable_transience
+# Enable starship transience
+type -q starship && enable_transience
 
 # ls aliases - auto-detect available tool
 if type -q eza
