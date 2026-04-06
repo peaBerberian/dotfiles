@@ -50,11 +50,17 @@ if command -v git >/dev/null 2>&1; then
 
     # Interactive branch checkout with fzf
     if command -v fzf >/dev/null 2>&1; then
-        gcb() {
-            local branch
-            branch=$(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | fzf)
-            [[ -n "$branch" ]] && git checkout "$branch"
-        }
+        alias gcb="git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/ \
+                   | fzf --height=50% --reverse --preview 'git log -1 --color=always {}' --prompt='Branch > ' \
+                   | xargs -r git checkout"
+        alias glo='git log --color=always --decorate=short \
+                           --pretty=format:"%C(auto)%h%C(reset) %C(yellow)%d%C(reset) %C(cyan)%ad%C(reset) %C(green)%an%C(reset) %s" \
+                           --date=relative \
+                     | fzf --ansi --no-sort \
+                           --preview "git show --decorate --color {1}" \
+                           --preview-window=right:50% \
+                           --bind "enter:execute-silent(echo {1} | pbcopy)+abort"'
+
     fi
 fi
 

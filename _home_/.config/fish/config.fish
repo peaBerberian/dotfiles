@@ -103,10 +103,18 @@ if type -q git
 
     if type -q fzf
         # Interactive branch checkout with fzf
-        function gcb
-            set BRANCH (git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | fzf)
-            and git checkout $BRANCH
-        end
+        abbr gbc "git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/ \
+                   | fzf --height=50% --reverse --preview 'git log -1 --color=always {}' --prompt='Branch > ' \
+                   | xargs -r git checkout"
+
+        # Interactive log
+        abbr glo 'git log --color=always --decorate=short \
+                           --pretty=format:"%C(auto)%h%C(reset) %C(yellow)%d%C(reset) %C(cyan)%ad%C(reset) %C(green)%an%C(reset) %s" \
+                           --date=relative \
+                     | fzf --ansi --no-sort \
+                           --preview "git show --decorate --color {1}" \
+                           --preview-window=right:50% \
+                           --bind "enter:execute-silent(echo {1} | pbcopy)+abort"'
     end
 end
 
