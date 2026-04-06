@@ -260,9 +260,9 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
+        clangd = {},
+        gopls = {},
+        pyright = {},
         rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -422,11 +422,6 @@ require('lazy').setup({
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         },
         sources = {
-          {
-            name = 'lazydev',
-            -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
-            group_index = 0,
-          },
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
@@ -699,12 +694,13 @@ require('lazy').setup({
           lua = { 'stylua' },
           fish = { 'fish_indent' },
           sh = { 'shfmt' },
-          typescript = { 'prettier' },
-          javascript = { 'prettierd', 'prettier', stop_after_first = true },
-          javascriptreact = { 'prettier' },
-          typescriptreact = { 'prettier' },
+          typescript = { 'eslint_d', 'prettier' },
+          javascript = { 'eslint_d', 'prettier' },
+          javascriptreact = { 'eslint_d', 'prettier' },
+          typescriptreact = { 'eslint_d', 'prettier' },
           markdown = { 'prettier' },
           rust = { 'rustfmt' },
+          zig = { 'zigfmt' },
         },
         formatters = {
           -- # Example of using shfmt with extra args
@@ -714,7 +710,7 @@ require('lazy').setup({
         },
         format_on_save = function()
           return {
-            timeout_ms = 500,
+            timeout_ms = 3000,
             lsp_format = 'fallback',
           }
         end,
