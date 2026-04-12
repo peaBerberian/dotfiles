@@ -481,11 +481,11 @@ require('lazy').setup({
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
-  { -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    lazy = false,
-    build = ':TSUpdate',
-  },
+  -- { -- Highlight, edit, and navigate code
+  --   'nvim-treesitter/nvim-treesitter',
+  --   lazy = false,
+  --   build = ':TSUpdate',
+  -- },
   { 'ziglang/zig.vim' },
   {
     'pmizio/typescript-tools.nvim',
@@ -725,10 +725,10 @@ require('lazy').setup({
       local lint = require 'lint'
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
-        typescript = { 'eslint' },
-        javascript = { 'eslint', stop_after_first = true },
-        javascriptreact = { 'eslint' },
-        typescriptreact = { 'eslint' },
+        typescript = { 'eslint_d', 'prettier' },
+        javascript = { 'eslint_d', 'prettier' },
+        javascriptreact = { 'eslint_d', 'prettier' },
+        typescriptreact = { 'eslint_d', 'prettier' },
       }
     end,
   },
