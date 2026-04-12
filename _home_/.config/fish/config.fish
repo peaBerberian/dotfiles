@@ -6,6 +6,9 @@ set fish_greeting
 set -gx PATH $HOME/bin $HOME/.local/bin /usr/local/bin $HOME/.cargo/bin $HOME/.npm/bin $PATH
 set -gx GPG_TTY (tty)
 
+mkdir -p ~/tmp
+set -x TMPDIR $HOME/tmp
+
 if test -f ~/.env.fish
     source ~/.env.fish
 end

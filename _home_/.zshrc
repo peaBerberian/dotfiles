@@ -8,6 +8,9 @@ export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=100000000
 export SAVEHIST=100000000
 
+mkdir -p ~/tmp
+export TMPDIR="$HOME/tmp"
+
 [[ -f ~/.env.sh ]] && . ~/.env.sh
 
 # Pager config

@@ -7,6 +7,9 @@ export HISTSIZE=100000000
 export HISTFILESIZE=100000000
 export HISTCONTROL=ignoredups:erasedups
 
+mkdir -p ~/tmp
+export TMPDIR="$HOME/tmp"
+
 [[ -f ~/.env.sh ]] && . ~/.env.sh
 
 # Pager config
