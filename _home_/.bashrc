@@ -40,7 +40,6 @@ fi
 # No, I don't really call myself alice ;)
 PS1='[\u@\h \W]\$ '
 
-command -v fzf >/dev/null 2>&1 && eval "$(fzf --bash)"
 command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init bash)"
 command -v starship >/dev/null 2>&1 && eval "$(starship init bash)"
 # command -v oh-my-posh >/dev/null 2>&1 && eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/config.toml)"
