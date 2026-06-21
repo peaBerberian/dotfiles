@@ -59,6 +59,7 @@ type -q starship && starship init fish | source
 type -q atuin && atuin init fish --disable-up-arrow | source
 type -q mise && mise activate fish | source
 type -q jj && jj util completion fish >~/.config/fish/completions/jj.fish
+type -q paul-envs && paul-envs completion fish >~/.config/fish/completions/paul-envs.fish
 
 # Enable starship transience
 type -q starship && enable_transience
