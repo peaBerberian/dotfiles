@@ -57,7 +57,7 @@ if command -v git >/dev/null 2>&1; then
                            --pretty=format:"%C(auto)%h%C(reset) %C(yellow)%d%C(reset) %C(cyan)%ad%C(reset) %C(green)%an%C(reset) %s" \
                            --date=relative \
                      | fzf --ansi --no-sort \
-                           --preview "git show --decorate --color {1}" \
+                           --preview "git show --color --pretty=fuller {1}" \
                            --preview-window=right:50% \
                            --bind "enter:execute-silent(echo {1} | pbcopy)+abort"'
 
