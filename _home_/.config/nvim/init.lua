@@ -634,7 +634,7 @@ require('lazy').setup({
   {
     'tpope/vim-fugitive',
     keys = {
-      { '<leader>gd', '<cmd>Gdiffsplit<cr>', desc = 'Git diff in a split' },
+      { '<leader>gd', '<cmd>Gvdiffsplit<cr>', desc = 'Git diff in a split' },
       { '<leader>gb', '<cmd>Git blame<cr>', desc = 'Git blame' },
     },
   },
@@ -694,10 +694,10 @@ require('lazy').setup({
           lua = { 'stylua' },
           fish = { 'fish_indent' },
           sh = { 'shfmt' },
-          typescript = { 'eslint_d', 'prettier' },
-          javascript = { 'eslint_d', 'prettier' },
-          javascriptreact = { 'eslint_d', 'prettier' },
-          typescriptreact = { 'eslint_d', 'prettier' },
+          typescript = { 'eslint_d', 'oxlint', 'prettier' },
+          javascript = { 'eslint_d', 'oxlint', 'prettier' },
+          javascriptreact = { 'eslint_d', 'oxlint', 'prettier' },
+          typescriptreact = { 'eslint_d', 'oxlint', 'prettier' },
           markdown = { 'prettier' },
           rust = { 'rustfmt' },
           zig = { 'zigfmt' },
@@ -725,10 +725,10 @@ require('lazy').setup({
       local lint = require 'lint'
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
-        typescript = { 'eslint_d', 'prettier' },
-        javascript = { 'eslint_d', 'prettier' },
-        javascriptreact = { 'eslint_d', 'prettier' },
-        typescriptreact = { 'eslint_d', 'prettier' },
+        typescript = { 'eslint_d', 'oxlint', 'prettier' },
+        javascript = { 'eslint_d', 'oxlint', 'prettier' },
+        javascriptreact = { 'eslint_d', 'oxlint', 'prettier' },
+        typescriptreact = { 'eslint_d', 'oxlint', 'prettier' },
       }
     end,
   },
