@@ -2,7 +2,7 @@
 name = Paul Berberian
 email = paul.berberian@proton.me
 [diff]
-noprefix = true
+; noprefix = true
 colorMoved = default
 [merge]
 conflictstyle = zdiff3
