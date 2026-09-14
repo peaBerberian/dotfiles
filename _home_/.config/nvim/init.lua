@@ -677,6 +677,20 @@ require('lazy').setup({
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
+    init = function()
+      vim.api.nvim_create_user_command('FormatDisable', function()
+        vim.b.disable_autoformat = true
+      end, {
+        desc = 'Disable format-on-save for current buffer',
+      })
+
+      vim.api.nvim_create_user_command('FormatEnable', function()
+        vim.b.disable_autoformat = false
+      end, {
+        desc = 'Enable format-on-save for current buffer',
+      })
+    end,
+
     keys = {
       {
         '<leader>cf',
@@ -708,7 +722,11 @@ require('lazy').setup({
             prepend_args = { '-i', '2' },
           },
         },
-        format_on_save = function()
+        format_on_save = function(bufnr)
+          if vim.b[bufnr].disable_autoformat then
+            return
+          end
+
           return {
             timeout_ms = 3000,
             lsp_format = 'fallback',
