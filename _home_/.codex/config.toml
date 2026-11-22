@@ -1,0 +1,14 @@
+[tui]
+status_line = [
+  "model-with-reasoning",
+  "current-dir",
+  "thread-name",
+  "project-name",
+  "context-used",
+  "five-hour-limit",
+  "weekly-limit",
+  "total-input-tokens",
+  "total-output-tokens",
+]
+status_line_use_colors = true
+fullscreen_transcript = false
